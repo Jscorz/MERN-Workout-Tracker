@@ -17,13 +17,6 @@ body {
 	margin: 0 auto;
 }
 
-/* homepage */
-.home {
-	display: grid;
-	grid-template-columns: 3fr 1fr;
-	gap: 100px;
-}
-
 .workout-details span {
 	position: absolute;
 	top: 20px;
