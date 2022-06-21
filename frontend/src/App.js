@@ -7,7 +7,7 @@ function App() {
 		<div className='App'>
 			<BrowserRouter>
 				<Navbar />
-				<div className='pages'>
+				<div className='max-w-full px-5 md:px-40 md:py-5'>
 					<Routes>
 						<Route path='/' element={<Home />} />
 					</Routes>
