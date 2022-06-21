@@ -1,7 +1,7 @@
 const WorkoutDetails = ({ workout }) => {
 	return (
-		<div className='flex flex-col  items-center space-y-3 bg-primary rounded-md my-10 mx-auto p-8 relative shadow-md'>
-			<h4 className=' text-xl text-slate-900'>{workout.title}</h4>
+		<div className='flex flex-col  items-center space-y-1 bg-primary rounded-md my-10 mx-auto p-8 relative shadow-md md:items-start'>
+			<h4 className=' text-xl text-slate-900 mb-3'>{workout.title}</h4>
 			<p className='text-md text-slate-800'>
 				<strong>Weight (lbs): </strong>
 				{workout.load}
