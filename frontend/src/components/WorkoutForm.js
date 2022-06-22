@@ -8,6 +8,7 @@ const WorkoutForm = () => {
 	const [load, setLoad] = useState("");
 	const [reps, setReps] = useState("");
 	const [error, setError] = useState("");
+	const [emptyFields, setEmptyFields] = useState([]);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -25,12 +26,14 @@ const WorkoutForm = () => {
 
 		if (!response.ok) {
 			setError(json.error);
+			setEmptyFields(json.emptyFields);
 		}
 		if (response.ok) {
 			setTitle("");
 			setLoad("");
 			setReps("");
 			setError(null);
+			setEmptyFields([]);
 			console.log(json);
 			dispatch({ type: "CREATE_WORKOUT", payload: json });
 		}
@@ -46,21 +49,33 @@ const WorkoutForm = () => {
 				type='text'
 				onChange={(e) => setTitle(e.target.value)}
 				value={title}
-				className='block p-2 mt-5 mb-5 w-full border rounded-md '
+				className={
+					emptyFields.includes("title")
+						? "border-red-500 block p-2 mt-5 mb-5 w-full border rounded-md"
+						: "block p-2 mt-5 mb-5 w-full border rounded-md "
+				}
 			/>
 			<label className='block'>Weight (in lbs):</label>
 			<input
 				type='number'
 				onChange={(e) => setLoad(e.target.value)}
 				value={load}
-				className='block p-2 mt-2 mb-5 w-full border rounded-md'
+				className={
+					emptyFields.includes("load")
+						? " border-red-500 block p-2 mt-5 mb-5 w-full border rounded-md"
+						: "block p-2 mt-5 mb-5 w-full border rounded-md "
+				}
 			/>
 			<label className='block'>Reps:</label>
 			<input
 				type='number'
 				onChange={(e) => setReps(e.target.value)}
 				value={reps}
-				className='block p-2 mt-2 mb-5 w-full border rounded-md'
+				className={
+					emptyFields.includes("reps")
+						? "border-red-500 block p-2 mt-5 mb-5 w-full border rounded-md"
+						: "block p-2 mt-5 mb-5 w-full border rounded-md "
+				}
 			/>
 			<button className='bg-cyan-700 text-white py-2 px-5 rounded-md border border-transparent cursor-pointer transition duration-300 hover:bg-primary hover:text-slate-900 uppercase'>
 				Add Workout
