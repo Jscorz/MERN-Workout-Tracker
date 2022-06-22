@@ -28,33 +28,42 @@ const WorkoutForm = () => {
 			setLoad("");
 			setReps("");
 			setError(null);
-			console.log("new workout added");
+			console.log(json);
 		}
 	};
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<h3>Add a New Workout</h3>
-			<label>Exercise Title:</label>
+			<h3 className='text-xl my-5 text-slate-900'>Add a New Workout</h3>
+			<label className='block'>Exercise Title:</label>
 			<input
 				type='text'
 				onChange={(e) => setTitle(e.target.value)}
 				value={title}
+				className='block p-3 mt-5 mb-5 w-full border rounded-md '
 			/>
-			<label>Weight (in lbs):</label>
+			<label className='block'>Weight (in lbs):</label>
 			<input
 				type='number'
 				onChange={(e) => setLoad(e.target.value)}
 				value={load}
+				className='block p-3 mt-2 mb-5 w-full border rounded-md'
 			/>
-			<label>Reps:</label>
+			<label className='block'>Reps:</label>
 			<input
 				type='number'
 				onChange={(e) => setReps(e.target.value)}
 				value={reps}
+				className='block p-3 mt-2 mb-5 w-full border rounded-md'
 			/>
-			<button>Add Workout</button>
-			{error && <div className='error'>{error}</div>}
+			<button className='bg-primary py-2 px-5 rounded-md border border-transparent cursor-pointer transition duration-300 hover:bg-secondary hover:text-slate-900 uppercase'>
+				Add Workout
+			</button>
+			{error && (
+				<div className='p-5 bg-offWhiteTwo border border-red-400 my-6 rounded-md text-red-400'>
+					{error}
+				</div>
+			)}
 		</form>
 	);
 };
