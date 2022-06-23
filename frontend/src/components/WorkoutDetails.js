@@ -1,5 +1,6 @@
 import { MdDeleteForever } from "react-icons/md";
 import { useWorkoutsContext } from "../hooks/useWorkoutContext";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 const WorkoutDetails = ({ workout }) => {
 	const { dispatch } = useWorkoutsContext();
@@ -28,7 +29,11 @@ const WorkoutDetails = ({ workout }) => {
 				<strong>Reps: </strong>
 				{workout.reps}
 			</p>
-			<p className='text-md text-slate-800'>{workout.createdAt}</p>
+			<p className='text-md text-slate-800'>
+				{formatDistanceToNow(new Date(workout.createdAt), {
+					addSuffix: true,
+				})}
+			</p>
 			<span>
 				<MdDeleteForever
 					onClick={handleClick}

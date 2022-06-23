@@ -18,7 +18,7 @@ const Home = () => {
 		};
 
 		fetchWorkouts();
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<div className='md:grid md:grid-cols-4 md:gap-24'>
