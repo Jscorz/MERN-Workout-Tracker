@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Reps Logger | Full Stack Workout Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Built with MongoDB, Express, React, and Node (MERN Stack)
 
-## Available Scripts
+<!-- **Link to project: [Live-demo]https://next-shoecommerce.netlify.app** -->
 
-In the project directory, you can run:
+|                           Desktop                            |                            Mobile                            |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| ![shoe-commerce](frontend/src/assets/desktop-screenshot.png) | ![shoe-commerce](frontend/src/assets//mobile-screenshot.png) |
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **How It's Made:**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### coming soon
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ### I began the project by creating a create-next-app, and installing TailwindCSS and then configured custom settings for Tailwind in the config file. I built out some of the simple parts of the website first such as the navbar and a basic card element to test connection the Stripe backend. I used a handler function to pull in the Stripe API and display products and checkout id's to match. I setup the different routes for checkout sucess/failure and made sure the products were displaying correctly. After that point where the main functionality of the store was working, I began styling the home page first, and the products, about, and contact pages afterwards. -->
 
-### `npm run build`
+<!-- ### I began building the project with a hello world starter from Gatsby's website. I decided to build out all the pages first and make sure the routing was setup correctly. When I was sure the routing was correct, I then built out the Navbar followed by the hero, services, experience, projects, and footer sections on the index.js page(home-page). Some of the data for these sections was imported from constants folder, and other data was pulled via GraphQL queries built upon a Strapi backend. Afterwards, I built the about page with more graphql queries. I also built out the projects page, but with same data via slightyly-altered queries from the projects section on the home page. The contact page was straightforward and the form is built upon formspree.io's backend to store the submissions. -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **Tech used:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### HTML, Tailwind CSS, Javascript, React JS, MongoDB, Express, Node
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## **Optimizations:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Coming soon
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- ### Optimization of the entire project was part of the reason Gatsby JS and GraphQL were chosen. Many of the built in plugins allowed me to pull data from queries and use static images to speed up loading times. The pages for individual projects were created programatically, saving plenty of time that would have been spent hard-coding data for the pages and SEO. Most sections with more than one of the same kind of element were either queries or constants that were iterated over to save code space as well. -->
