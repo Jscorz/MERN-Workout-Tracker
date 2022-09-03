@@ -14,4 +14,13 @@ const userSchema = new Schema({
 	},
 });
 
+// static signup method
+userSchema.statics.signup = async (email, password) => {
+	const exists = await this.findOne({ email });
+
+	if (exists) {
+		throw Error("Email already exists");
+	}
+};
+
 module.exports = mongoose.model("User", userSchema);
