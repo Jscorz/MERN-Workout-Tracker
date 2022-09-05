@@ -12,10 +12,12 @@ const Signup = () => {
 
 	return (
 		<form
-			className='max-w-[400px] mt-20 mx-auto p-5 py-10 bg-[#fff] text-primary rounded-lg flex flex-col space-y-6'
+			className='max-w-[400px] mt-20 mx-auto p-5 py-10 bg-[#fff] rounded-lg flex flex-col space-y-6'
 			onSubmit={handleSubmit}
 		>
-			<h3 className='font-extrabold tracking-wider text-2xl'>Sign up</h3>
+			<h3 className='font-extrabold tracking-wider text-2xl text-primary'>
+				Sign up
+			</h3>
 			<label className='text-gray-600'>Email:</label>
 			<input
 				type='email'
