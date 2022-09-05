@@ -12,7 +12,7 @@ const Signup = () => {
 
 	return (
 		<form
-			className='max-w-[400px] mt-20 mx-auto p-5 py-10 bg-[#fff] rounded-lg flex flex-col space-y-6'
+			className='max-w-[400px] mt-20 mx-auto p-5 py-10 bg-[#fff]  border-2 border-primary rounded-lg flex flex-col space-y-6'
 			onSubmit={handleSubmit}
 		>
 			<h3 className='font-extrabold tracking-wider text-2xl text-primary'>
