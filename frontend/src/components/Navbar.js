@@ -11,6 +11,22 @@ const Navbar = () => {
 						className='hover:opacity-80 duration-200 transition'
 					/>
 				</Link>
+				<nav>
+					<div>
+						<Link
+							to='/login'
+							className='text-white mr-12 text-2xl font-bold'
+						>
+							Login
+						</Link>
+						<Link
+							to='/signup'
+							className='text-white text-2xl font-bold'
+						>
+							Signup
+						</Link>
+					</div>
+				</nav>
 			</div>
 		</header>
 	);
