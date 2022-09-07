@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
 import logo from "../assets/Reps-Logger.svg";
 
 const Navbar = () => {
 	const { logout } = useLogout();
-
+	const { user } = useAuthContext();
 	const handleClick = () => {
 		logout();
 	};
@@ -20,29 +21,35 @@ const Navbar = () => {
 					/>
 				</Link>
 				<nav className='flex items-center'>
-					<div>
-						<button
-							className='text-white font-bold mr-4 p-3 border-2 border-white rounded-lg '
-							onClick={handleClick}
-						>
-							Log out
-						</button>
-					</div>
-
-					<div>
-						<Link
-							to='/login'
-							className='text-white mr-12 text-2xl font-bold'
-						>
-							Login
-						</Link>
-						<Link
-							to='/signup'
-							className='text-white text-2xl font-bold'
-						>
-							Signup
-						</Link>
-					</div>
+					{user && (
+						<div>
+							<span className='text-white mr-4'>
+								{user.email}
+							</span>
+							<button
+								className='text-white font-bold px-3 py-1 border-2 border-white rounded-lg '
+								onClick={handleClick}
+							>
+								Log out
+							</button>
+						</div>
+					)}
+					{!user && (
+						<div>
+							<Link
+								to='/login'
+								className='text-white mr-12 text-2xl font-bold'
+							>
+								Login
+							</Link>
+							<Link
+								to='/signup'
+								className='text-white text-2xl font-bold'
+							>
+								Signup
+							</Link>
+						</div>
+					)}
 				</nav>
 			</div>
 		</header>
