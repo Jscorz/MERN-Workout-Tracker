@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 import logo from "../assets/Reps-Logger.svg";
+import weightsLogo from "../assets/weights-icon.png";
 import userImage1 from "../assets/user-picture-mario.jpg";
 
 const Navbar = () => {
@@ -13,12 +14,17 @@ const Navbar = () => {
 
 	return (
 		<header>
-			<div className='flex items-center justify-between max-w-full bg-primary bg-opacity-90 px-20 py-6 mx-auto'>
+			<div className='flex items-center justify-between max-w-full bg-primary bg-opacity-90 px-2 py-6 mx-auto md:px-20'>
 				<Link to='/'>
+					<img
+						src={weightsLogo}
+						alt=''
+						className='absolute left-5 top-3 -z-0 md:top-6 md:left-8'
+					/>
 					<img
 						src={logo}
 						alt=''
-						className='hover:opacity-80 duration-200 transition'
+						className='ml-20 hover:opacity-80 duration-200 transition md:ml-4'
 					/>
 				</Link>
 				<nav className='flex items-center'>
@@ -27,14 +33,14 @@ const Navbar = () => {
 							<img
 								src={userImage1}
 								alt=''
-								className='rounded-full h-20 mr-4 border-2'
+								className='hidden rounded-full h-20   mr-4 border-2 md:block'
 							/>
 
-							<span className='text-white mr-4'>
+							<span className='hidden text-white text-sm mr-4 md:block'>
 								{user.email}
 							</span>
 							<button
-								className='text-white font-bold px-3 py-1 border-2 border-white rounded-lg '
+								className='text-white font-bold px-3 py-1 border-2 border-white rounded-lg md:-mr-8  '
 								onClick={handleClick}
 							>
 								Log out
