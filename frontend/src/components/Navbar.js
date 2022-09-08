@@ -1,9 +1,13 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 import logo from "../assets/Reps-Logger.svg";
 import weightsLogo from "../assets/weights-icon.png";
 import userImage1 from "../assets/user-picture-mario.jpg";
+import userImage2 from "../assets/user-picture-minion.jpg";
+import userImage3 from "../assets/user-picture-monster.jpg";
+import userImage4 from "../assets/user-picture-eyeballs.jpg";
 
 const Navbar = () => {
 	const { logout } = useLogout();
@@ -11,6 +15,11 @@ const Navbar = () => {
 	const handleClick = () => {
 		logout();
 	};
+	const [pictureNumber, setPictureNumber] = useState("");
+
+	useEffect(() => {
+		setPictureNumber(Math.trunc(Math.random() * 4 + 1));
+	}, []);
 
 	return (
 		<header>
@@ -30,11 +39,34 @@ const Navbar = () => {
 				<nav className='flex items-center'>
 					{user && (
 						<div className='flex items-center'>
-							<img
-								src={userImage1}
-								alt=''
-								className='hidden rounded-full h-20   mr-4 border-2 md:block'
-							/>
+							{pictureNumber === 1 && (
+								<img
+									src={userImage1}
+									alt=''
+									className='hidden rounded-full h-20   mr-4 border-2 md:block'
+								/>
+							)}
+							{pictureNumber === 2 && (
+								<img
+									src={userImage2}
+									alt=''
+									className='hidden rounded-full h-20   mr-4 border-2 md:block'
+								/>
+							)}
+							{pictureNumber === 3 && (
+								<img
+									src={userImage3}
+									alt=''
+									className='hidden rounded-full h-20   mr-4 border-2 md:block'
+								/>
+							)}
+							{pictureNumber === 4 && (
+								<img
+									src={userImage4}
+									alt=''
+									className='hidden rounded-full h-20   mr-4 border-2 md:block'
+								/>
+							)}
 
 							<span className='hidden text-white text-sm mr-4 md:block'>
 								{user.email}
