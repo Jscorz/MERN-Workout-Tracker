@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 import logo from "../assets/Reps-Logger.svg";
+import userImage1 from "../assets/user-picture-mario.jpg";
 
 const Navbar = () => {
 	const { logout } = useLogout();
@@ -22,7 +23,13 @@ const Navbar = () => {
 				</Link>
 				<nav className='flex items-center'>
 					{user && (
-						<div>
+						<div className='flex items-center'>
+							<img
+								src={userImage1}
+								alt=''
+								className='rounded-full h-20 mr-4 border-2'
+							/>
+
 							<span className='text-white mr-4'>
 								{user.email}
 							</span>
