@@ -23,12 +23,12 @@ const Navbar = () => {
 
 	return (
 		<header>
-			<div className='flex items-center justify-between max-w-full bg-primary bg-opacity-90 px-2 py-6 mx-auto md:px-20'>
+			<div className='flex items-center justify-between max-w-full bg-primary bg-opacity-90 px-2 py-8 mx-auto md:px-20'>
 				<Link to='/'>
 					<img
 						src={weightsLogo}
 						alt=''
-						className='absolute left-5 top-3 -z-0 md:top-6 md:left-8'
+						className='absolute left-5 top-4 -z-0 md:top-5 md:left-8'
 					/>
 					<img
 						src={logo}
@@ -43,28 +43,28 @@ const Navbar = () => {
 								<img
 									src={userImage1}
 									alt=''
-									className='hidden rounded-full h-20   mr-4 border-2 md:block'
+									className='hidden rounded-full h-12 mr-2 border-2 md:block'
 								/>
 							)}
 							{pictureNumber === 2 && (
 								<img
 									src={userImage2}
 									alt=''
-									className='hidden rounded-full h-20   mr-4 border-2 md:block'
+									className='hidden rounded-full h-12   mr-2 border-2 md:block'
 								/>
 							)}
 							{pictureNumber === 3 && (
 								<img
 									src={userImage3}
 									alt=''
-									className='hidden rounded-full h-20   mr-4 border-2 md:block'
+									className='hidden rounded-full h-12   mr-2 border-2 md:block'
 								/>
 							)}
 							{pictureNumber === 4 && (
 								<img
 									src={userImage4}
 									alt=''
-									className='hidden rounded-full h-20   mr-4 border-2 md:block'
+									className='hidden rounded-full h-12   mr-2 border-2 md:block'
 								/>
 							)}
 
