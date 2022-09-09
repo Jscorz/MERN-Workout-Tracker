@@ -28,7 +28,7 @@ const Navbar = () => {
 					<img
 						src={weightsLogo}
 						alt=''
-						className='absolute left-5 top-3 -z-0 md:top-2 md:left-8'
+						className='absolute left-5 top-3 -z-0 md:top-6 md:left-8'
 					/>
 					<img
 						src={logo}
