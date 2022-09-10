@@ -45,7 +45,7 @@ const WorkoutDetails = ({ workout }) => {
 			<span>
 				<MdDeleteForever
 					onClick={handleClick}
-					className='text-3xl text-red-700 cursor-pointer absolute top-10 right-10'
+					className='text-3xl text-gray-600 cursor-pointer absolute top-10 right-10'
 				/>
 			</span>
 		</div>
