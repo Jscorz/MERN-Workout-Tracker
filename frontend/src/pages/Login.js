@@ -11,6 +11,12 @@ const Login = () => {
 
 		await login(email, password);
 	};
+	const handleGuestSubmit = async (e) => {
+		e.preventDefault();
+		setEmail("hernandezmario@gmail.com");
+		setPassword("Mario@Luigi@peach_12345");
+		handleSubmit();
+	};
 
 	return (
 		<form
@@ -34,13 +40,21 @@ const Login = () => {
 				value={password}
 				className='border-black-700 border-2 p-2'
 			/>
-
-			<button
-				disabled={isLoading}
-				className='w-20 py-3 px-5 bg-primary border text-white whitespace-nowrap flex justify-center rounded-lg'
-			>
-				<div>Log in</div>
-			</button>
+			<div className='flex justify-between'>
+				<button
+					disabled={isLoading}
+					onClick={handleGuestSubmit}
+					className='w-48 py-3 px-5 bg-primary border text-white whitespace-nowrap flex justify-center rounded-lg'
+				>
+					<div>Fill with Guest details</div>
+				</button>
+				<button
+					disabled={isLoading}
+					className='w-20 py-3 px-5 bg-primary border text-white whitespace-nowrap flex justify-center rounded-lg'
+				>
+					<div>Log in</div>
+				</button>
+			</div>
 			{error && (
 				<div className='w-full p-5 border border-red-600  bg-primary/50 text-red-600 rounded-lg'>
 					{error}
