@@ -14,10 +14,10 @@ const Signup = () => {
 
 	return (
 		<form
-			className='max-w-[400px] mt-20 mx-auto p-5 py-10 bg-[#fff]  border-2 border-primary rounded-lg flex flex-col space-y-6'
+			className='gradient max-w-[400px] mt-20 mx-auto p-5 py-10 bg-[#fff]  border-2 border-primary rounded-lg flex flex-col space-y-6'
 			onSubmit={handleSubmit}
 		>
-			<h3 className='font-extrabold tracking-wider text-2xl text-primary'>
+			<h3 className='font-extrabold tracking-wider text-2xl text-slate-700'>
 				Sign up
 			</h3>
 			<label className='text-gray-600'>Email:</label>
@@ -37,7 +37,7 @@ const Signup = () => {
 
 			<button
 				disabled={isLoading}
-				className='w-20 py-3 px-5 bg-primary text-white whitespace-nowrap flex justify-center rounded-lg'
+				className='w-20 py-3 px-5 border bg-primary text-white whitespace-nowrap flex justify-center rounded-lg'
 			>
 				<div>Sign up</div>
 			</button>

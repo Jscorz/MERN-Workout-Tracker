@@ -6,7 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
 
 body {
-	background: #faf9f6;
+	background: black;
 	margin: 0;
 	font-family: "Poppins";
 }
@@ -26,4 +26,38 @@ body {
 	padding: 6px;
 	border-radius: 50%;
 	color: #333;
+}
+
+.gradient {
+	position: relative;
+	background: darkgrey;
+}
+
+.gradient:before {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+	filter: blur(20px);
+	transform: translate3d(0px, 20px, 0);
+	border-radius: inherit;
+}
+
+.gradient:after {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: inherit;
+	border-radius: inherit;
+}
+.workout-form {
+	background: darkgrey;
 }

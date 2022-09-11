@@ -48,8 +48,11 @@ const WorkoutForm = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<h3 className='text-xl my-5 text-slate-900 font-bold'>
+		<form
+			onSubmit={handleSubmit}
+			className='border-2 border-white p-3 rounded-lg workout-form'
+		>
+			<h3 className='text-xl my-5 text-white font-bold'>
 				Add a New Workout
 			</h3>
 			<label className='block'>Exercise Title:</label>
@@ -59,7 +62,7 @@ const WorkoutForm = () => {
 				value={title}
 				className={
 					emptyFields.includes("title")
-						? "border-red-500 block p-2 mt-5 mb-5 w-full border rounded-md"
+						? "text-black border-red-500 block p-2 mt-5 mb-5 w-full border rounded-md"
 						: "block p-2 mt-5 mb-5 w-full border rounded-md "
 				}
 			/>
@@ -81,11 +84,11 @@ const WorkoutForm = () => {
 				value={reps}
 				className={
 					emptyFields.includes("reps")
-						? "border-red-500 block p-2 mt-5 mb-5 w-full border rounded-md"
+						? "text-slate-900 border-red-500 block p-2 mt-5 mb-5 w-full border rounded-md"
 						: "block p-2 mt-5 mb-5 w-full border rounded-md "
 				}
 			/>
-			<button className='bg-cyan-700 text-white py-2 px-5 rounded-md border border-transparent cursor-pointer transition duration-300 hover:bg-primary hover:text-slate-900'>
+			<button className=' bg-white text-slate-900 py-2 px-5 rounded-md border border-slate-900 cursor-pointer transition duration-300 hover:bg-primary hover:text-slate-900'>
 				Add Workout
 			</button>
 			{error && (
