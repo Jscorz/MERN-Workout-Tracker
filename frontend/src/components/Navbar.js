@@ -33,7 +33,7 @@ const Navbar = () => {
 					<img
 						src={logo}
 						alt=''
-						className='ml-20 hover:opacity-80 duration-200 transition md:ml-4'
+						className='ml-20 hover:opacity-80 duration-200 transition w-1/2 md:w-full md:ml-4'
 					/>
 				</Link>
 				<nav className='flex items-center'>
@@ -80,16 +80,16 @@ const Navbar = () => {
 						</div>
 					)}
 					{!user && (
-						<div>
+						<div className='flex flex-col md:flex-row '>
 							<Link
 								to='/login'
-								className='text-white mr-12 text-2xl font-bold'
+								className='text-xl text-white mr-12 md:text-2xl font-bold'
 							>
 								Login
 							</Link>
 							<Link
 								to='/signup'
-								className='text-white text-2xl font-bold'
+								className='text-xl text-white md:text-2xl font-bold'
 							>
 								Signup
 							</Link>
