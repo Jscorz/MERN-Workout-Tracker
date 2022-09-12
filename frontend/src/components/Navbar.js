@@ -23,7 +23,7 @@ const Navbar = () => {
 
 	return (
 		<header>
-			<div className=' flex items-center justify-between max-w-full bg-black bg-opacity-90 px-2 py-8 mx-auto md:px-20'>
+			<div className=' flex items-center justify-between max-w-full bg-slate-900 bg-opacity-90 px-2 py-8 mx-auto md:px-20'>
 				<Link to='/'>
 					<img
 						src={weightsLogo}
