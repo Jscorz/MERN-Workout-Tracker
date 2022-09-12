@@ -13,9 +13,8 @@ const Login = () => {
 	};
 	const handleGuestSubmit = async (e) => {
 		e.preventDefault();
-		setEmail("hernandezmario@gmail.com");
-		setPassword("Mario@Luigi@peach_12345");
-		handleSubmit();
+
+		await login("hernandezmario@gmail.com", "Mario@Luigi@peach_12345");
 	};
 
 	return (
@@ -44,9 +43,9 @@ const Login = () => {
 				<button
 					disabled={isLoading}
 					onClick={handleGuestSubmit}
-					className='w-48 py-3 px-5 bg-primary border text-white whitespace-nowrap flex justify-center rounded-lg'
+					className='w-44 py-3 px-5 bg-primary border text-white whitespace-nowrap flex justify-center rounded-lg'
 				>
-					<div>Fill with Guest details</div>
+					<div>Log in as guest</div>
 				</button>
 				<button
 					disabled={isLoading}
