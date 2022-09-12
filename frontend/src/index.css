@@ -6,7 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
 
 body {
-	background: black;
+	background: #f1f1f1;
 	margin: 0;
 	font-family: "Poppins";
 }
@@ -30,7 +30,7 @@ body {
 
 .gradient {
 	position: relative;
-	background: darkgrey;
+	background: #f1f1f1;
 }
 
 .gradient:before {
@@ -89,5 +89,5 @@ body {
 }
 
 .workout-form {
-	background: darkgrey;
+	background: lightgrey;
 }
