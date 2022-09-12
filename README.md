@@ -4,9 +4,9 @@
 
 <!-- **Link to project: [Live-demo]https://next-shoecommerce.netlify.app** -->
 
-|                           Desktop                            |                            Mobile                            |
-| :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![shoe-commerce](frontend/src/assets/Desktop-Screenshot.png) | ![shoe-commerce](frontend/src/assets//Mobile-Screenshot.png) |
+|                              Desktop                               |                               Mobile                               |
+| :----------------------------------------------------------------: | :----------------------------------------------------------------: |
+| ![shoe-commerce](frontend/src/assets/desktop-screenshot-light.png) | ![shoe-commerce](frontend/src/assets//dobile-screenshot-light.png) |
 
 ---
 
