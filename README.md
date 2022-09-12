@@ -6,7 +6,7 @@
 
 |                              Desktop                               |                               Mobile                               |
 | :----------------------------------------------------------------: | :----------------------------------------------------------------: |
-| ![shoe-commerce](frontend/src/assets/desktop-screenshot-light.png) | ![shoe-commerce](frontend/src/assets//dobile-screenshot-light.png) |
+| ![shoe-commerce](frontend/src/assets/desktop-screenshot-light.png) | ![shoe-commerce](frontend/src/assets//mobile-screenshot-light.png) |
 
 ---
 
