@@ -30,6 +30,7 @@ body {
 
 .gradient {
 	position: relative;
+	background: darkgrey;
 }
 
 .gradient:before {
