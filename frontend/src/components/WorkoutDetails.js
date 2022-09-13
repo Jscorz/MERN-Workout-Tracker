@@ -2,10 +2,20 @@ import { MdDeleteForever } from "react-icons/md";
 import { useWorkoutsContext } from "../hooks/useWorkoutContext";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { workoutsReducer } from "../context/WorkoutsContext";
+import moment from "moment";
 
 const WorkoutDetails = ({ workout }) => {
-	const { dispatch } = useWorkoutsContext();
+	const { dispatch, workouts } = useWorkoutsContext();
 	const { user } = useAuthContext();
+
+	let hours = moment().diff(moment(workout.createdAt), "hours");
+	let hoursWorkouts = workouts.filter(
+		(workout) => moment().diff(moment(workout.createdAt), "hours") < 24
+	);
+	let days = moment().diff(moment(workout.createdAt), "days");
+
+	console.log(days, hours, hoursWorkouts);
 
 	const handleClick = async () => {
 		if (!user) {
@@ -48,6 +58,7 @@ const WorkoutDetails = ({ workout }) => {
 					className='text-3xl text-gray-600 cursor-pointer absolute top-10 right-10'
 				/>
 			</span>
+			<div></div>
 		</div>
 	);
 };
