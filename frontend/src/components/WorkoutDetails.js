@@ -1,21 +1,33 @@
+import { useEffect } from "react";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import moment from "moment";
+import useCalculateTotalWeight from "../hooks/useCalculateTotalWeight";
 import { MdDeleteForever } from "react-icons/md";
 import { useWorkoutsContext } from "../hooks/useWorkoutContext";
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useAuthContext } from "../hooks/useAuthContext";
-import { workoutsReducer } from "../context/WorkoutsContext";
-import moment from "moment";
+import { useTotalWeightContext } from "../hooks/useTotalWeightContext";
 
 const WorkoutDetails = ({ workout }) => {
 	const { dispatch, workouts } = useWorkoutsContext();
+	const { dispatch: totalWeightDispatch, totalWeight } =
+		useTotalWeightContext();
 	const { user } = useAuthContext();
 
-	let hours = moment().diff(moment(workout.createdAt), "hours");
 	let hoursWorkouts = workouts.filter(
 		(workout) => moment().diff(moment(workout.createdAt), "hours") < 24
 	);
-	let days = moment().diff(moment(workout.createdAt), "days");
 
-	console.log(days, hours, hoursWorkouts);
+	let totalWeightLoad = useCalculateTotalWeight(hoursWorkouts);
+
+	useEffect(() => {
+		if (!user) {
+			return;
+		}
+		totalWeightDispatch({
+			type: "SET_TOTAL_WEIGHT",
+			payload: totalWeightLoad,
+		});
+	}, []);
 
 	const handleClick = async () => {
 		if (!user) {
