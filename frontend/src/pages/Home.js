@@ -1,14 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useTotalWeightContext } from "../hooks/useTotalWeightContext";
 import WorkoutDetails from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
+import TotalWeightModal from "../components/TotalWeightModal";
 
 const Home = () => {
 	const { workouts, dispatch } = useWorkoutsContext();
 	const { user } = useAuthContext();
 	const { totalWeight } = useTotalWeightContext();
+
+	const [isTotalWeightModalOpen, setIsTotalWeightModalOpen] = useState(false);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setIsTotalWeightModalOpen(true);
+		}, 3000);
+	}, []);
+
 	useEffect(() => {
 		const fetchWorkouts = async () => {
 			const response = await fetch("/api/workouts", {
@@ -30,9 +40,14 @@ const Home = () => {
 
 	return (
 		<div>
-			<h1 className='text-center p-3 border-2 border-slate-500 rounded-lg'>
-				You have lifted {totalWeight}lbs in the last 24 hours
-			</h1>
+			<button onClick={() => setIsTotalWeightModalOpen(true)}>
+				open modal
+			</button>
+			{isTotalWeightModalOpen && (
+				<TotalWeightModal
+					onRequestClose={() => setIsTotalWeightModalOpen(false)}
+				/>
+			)}
 			<div className='md:grid md:grid-cols-4 md:gap-24'>
 				<WorkoutForm />
 				<div className='col-span-2 col-start-1 row-start-1'>
