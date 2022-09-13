@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
-import logo from "../assets/Reps-Logger.svg";
-import weightsLogo from "../assets/weights-icon.png";
+import logo from "../assets/logo-no-background.png";
 import userImage1 from "../assets/user-picture-mario.jpg";
 import userImage2 from "../assets/user-picture-minion.jpg";
 import userImage3 from "../assets/user-picture-monster.jpg";
@@ -23,17 +22,12 @@ const Navbar = () => {
 
 	return (
 		<header>
-			<div className=' flex items-center justify-between max-w-full bg-slate-900 bg-opacity-90 px-2 py-8 mx-auto md:px-20'>
+			<div className=' flex items-center justify-between max-w-full bg-slate-900 bg-opacity-90 px-2 py-2 mx-auto md:px-20'>
 				<Link to='/'>
-					<img
-						src={weightsLogo}
-						alt=''
-						className='absolute left-5 top-4 -z-0 md:top-5 md:left-8'
-					/>
 					<img
 						src={logo}
 						alt=''
-						className='ml-20 hover:opacity-80 duration-200 transition w-1/2 md:w-full md:ml-4'
+						className='ml-5 mb-2 hover:opacity-80 duration-200 transition  md:w-full md:ml-4'
 					/>
 				</Link>
 				<nav className='flex items-center'>
