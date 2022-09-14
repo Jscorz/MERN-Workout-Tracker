@@ -40,7 +40,10 @@ const Home = () => {
 
 	return (
 		<div>
-			<button onClick={() => setIsTotalWeightModalOpen(true)}>
+			<button
+				className='py-3 px-6 border-2 border-slate-800 rounded-lg transition hover:bg-slate-900/25'
+				onClick={() => setIsTotalWeightModalOpen(true)}
+			>
 				open modal
 			</button>
 			{isTotalWeightModalOpen && (

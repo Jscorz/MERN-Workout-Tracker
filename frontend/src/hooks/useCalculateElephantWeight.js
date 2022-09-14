@@ -1,5 +1,5 @@
 const useCalculateElephantWeight = (totalWeight) => {
-	const avgElephantWeight = 16000;
+	const avgElephantWeight = 6000;
 	return (totalWeight / avgElephantWeight).toFixed(1);
 };
 
