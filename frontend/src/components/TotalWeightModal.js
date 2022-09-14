@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
 import { useTotalWeightContext } from "../hooks/useTotalWeightContext";
+import weightsImage from "../assets/weights-login.jpg";
 import useCalculateTigerWeight from "../hooks/useCalculateTigerWeight";
 import useCalculateCrocodileWeight from "../hooks/useCalculateCrocodileWeight";
-import weightsImage from "../assets/weights-login.jpg";
+import useCalculateMotorcycleWeight from "../hooks/useCalculateMotorcycleWeight";
+import useCalculateElephantWeight from "../hooks/useCalculateElephantWeight";
 
 const TotalWeightModal = ({ onRequestClose }) => {
 	const { totalWeight } = useTotalWeightContext();
-	const tigerWeight = useCalculateTigerWeight(totalWeight);
 	const crocodileWeight = useCalculateCrocodileWeight(totalWeight);
+	const elephantWeight = useCalculateElephantWeight(totalWeight);
+	const motorcyleWeight = useCalculateMotorcycleWeight(totalWeight);
+	const tigerWeight = useCalculateTigerWeight(totalWeight);
 
 	const [randomNumber, setRandomNumber] = useState("");
 
@@ -28,22 +32,23 @@ const TotalWeightModal = ({ onRequestClose }) => {
 						</h1>
 						{randomNumber === 1 && (
 							<h2 className='text-slate-800  text-3xl text-center p-3'>
-								That is equal to {tigerWeight} Tigers
+								That is the same as {tigerWeight} Tigers
 							</h2>
 						)}
 						{randomNumber === 2 && (
 							<h2 className='text-slate-800  text-3xl text-center p-3'>
-								That is equal to {crocodileWeight} Crocodiles
+								That is the same as {crocodileWeight} Crocodiles
 							</h2>
 						)}
 						{randomNumber === 3 && (
 							<h2 className='text-slate-800  text-3xl text-center p-3'>
-								That is equal to {tigerWeight} Tigers
+								That is the same as {motorcyleWeight}{" "}
+								Motorcycyles
 							</h2>
 						)}
 						{randomNumber === 4 && (
 							<h2 className='text-slate-800  text-3xl text-center p-3'>
-								That is equal to {crocodileWeight} Crocodiles
+								That is the same as {elephantWeight} Elephants
 							</h2>
 						)}
 					</div>

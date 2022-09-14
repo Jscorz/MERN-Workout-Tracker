@@ -1,5 +1,3 @@
-import React from "react";
-
 const useCalculateCrocodileWeight = (totalWeight) => {
 	const avgCrocodileWeight = 2500;
 	return (totalWeight / avgCrocodileWeight).toFixed(1);
