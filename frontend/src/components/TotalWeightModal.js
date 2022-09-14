@@ -1,8 +1,21 @@
+import { useState, useEffect } from "react";
 import { useTotalWeightContext } from "../hooks/useTotalWeightContext";
+import useCalculateTigerWeight from "../hooks/useCalculateTigerWeight";
+import useCalculateCrocodileWeight from "../hooks/useCalculateCrocodileWeight";
 import weightsImage from "../assets/weights-login.jpg";
 
 const TotalWeightModal = ({ onRequestClose }) => {
 	const { totalWeight } = useTotalWeightContext();
+	const tigerWeight = useCalculateTigerWeight(totalWeight);
+	const crocodileWeight = useCalculateCrocodileWeight(totalWeight);
+
+	const [randomNumber, setRandomNumber] = useState("");
+
+	useEffect(() => {
+		setRandomNumber(Math.trunc(Math.random() * 4 + 1));
+		console.log(randomNumber);
+	}, []);
+
 	return (
 		<section className='w-full h-full z-50 absolute top-20 left-0 border-2 border-black'>
 			<div className='-z-20 absolute left-0 inset-0 bg-white w-full h-full'></div>
@@ -13,6 +26,26 @@ const TotalWeightModal = ({ onRequestClose }) => {
 							You have lifted {totalWeight}lbs in the last 24
 							hours
 						</h1>
+						{randomNumber === 1 && (
+							<h2 className='text-slate-800  text-3xl text-center p-3'>
+								That is equal to {tigerWeight} Tigers
+							</h2>
+						)}
+						{randomNumber === 2 && (
+							<h2 className='text-slate-800  text-3xl text-center p-3'>
+								That is equal to {crocodileWeight} Crocodiles
+							</h2>
+						)}
+						{randomNumber === 3 && (
+							<h2 className='text-slate-800  text-3xl text-center p-3'>
+								That is equal to {tigerWeight} Tigers
+							</h2>
+						)}
+						{randomNumber === 4 && (
+							<h2 className='text-slate-800  text-3xl text-center p-3'>
+								That is equal to {crocodileWeight} Crocodiles
+							</h2>
+						)}
 					</div>
 					<div className='relative md:w-[700px] order-1 md:order-2'>
 						<img
@@ -22,7 +55,7 @@ const TotalWeightModal = ({ onRequestClose }) => {
 						/>
 						<button
 							onClick={onRequestClose}
-							className='absolute top-5 right-5 text-xl p-1 bg-white bg-opacity-20 text-red-600 border-2 border-red-600 lg:p-3 lg:text-2xl rounded-full'
+							className='text-center absolute top-5 right-5 text-xl w-8 h-8 bg-white bg-opacity-20 text-red-600 border-2 border-red-600  lg:w-11 lg:h-11 lg:text-2xl rounded-full'
 						>
 							X
 						</button>
