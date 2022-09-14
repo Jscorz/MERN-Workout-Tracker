@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { useTotalWeightContext } from "../hooks/useTotalWeightContext";
 import weightsImage from "../assets/weights-login.jpg";
+import crocodileImage from "../assets/crocodile.png";
+import elephantImage from "../assets/elephant.png";
+import motorcycleImage from "../assets/motorcycle.png";
+import tigerImage from "../assets/tiger.png";
 import useCalculateTigerWeight from "../hooks/useCalculateTigerWeight";
 import useCalculateCrocodileWeight from "../hooks/useCalculateCrocodileWeight";
 import useCalculateMotorcycleWeight from "../hooks/useCalculateMotorcycleWeight";
@@ -34,25 +38,39 @@ const TotalWeightModal = ({ onRequestClose }) => {
 							hours
 						</h1>
 						{randomNumber === 1 && (
-							<h2 className='text-slate-800  text-3xl text-center p-3'>
-								That is the same as {tigerWeight} Tigers
-							</h2>
+							<div>
+								<h2 className='text-slate-800  text-3xl text-center p-3'>
+									That is the same as {tigerWeight} Tigers
+								</h2>
+								<img src={tigerImage} alt='' />
+							</div>
 						)}
 						{randomNumber === 2 && (
-							<h2 className='text-slate-800  text-3xl text-center p-3'>
-								That is the same as {crocodileWeight} Crocodiles
-							</h2>
+							<div>
+								<h2 className='text-slate-800  text-3xl text-center p-3'>
+									That is the same as {crocodileWeight}{" "}
+									Crocodiles
+								</h2>
+								<img src={crocodileImage} alt='' />
+							</div>
 						)}
 						{randomNumber === 3 && (
-							<h2 className='text-slate-800  text-3xl text-center p-3'>
-								That is the same as {motorcyleWeight}{" "}
-								Motorcycyles
-							</h2>
+							<div>
+								<h2 className='text-slate-800  text-3xl text-center p-3'>
+									That is the same as {motorcyleWeight}{" "}
+									Motorcycyles
+								</h2>
+								<img src={motorcycleImage} alt='' />
+							</div>
 						)}
 						{randomNumber === 4 && (
-							<h2 className='text-slate-800  text-3xl text-center p-3'>
-								That is the same as {elephantWeight} Elephants
-							</h2>
+							<div>
+								<h2 className='text-slate-800  text-3xl text-center p-3'>
+									That is the same as {elephantWeight}{" "}
+									Elephants
+								</h2>
+								<img src={elephantImage} alt='' />
+							</div>
 						)}
 					</div>
 					<div className='relative md:w-[700px] order-1 md:order-2'>
