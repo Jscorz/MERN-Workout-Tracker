@@ -21,10 +21,13 @@ const TotalWeightModal = ({ onRequestClose }) => {
 	}, []);
 
 	return (
-		<section className='w-full h-full z-50 absolute top-20 left-0 border-2 border-black'>
+		<section
+			id='top'
+			className='w-full h-[200%] z-50 absolute top-20 left-0 '
+		>
 			<div className='-z-20 absolute left-0 inset-0 bg-white w-full h-full'></div>
-			<div className='login-gradient'>
-				<div className='bg-white   mx-3 mt-6 border-2 z-60 border-slate-500 rounded-lg flex  flex-col md:mx-auto md:flex-row md:w-[700px] md:h-[40rem]'>
+			<div className='login-gradient relative'>
+				<div className='bg-white   mx-3 mt-6 border-2 z-60 border-primary rounded-lg flex  flex-col md:mx-auto md:flex-row md:w-[700px] md:h-[40rem]'>
 					<div className='w-full order-2 md:order-1'>
 						<h1 className='text-slate-800 font-bold text-3xl text-center p-3'>
 							You have lifted {totalWeight}lbs in the last 24
@@ -56,7 +59,7 @@ const TotalWeightModal = ({ onRequestClose }) => {
 						<img
 							src={weightsImage}
 							alt=''
-							className='h-96 min-w-full md:min-h-full'
+							className='h-96 min-w-full md:min-h-full rounded-tr-lg rounded-br-lg border-l-2 border-l-primary'
 						/>
 						<button
 							onClick={onRequestClose}
@@ -67,6 +70,11 @@ const TotalWeightModal = ({ onRequestClose }) => {
 					</div>
 				</div>
 			</div>
+			<a href='#top'>
+				<button className='absolute bottom-48 left-[40%] text-center text-slate-900  py-2 px-4 border-2 border-slate-800 shadow-lg rounded-lg md:left-[45%]'>
+					back to top
+				</button>
+			</a>
 		</section>
 	);
 };
