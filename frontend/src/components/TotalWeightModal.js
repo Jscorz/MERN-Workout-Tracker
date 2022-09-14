@@ -71,8 +71,14 @@ const TotalWeightModal = ({ onRequestClose }) => {
 				</div>
 			</div>
 			<a href='#top'>
-				<button className='absolute bottom-48 left-[40%] text-center text-slate-900  py-2 px-4 border-2 border-slate-800 shadow-lg rounded-lg md:left-[45%]'>
+				<button className='absolute bottom-48 left-[40%] text-center text-slate-900  py-2 px-4 border-2 border-slate-800 shadow-lg rounded-lg transition hover:bg-slate-900/25 md:left-[45%]'>
 					back to top
+				</button>
+				<button
+					onClick={onRequestClose}
+					className='absolute bottom-36 left-[40%] text-center text-slate-900  py-2 px-10 border-2 border-slate-800 shadow-lg rounded-lg transition hover:bg-slate-900/25 md:left-[45%]'
+				>
+					close
 				</button>
 			</a>
 		</section>
