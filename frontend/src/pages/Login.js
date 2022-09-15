@@ -15,7 +15,7 @@ const Login = () => {
 	const handleGuestSubmit = async (e) => {
 		e.preventDefault();
 
-		await login("guestUser78192@gmail.com", "Mario@Luigi@peach_12345");
+		await login("genericGuestUser@gmail.com", "Mario@Luigi@peach_12345");
 	};
 
 	return (
