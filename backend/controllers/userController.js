@@ -15,7 +15,7 @@ const loginUser = async (req, res) => {
 		// create a token
 		const token = createToken(user._id);
 
-		res.status(200).json({ email, token });
+		res.status(200).json({ email, token, user });
 	} catch (error) {
 		res.status(400).json({ error: error.message });
 	}
@@ -23,15 +23,28 @@ const loginUser = async (req, res) => {
 
 // signup user
 const signupUser = async (req, res) => {
-	const { email, password } = req.body;
+	const { email, password, userpicture } = req.body;
 
 	try {
-		const user = await User.signup(email, password);
+		const user = await User.signup(email, password, userpicture);
 
 		// create a token
 		const token = createToken(user._id);
 
-		res.status(200).json({ email, token });
+		res.status(200).json({ email, token, user });
+	} catch (error) {
+		res.status(400).json({ error: error.message });
+	}
+};
+
+// change user image
+const chooseUserPicture = async (req, res) => {
+	const { email, userpictureChoice, _id } = req.body;
+
+	try {
+		const user = await User.changePicture(email, _id, userpictureChoice);
+
+		res.status(200).json({ user, userpictureChoice });
 	} catch (error) {
 		res.status(400).json({ error: error.message });
 	}
@@ -40,4 +53,5 @@ const signupUser = async (req, res) => {
 module.exports = {
 	loginUser,
 	signupUser,
+	chooseUserPicture,
 };

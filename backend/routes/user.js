@@ -1,7 +1,11 @@
 const express = require("express");
 
 // controller functions
-const { loginUser, signupUser } = require("../controllers/userController");
+const {
+	loginUser,
+	signupUser,
+	chooseUserPicture,
+} = require("../controllers/userController");
 
 const router = express.Router();
 
@@ -10,5 +14,8 @@ router.post("/login", loginUser);
 
 // signup
 router.post("/signup", signupUser);
+
+// user image
+router.patch("/userpicture", chooseUserPicture);
 
 module.exports = router;
