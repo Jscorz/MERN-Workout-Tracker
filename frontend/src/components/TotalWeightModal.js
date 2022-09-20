@@ -21,13 +21,12 @@ const TotalWeightModal = ({ onRequestClose }) => {
 
 	useEffect(() => {
 		setRandomNumber(Math.trunc(Math.random() * 4 + 1));
-		console.log(randomNumber);
 	}, []);
 
 	return (
 		<section
 			id='top'
-			className='w-full h-[200%] z-50 absolute top-20 left-0 '
+			className='w-full h-[200%] z-30 absolute top-20 left-0 '
 		>
 			<div className='-z-20 absolute left-0 inset-0 bg-white w-full h-full'></div>
 			<div className='login-gradient relative'>

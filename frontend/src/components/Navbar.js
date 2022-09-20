@@ -36,7 +36,10 @@ const Navbar = () => {
 								<img
 									src={userImage1}
 									alt=''
-									className='hidden rounded-full h-12 mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
+									className='hidden rounded-full h-12 mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block relative'
+									onClick={() =>
+										setIsUserPictureModelOpen(true)
+									}
 								/>
 							)}
 							{user.user.userpicture === "2" && (
@@ -44,6 +47,9 @@ const Navbar = () => {
 									src={userImage2}
 									alt=''
 									className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
+									onClick={() =>
+										setIsUserPictureModelOpen(true)
+									}
 								/>
 							)}
 							{user.user.userpicture === "3" && (
@@ -51,6 +57,9 @@ const Navbar = () => {
 									src={userImage3}
 									alt=''
 									className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
+									onClick={() =>
+										setIsUserPictureModelOpen(true)
+									}
 								/>
 							)}
 							{user.user.userpicture === "4" && (
@@ -58,6 +67,9 @@ const Navbar = () => {
 									src={userImage4}
 									alt=''
 									className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
+									onClick={() =>
+										setIsUserPictureModelOpen(true)
+									}
 								/>
 							)}
 
