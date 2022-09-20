@@ -21,7 +21,6 @@ export const useChangeUserPicture = () => {
 		}
 		if (response.ok) {
 			// update loading state
-			console.log(json);
 			console.log("success");
 			setIsLoading(false);
 		}

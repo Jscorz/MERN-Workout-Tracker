@@ -8,10 +8,11 @@ import { useChangeUserPicture } from "../hooks/useChangeUserPicture";
 
 const UserPictureModal = () => {
 	const { user } = useAuthContext();
-	const { changePicture, isLoading, error } = useChangeUserPicture();
+	const { changePicture } = useChangeUserPicture();
+
 	const HandleSubmit = async (e) => {
-		console.log(user.user.email, 1, user.user._id);
-		await changePicture(user.user.email, 1, user.user._id);
+		await changePicture(user.user.email, "2", user.user._id);
+		console.log(user.user);
 	};
 
 	return (
@@ -23,6 +24,7 @@ const UserPictureModal = () => {
 				<img
 					src={userImage1}
 					alt=''
+					id='1'
 					className='hidden rounded-full h-12 mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block relative'
 					onClick={HandleSubmit}
 				/>
@@ -30,6 +32,7 @@ const UserPictureModal = () => {
 				<img
 					src={userImage2}
 					alt=''
+					id='2'
 					className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
 					onClick={HandleSubmit}
 				/>
@@ -37,6 +40,7 @@ const UserPictureModal = () => {
 				<img
 					src={userImage3}
 					alt=''
+					id='3'
 					className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
 					onClick={HandleSubmit}
 				/>
@@ -44,6 +48,7 @@ const UserPictureModal = () => {
 				<img
 					src={userImage4}
 					alt=''
+					id='4'
 					className='hidden rounded-full h-12   border-2 transition hover:opacity-50 cursor-pointer md:block'
 					onClick={HandleSubmit}
 				/>
