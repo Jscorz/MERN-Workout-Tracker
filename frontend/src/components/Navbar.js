@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
@@ -14,11 +13,6 @@ const Navbar = () => {
 	const handleClick = () => {
 		logout();
 	};
-	const [pictureNumber, setPictureNumber] = useState("");
-
-	useEffect(() => {
-		setPictureNumber(Math.trunc(Math.random() * 4 + 1));
-	}, []);
 
 	return (
 		<header>
@@ -32,29 +26,29 @@ const Navbar = () => {
 				</Link>
 				<nav className='flex items-center'>
 					{user && (
-						<div className='flex items-center'>
-							{pictureNumber === 1 && (
+						<div className='flex items-center '>
+							{user.user.userpicture === "1" && (
 								<img
 									src={userImage1}
 									alt=''
-									className='hidden rounded-full h-12 mr-2 border-2 md:block'
+									className='hidden rounded-full h-12 mr-2 border-2  md:block'
 								/>
 							)}
-							{pictureNumber === 2 && (
+							{user.user.userpicture === "2" && (
 								<img
 									src={userImage2}
 									alt=''
 									className='hidden rounded-full h-12   mr-2 border-2 md:block'
 								/>
 							)}
-							{pictureNumber === 3 && (
+							{user.user.userpicture === "3" && (
 								<img
 									src={userImage3}
 									alt=''
 									className='hidden rounded-full h-12   mr-2 border-2 md:block'
 								/>
 							)}
-							{pictureNumber === 4 && (
+							{user.user.userpicture === "4" && (
 								<img
 									src={userImage4}
 									alt=''
