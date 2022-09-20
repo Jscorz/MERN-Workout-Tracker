@@ -11,7 +11,7 @@ const UserPictureModal = () => {
 	const { changePicture } = useChangeUserPicture();
 
 	const HandleSubmit = async (e) => {
-		await changePicture(user.user.email, "2", user.user._id);
+		await changePicture(user.user.email, "4", user.user._id);
 		console.log(user.user);
 	};
 

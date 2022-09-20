@@ -4,14 +4,18 @@ export const useChangeUserPicture = () => {
 	const [error, setError] = useState(null);
 	const [isLoading, setIsLoading] = useState(null);
 
-	const changePicture = async (email, userpicture, _id) => {
+	const changePicture = async (email, userpictureChoice, _id) => {
 		setIsLoading(true);
 		setError(null);
 
 		const response = await fetch("/api/user/userpicture", {
-			method: "PATCH",
+			method: "PUT",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ email, userpicture, _id }),
+			body: JSON.stringify({
+				email,
+				userpicture: userpictureChoice,
+				_id,
+			}),
 		});
 		const json = await response.json();
 
@@ -21,7 +25,7 @@ export const useChangeUserPicture = () => {
 		}
 		if (response.ok) {
 			// update loading state
-			console.log("success");
+			console.log(json);
 			setIsLoading(false);
 		}
 	};
