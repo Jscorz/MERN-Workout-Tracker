@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
+import UserPictureModal from "../components/UserPictureModal";
 import logo from "../assets/logo-no-background.png";
 import userImage1 from "../assets/user-picture-mario.jpg";
 import userImage2 from "../assets/user-picture-minion.jpg";
@@ -10,6 +12,9 @@ import userImage4 from "../assets/user-picture-eyeballs.jpg";
 const Navbar = () => {
 	const { logout } = useLogout();
 	const { user } = useAuthContext();
+
+	const [isUserPictureModelOpen, setIsUserPictureModelOpen] = useState(false);
+
 	const handleClick = () => {
 		logout();
 	};
@@ -53,6 +58,14 @@ const Navbar = () => {
 									src={userImage4}
 									alt=''
 									className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
+								/>
+							)}
+
+							{isUserPictureModelOpen && (
+								<UserPictureModal
+									onRequestClose={() =>
+										setIsUserPictureModelOpen(false)
+									}
 								/>
 							)}
 
