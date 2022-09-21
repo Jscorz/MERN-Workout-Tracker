@@ -19,7 +19,12 @@ const Navbar = () => {
 	};
 
 	const handlePictureClick = () => {
-		setIsUserPictureModelOpen(true);
+		if (isUserPictureModelOpen) {
+			setIsUserPictureModelOpen(false);
+		}
+		if (!isUserPictureModelOpen) {
+			setIsUserPictureModelOpen(true);
+		}
 	};
 
 	return (
