@@ -6,13 +6,14 @@ import userImage4 from "../assets/user-picture-eyeballs.jpg";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useChangeUserPicture } from "../hooks/useChangeUserPicture";
 
-const UserPictureModal = () => {
+const UserPictureModal = ({ onRequestClose }) => {
 	const { user } = useAuthContext();
 	const { changePicture } = useChangeUserPicture();
 
 	const HandleSubmit = async (e) => {
 		e.preventDefault();
 		await changePicture(e.target.id, user.user._id);
+		onRequestClose();
 	};
 
 	return (
