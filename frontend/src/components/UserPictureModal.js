@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import userImage1 from "../assets/user-picture-mario.jpg";
 import userImage2 from "../assets/user-picture-minion.jpg";
 import userImage3 from "../assets/user-picture-monster.jpg";
@@ -10,9 +10,9 @@ const UserPictureModal = () => {
 	const { user } = useAuthContext();
 	const { changePicture } = useChangeUserPicture();
 
-	const HandleSubmit = async () => {
-		await changePicture("2", user.user._id);
-		console.log(user.user);
+	const HandleSubmit = async (e) => {
+		e.preventDefault();
+		await changePicture(e.target.id, user.user._id);
 	};
 
 	return (
@@ -50,9 +50,7 @@ const UserPictureModal = () => {
 					alt=''
 					id='4'
 					className='hidden rounded-full h-12   border-2 transition hover:opacity-50 cursor-pointer md:block'
-					onClick={async () =>
-						await changePicture(user.user.email, "3", user.user._id)
-					}
+					onClick={HandleSubmit}
 				/>
 			</div>
 		</section>

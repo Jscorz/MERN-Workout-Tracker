@@ -12,11 +12,14 @@ import userImage4 from "../assets/user-picture-eyeballs.jpg";
 const Navbar = () => {
 	const { logout } = useLogout();
 	const { user } = useAuthContext();
-
 	const [isUserPictureModelOpen, setIsUserPictureModelOpen] = useState(false);
 
 	const handleClick = () => {
 		logout();
+	};
+
+	const handlePictureClick = () => {
+		setIsUserPictureModelOpen(true);
 	};
 
 	return (
@@ -37,9 +40,7 @@ const Navbar = () => {
 									src={userImage1}
 									alt=''
 									className='hidden rounded-full h-12 mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block relative'
-									onClick={() =>
-										setIsUserPictureModelOpen(true)
-									}
+									onClick={handlePictureClick}
 								/>
 							)}
 							{user.user.userpicture === "2" && (
@@ -47,9 +48,7 @@ const Navbar = () => {
 									src={userImage2}
 									alt=''
 									className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
-									onClick={() =>
-										setIsUserPictureModelOpen(true)
-									}
+									onClick={handlePictureClick}
 								/>
 							)}
 							{user.user.userpicture === "3" && (
@@ -57,9 +56,7 @@ const Navbar = () => {
 									src={userImage3}
 									alt=''
 									className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
-									onClick={() =>
-										setIsUserPictureModelOpen(true)
-									}
+									onClick={handlePictureClick}
 								/>
 							)}
 							{user.user.userpicture === "4" && (
@@ -67,9 +64,7 @@ const Navbar = () => {
 									src={userImage4}
 									alt=''
 									className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
-									onClick={() =>
-										setIsUserPictureModelOpen(true)
-									}
+									onClick={handlePictureClick}
 								/>
 							)}
 
@@ -82,7 +77,7 @@ const Navbar = () => {
 							)}
 
 							<span className='hidden text-white text-sm mr-4 md:block'>
-								{user.email}
+								{user.user.email}
 							</span>
 							<button
 								className='text-white font-bold px-3 py-1 border-2 border-white rounded-lg md:-mr-8  '

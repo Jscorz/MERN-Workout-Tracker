@@ -70,7 +70,7 @@ userSchema.statics.login = async function (email, password) {
 // change user picture
 userSchema.statics.changePicture = async function (_id, userPicture) {
 	const user = await this.findByIdAndUpdate(
-		{ _id, userPicture },
+		_id,
 		{ userpicture: userPicture },
 		{
 			new: true,
@@ -78,7 +78,7 @@ userSchema.statics.changePicture = async function (_id, userPicture) {
 	);
 
 	if (!user) {
-		throw Error("Incorrect email");
+		throw Error("Error changing picture, try again");
 	}
 
 	return user;
