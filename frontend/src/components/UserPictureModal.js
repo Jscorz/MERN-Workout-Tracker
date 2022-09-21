@@ -10,8 +10,8 @@ const UserPictureModal = () => {
 	const { user } = useAuthContext();
 	const { changePicture } = useChangeUserPicture();
 
-	const HandleSubmit = async (e) => {
-		await changePicture(user.user.email, "4", user.user._id);
+	const HandleSubmit = async () => {
+		await changePicture("2", user.user._id);
 		console.log(user.user);
 	};
 
@@ -50,7 +50,9 @@ const UserPictureModal = () => {
 					alt=''
 					id='4'
 					className='hidden rounded-full h-12   border-2 transition hover:opacity-50 cursor-pointer md:block'
-					onClick={HandleSubmit}
+					onClick={async () =>
+						await changePicture(user.user.email, "3", user.user._id)
+					}
 				/>
 			</div>
 		</section>

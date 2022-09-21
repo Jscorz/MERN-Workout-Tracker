@@ -16,6 +16,6 @@ router.post("/login", loginUser);
 router.post("/signup", signupUser);
 
 // user image
-router.put("/userpicture", chooseUserPicture);
+router.patch("/userpicture", chooseUserPicture);
 
 module.exports = router;

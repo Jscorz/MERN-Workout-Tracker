@@ -39,12 +39,12 @@ const signupUser = async (req, res) => {
 
 // change user image
 const chooseUserPicture = async (req, res) => {
-	const { email, userpictureChoice, _id } = req.body;
+	const { userpictureChoice, _id } = req.body;
 
 	try {
-		const user = await User.changePicture(email, _id, userpictureChoice);
+		const user = await User.changePicture(_id, userpictureChoice);
 
-		res.status(200).json({ user, userpictureChoice });
+		res.status(200).json({ user });
 	} catch (error) {
 		res.status(400).json({ error: error.message });
 	}

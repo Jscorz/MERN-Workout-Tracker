@@ -68,13 +68,9 @@ userSchema.statics.login = async function (email, password) {
 };
 
 // change user picture
-userSchema.statics.changePicture = async function (email, _id, userPicture) {
-	if (!email) {
-		throw Error("Email field must be filled");
-	}
-	// const user = await this.findOne({ email });
+userSchema.statics.changePicture = async function (_id, userPicture) {
 	const user = await this.findByIdAndUpdate(
-		{ _id, email, userPicture },
+		{ _id, userPicture },
 		{ userpicture: userPicture },
 		{
 			new: true,
