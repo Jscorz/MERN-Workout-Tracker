@@ -88,6 +88,86 @@ body {
 	border-radius: inherit;
 }
 
+.total-weight-gradient {
+	position: relative;
+}
+
+.total-weight-gradient:before {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	top: 0%;
+	left: 0%;
+	bottom: 0;
+	right: 0%;
+	background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+	filter: blur(20px);
+	transform: translate3d(0, 15px, 0);
+	border-radius: inherit;
+}
+
+.total-weight-gradient:after {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	top: 15%;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: inherit;
+	border-radius: inherit;
+}
+
+@media only screen and (min-width: 800px) {
+	.total-weight-gradient:before,
+	.total-weight-gradient:after {
+		left: 10%;
+		right: 10%;
+	}
+}
+@media only screen and (min-width: 1000px) {
+	.total-weight-gradient:before,
+	.total-weight-gradient:after {
+		left: 15%;
+		right: 15%;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.total-weight-gradient:before,
+	.total-weight-gradient:after {
+		left: 20%;
+		right: 20%;
+	}
+}
+@media only screen and (min-width: 1400px) {
+	.total-weight-gradient:before,
+	.total-weight-gradient:after {
+		left: 25%;
+		right: 25%;
+	}
+}
+@media only screen and (min-width: 1600px) {
+	.total-weight-gradient:before,
+	.total-weight-gradient:after {
+		left: 30%;
+		right: 30%;
+	}
+}
+@media only screen and (min-width: 1800px) {
+	.total-weight-gradient:before,
+	.total-weight-gradient:after {
+		left: 35%;
+		right: 35%;
+	}
+}
+@media only screen and (min-width: 2000px) {
+	.total-weight-gradient:before,
+	.total-weight-gradient:after {
+		left: 40%;
+		right: 40%;
+	}
+}
+
 .workout-form {
 	background: lightgrey;
 }

@@ -26,10 +26,10 @@ const TotalWeightModal = ({ onRequestClose }) => {
 	return (
 		<section
 			id='top'
-			className='w-full h-[200%] z-30 absolute top-20 left-0 '
+			className='w-full h-[200%] z-30 absolute top-20 left-0'
 		>
 			<div className='-z-20 absolute left-0 inset-0 bg-white w-full h-full'></div>
-			<div className='login-gradient relative'>
+			<div className='total-weight-gradient relative'>
 				<div className='bg-white   mx-3 mt-6 border-2 z-60 border-primary rounded-lg flex  flex-col md:mx-auto md:flex-row md:w-[700px] md:h-[40rem]'>
 					<div className='w-full order-2 md:order-1'>
 						<h1 className='text-slate-800 font-bold text-3xl text-center p-3'>
