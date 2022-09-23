@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTotalWeightContext } from "../hooks/useTotalWeightContext";
 import weightsImage from "../assets/weights-login.jpg";
+import kettlebellsImage from "../assets/kettlebells.jpg";
 import crocodileImage from "../assets/crocodile.png";
 import elephantImage from "../assets/elephant.png";
 import motorcycleImage from "../assets/motorcycle.png";
@@ -30,7 +31,7 @@ const TotalWeightModal = ({ onRequestClose }) => {
 		>
 			<div className='-z-20 absolute left-0 inset-0 bg-white w-full h-full'></div>
 			<div className='total-weight-gradient relative'>
-				<div className='bg-white   mx-3 mt-6 border-2 z-60 border-primary rounded-lg flex  flex-col md:mx-auto md:flex-row md:w-[700px] md:h-[40rem]'>
+				<div className='bg-white   mx-3 mt-10 border-2 z-60 border-primary rounded-lg flex  flex-col md:mx-auto md:flex-row md:w-[700px] md:h-[30rem]'>
 					<div className='w-full order-2 md:order-1'>
 						<h1 className='text-slate-800 font-bold text-3xl text-center p-3'>
 							You have lifted {totalWeight}lbs in the last 24
@@ -74,7 +75,7 @@ const TotalWeightModal = ({ onRequestClose }) => {
 					</div>
 					<div className='relative md:w-[700px] order-1 md:order-2'>
 						<img
-							src={weightsImage}
+							src={kettlebellsImage}
 							alt=''
 							className='h-96 min-w-full md:min-h-full rounded-tr-lg rounded-br-lg border-l-2 border-l-primary'
 						/>
