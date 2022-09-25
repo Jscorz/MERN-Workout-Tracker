@@ -4,9 +4,11 @@
 
 <!-- **Link to project: [Live-demo]https://next-shoecommerce.netlify.app** -->
 
-|                        Desktop                        |                         Mobile                         |
+![screen-gif](./frontend/src/assets/ezgif.com-gif-maker.gif)
+
+<!-- |                        Desktop                        |                         Mobile                         |
 | :---------------------------------------------------: | :----------------------------------------------------: |
-| ![Reps Logger](frontend/src/assets/DT-screenshot.png) | ![Reps Logger](frontend/src/assets//MB-screenshot.png) |
+| ![Reps Logger](frontend/src/assets/DT-screenshot.png) | ![Reps Logger](frontend/src/assets//MB-screenshot.png) | -->
 
 ---
 
