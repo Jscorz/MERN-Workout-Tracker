@@ -99,14 +99,14 @@ const WorkoutDetails = ({ workout }) => {
 			<span>
 				<MdDeleteForever
 					onClick={handleClickDelete}
-					className='text-3xl text-gray-600 cursor-pointer absolute top-10 right-10'
+					className='text-3xl text-red-600 cursor-pointer absolute top-10 right-10'
 				/>
 			</span>
 
 			<span>
 				<AiFillEdit
 					onClick={handleClickEdit}
-					className='text-3xl text-gray-600 cursor-pointer absolute top-20 right-10'
+					className='text-3xl text-green-600 cursor-pointer absolute top-20 right-10'
 				/>
 			</span>
 			{isEditModalOpen && (
