@@ -1,17 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import moment from "moment";
 import useCalculateTotalWeight from "../hooks/useCalculateTotalWeight";
 import { MdDeleteForever } from "react-icons/md";
+import { AiFillEdit } from "react-icons/ai";
 import { useWorkoutsContext } from "../hooks/useWorkoutContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useTotalWeightContext } from "../hooks/useTotalWeightContext";
 
 const WorkoutDetails = ({ workout }) => {
 	const { dispatch, workouts } = useWorkoutsContext();
-	const { dispatch: totalWeightDispatch, totalWeight } =
-		useTotalWeightContext();
+	const { dispatch: totalWeightDispatch } = useTotalWeightContext();
 	const { user } = useAuthContext();
+
+	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+	const [title, setTitle] = useState("");
+	const [load, setLoad] = useState("");
+	const [reps, setReps] = useState("");
+	const [error, setError] = useState("");
+	const [emptyFields, setEmptyFields] = useState([]);
 
 	let hoursWorkouts = workouts.filter(
 		(workout) => moment().diff(moment(workout.createdAt), "hours") < 24
@@ -29,7 +36,7 @@ const WorkoutDetails = ({ workout }) => {
 		});
 	}, []);
 
-	const handleClick = async () => {
+	const handleClickDelete = async () => {
 		if (!user) {
 			return;
 		}
@@ -44,6 +51,31 @@ const WorkoutDetails = ({ workout }) => {
 		if (response.ok) {
 			dispatch({ type: "DELETE_WORKOUT", payload: json });
 		}
+	};
+
+	const handleClickEdit = async (e) => {
+		e.preventDefault();
+
+		setIsEditModalOpen(!isEditModalOpen);
+		// if (!user) {
+		// 	return;
+		// }
+		// const response = await fetch("/api/workouts/" + workout._id, {
+		// 	method: "PATCH",
+		// 	headers: {
+		// 		Authorization: `Bearer ${user.token}`,
+		// 	},
+		// 	body: JSON.stringify({
+		// 		title,
+		// 		reps,
+		// 		load,
+		// 	}),
+		// });
+		// const json = await response.json();
+
+		// if (response.ok) {
+		// 	dispatch({ type: "DELETE_WORKOUT", payload: json });
+		// }
 	};
 
 	return (
@@ -66,11 +98,60 @@ const WorkoutDetails = ({ workout }) => {
 			</p>
 			<span>
 				<MdDeleteForever
-					onClick={handleClick}
+					onClick={handleClickDelete}
 					className='text-3xl text-gray-600 cursor-pointer absolute top-10 right-10'
 				/>
 			</span>
-			<div></div>
+
+			<span>
+				<AiFillEdit
+					onClick={handleClickEdit}
+					className='text-3xl text-gray-600 cursor-pointer absolute top-20 right-10'
+				/>
+			</span>
+			{isEditModalOpen && (
+				<form className='flex flex-col space-y-2 p-2 border-2 bg-slate-700 absolute -top-2 left-0 right-20 rounded-lg'>
+					<h3 className='text-white text-xl pb-2'>Edit Workout</h3>
+					<label className='block text-white'>Exercise Title:</label>
+					<input
+						type='text'
+						value={title}
+						onChange={(e) => setTitle(e.target.value)}
+						className={
+							emptyFields.includes("title")
+								? "text-slate-900 border-red-500 border rounded-md p-1"
+								: "block  border rounded-md p-1 "
+						}
+					/>
+					<label className='block text-white'>Weight (in lbs):</label>
+					<input
+						type='text'
+						value={load}
+						onChange={(e) => setLoad(e.target.value)}
+						className={
+							emptyFields.includes("load")
+								? "text-slate-900 border-red-500 border rounded-md p-1"
+								: "block  border rounded-md p-1 "
+						}
+					/>
+					<label className='block text-white'>Reps:</label>
+					<input
+						type='text'
+						value={reps}
+						onChange={(e) => setReps(e.target.value)}
+						className={
+							emptyFields.includes("reps")
+								? "text-slate-900 border-red-500 border rounded-md p-1"
+								: "block  border rounded-md p-1"
+						}
+					/>
+					<div className='pt-3'>
+						<button className='text-slate-900 bg-green-400 rounded-md py-2 px-4 w-full'>
+							Edit Workout
+						</button>
+					</div>
+				</form>
+			)}
 		</div>
 	);
 };
