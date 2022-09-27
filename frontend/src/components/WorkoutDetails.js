@@ -53,29 +53,39 @@ const WorkoutDetails = ({ workout }) => {
 		}
 	};
 
-	const handleClickEdit = async (e) => {
+	const handleSubmitEditWorkout = async (e) => {
 		e.preventDefault();
+		console.log(workout._id);
 
-		setIsEditModalOpen(!isEditModalOpen);
-		// if (!user) {
-		// 	return;
-		// }
-		// const response = await fetch("/api/workouts/" + workout._id, {
-		// 	method: "PATCH",
-		// 	headers: {
-		// 		Authorization: `Bearer ${user.token}`,
-		// 	},
-		// 	body: JSON.stringify({
-		// 		title,
-		// 		reps,
-		// 		load,
-		// 	}),
-		// });
-		// const json = await response.json();
+		if (!user) {
+			setError("You must be logged in");
+			return;
+		}
 
-		// if (response.ok) {
-		// 	dispatch({ type: "DELETE_WORKOUT", payload: json });
-		// }
+		const response = await fetch("/api/workouts/" + workout._id, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${user.token}`,
+			},
+			body: JSON.stringify({ title, load, reps }),
+		});
+		const json = await response.json();
+
+		if (!response.ok) {
+			setError(json.error);
+			setEmptyFields(json.emptyFields);
+		}
+		if (response.ok) {
+			setTitle("");
+			setLoad("");
+			setReps("");
+			setError(null);
+			setEmptyFields([]);
+			console.log(json);
+			setIsEditModalOpen(!isEditModalOpen);
+			return json;
+		}
 	};
 
 	return (
@@ -105,12 +115,15 @@ const WorkoutDetails = ({ workout }) => {
 
 			<span>
 				<AiFillEdit
-					onClick={handleClickEdit}
+					onClick={() => setIsEditModalOpen(!isEditModalOpen)}
 					className='text-3xl text-green-600 cursor-pointer absolute top-20 right-10'
 				/>
 			</span>
 			{isEditModalOpen && (
-				<form className='flex flex-col space-y-2 p-2 border-2 bg-slate-700 absolute -top-2 left-0 right-20 rounded-lg'>
+				<form
+					onSubmit={handleSubmitEditWorkout}
+					className='flex flex-col space-y-2 p-2 border-2 bg-slate-700 absolute -top-2 left-0 right-20 rounded-lg z-40'
+				>
 					<h3 className='text-white text-xl pb-2'>Edit Workout</h3>
 					<label className='block text-white'>Exercise Title:</label>
 					<input
@@ -125,7 +138,7 @@ const WorkoutDetails = ({ workout }) => {
 					/>
 					<label className='block text-white'>Weight (in lbs):</label>
 					<input
-						type='text'
+						type='number'
 						value={load}
 						onChange={(e) => setLoad(e.target.value)}
 						className={
@@ -136,7 +149,7 @@ const WorkoutDetails = ({ workout }) => {
 					/>
 					<label className='block text-white'>Reps:</label>
 					<input
-						type='text'
+						type='number'
 						value={reps}
 						onChange={(e) => setReps(e.target.value)}
 						className={

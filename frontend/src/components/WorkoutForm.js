@@ -42,7 +42,6 @@ const WorkoutForm = () => {
 			setReps("");
 			setError(null);
 			setEmptyFields([]);
-			console.log(json);
 			dispatch({ type: "CREATE_WORKOUT", payload: json });
 		}
 	};
