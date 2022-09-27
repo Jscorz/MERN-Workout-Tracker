@@ -8,7 +8,7 @@ import { useWorkoutsContext } from "../hooks/useWorkoutContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useTotalWeightContext } from "../hooks/useTotalWeightContext";
 
-const WorkoutDetails = ({ workout }) => {
+const WorkoutDetails = ({ workout, reFetchWorkouts }) => {
 	const { dispatch, workouts } = useWorkoutsContext();
 	const { dispatch: totalWeightDispatch } = useTotalWeightContext();
 	const { user } = useAuthContext();
@@ -88,6 +88,7 @@ const WorkoutDetails = ({ workout }) => {
 			setEmptyFields([]);
 			forceUpdate();
 			setIsEditModalOpen(!isEditModalOpen);
+			reFetchWorkouts();
 			return json;
 		}
 	}

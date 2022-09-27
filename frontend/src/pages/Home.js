@@ -37,6 +37,20 @@ const Home = () => {
 		}
 	}, [dispatch, user]);
 
+	const reFetchWorkouts = async () => {
+		const response = await fetch("/api/workouts", {
+			headers: {
+				Authorization: `Bearer ${user.token}`,
+			},
+		});
+
+		const json = await response.json();
+
+		if (response.ok) {
+			dispatch({ type: "SET_WORKOUTS", payload: json });
+		}
+	};
+
 	return (
 		<div>
 			{/* Button to open modal for development purposes */}
@@ -59,6 +73,7 @@ const Home = () => {
 							<WorkoutDetails
 								key={workout._id}
 								workout={workout}
+								reFetchWorkouts={reFetchWorkouts}
 							/>
 						))}
 				</div>
