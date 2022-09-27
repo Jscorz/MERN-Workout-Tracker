@@ -40,7 +40,7 @@ const Signup = () => {
 
 					<button
 						disabled={isLoading}
-						className='w-20 py-3 px-5 border bg-primary text-white whitespace-nowrap flex justify-center rounded-lg'
+						className='w-32 py-3 px-5 border bg-primary text-white whitespace-nowrap flex justify-center rounded-lg'
 					>
 						<div>Sign up</div>
 					</button>

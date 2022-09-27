@@ -13,9 +13,9 @@ const WorkoutDetails = ({ workout, reFetchWorkouts }) => {
 	const { dispatch: totalWeightDispatch } = useTotalWeightContext();
 	const { user } = useAuthContext();
 
-	const [title, setTitle] = useState("");
-	const [load, setLoad] = useState("");
-	const [reps, setReps] = useState("");
+	const [title, setTitle] = useState(workout.title);
+	const [load, setLoad] = useState(workout.load);
+	const [reps, setReps] = useState(workout.reps);
 	const [error, setError] = useState("");
 	const [emptyFields, setEmptyFields] = useState([]);
 
@@ -168,6 +168,11 @@ const WorkoutDetails = ({ workout, reFetchWorkouts }) => {
 							Edit Workout
 						</button>
 					</div>
+					{error && (
+						<div className='p-5 bg-offWhiteTwo border border-red-400 my-6 rounded-md text-red-400'>
+							{error}
+						</div>
+					)}
 				</form>
 			)}
 		</div>
