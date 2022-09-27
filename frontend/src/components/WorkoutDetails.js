@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import moment from "moment";
 import useCalculateTotalWeight from "../hooks/useCalculateTotalWeight";
@@ -13,12 +13,15 @@ const WorkoutDetails = ({ workout }) => {
 	const { dispatch: totalWeightDispatch } = useTotalWeightContext();
 	const { user } = useAuthContext();
 
-	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 	const [title, setTitle] = useState("");
 	const [load, setLoad] = useState("");
 	const [reps, setReps] = useState("");
 	const [error, setError] = useState("");
 	const [emptyFields, setEmptyFields] = useState([]);
+
+	const [, updateState] = useState();
+	const forceUpdate = useCallback(() => updateState({}), []);
+	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
 	let hoursWorkouts = workouts.filter(
 		(workout) => moment().diff(moment(workout.createdAt), "hours") < 24
@@ -53,8 +56,9 @@ const WorkoutDetails = ({ workout }) => {
 		}
 	};
 
-	const handleSubmitEditWorkout = async (e) => {
+	async function HandleSubmitEditWorkout(e) {
 		e.preventDefault();
+
 		console.log(workout._id);
 
 		if (!user) {
@@ -82,11 +86,11 @@ const WorkoutDetails = ({ workout }) => {
 			setReps("");
 			setError(null);
 			setEmptyFields([]);
-			console.log(json);
+			forceUpdate();
 			setIsEditModalOpen(!isEditModalOpen);
 			return json;
 		}
-	};
+	}
 
 	return (
 		<div className='gradient flex flex-col  items-center space-y-1 bg-primary rounded-md my-16 mx-auto p-8 relative shadow-md md:items-start'>
@@ -121,7 +125,7 @@ const WorkoutDetails = ({ workout }) => {
 			</span>
 			{isEditModalOpen && (
 				<form
-					onSubmit={handleSubmitEditWorkout}
+					onSubmit={HandleSubmitEditWorkout}
 					className='flex flex-col space-y-2 p-2 border-2 bg-slate-700 absolute -top-2 left-0 right-20 rounded-lg z-40'
 				>
 					<h3 className='text-white text-xl pb-2'>Edit Workout</h3>

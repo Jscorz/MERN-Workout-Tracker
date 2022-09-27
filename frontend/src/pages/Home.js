@@ -9,7 +9,6 @@ import TotalWeightModal from "../components/TotalWeightModal";
 const Home = () => {
 	const { workouts, dispatch } = useWorkoutsContext();
 	const { user } = useAuthContext();
-	const { totalWeight } = useTotalWeightContext();
 
 	const [isTotalWeightModalOpen, setIsTotalWeightModalOpen] = useState(false);
 
