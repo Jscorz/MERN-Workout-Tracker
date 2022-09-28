@@ -16,11 +16,9 @@ const WorkoutDetails = ({ workout, reFetchWorkouts }) => {
 	const [title, setTitle] = useState(workout.title);
 	const [load, setLoad] = useState(workout.load);
 	const [reps, setReps] = useState(workout.reps);
+
 	const [error, setError] = useState("");
 	const [emptyFields, setEmptyFields] = useState([]);
-
-	const [, updateState] = useState();
-	const forceUpdate = useCallback(() => updateState({}), []);
 	const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
 	let hoursWorkouts = workouts.filter(
@@ -59,8 +57,6 @@ const WorkoutDetails = ({ workout, reFetchWorkouts }) => {
 	async function HandleSubmitEditWorkout(e) {
 		e.preventDefault();
 
-		console.log(workout._id);
-
 		if (!user) {
 			setError("You must be logged in");
 			return;
@@ -81,12 +77,8 @@ const WorkoutDetails = ({ workout, reFetchWorkouts }) => {
 			setEmptyFields(json.emptyFields);
 		}
 		if (response.ok) {
-			setTitle("");
-			setLoad("");
-			setReps("");
 			setError(null);
 			setEmptyFields([]);
-			forceUpdate();
 			setIsEditModalOpen(!isEditModalOpen);
 			reFetchWorkouts();
 			return json;
