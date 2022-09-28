@@ -46,7 +46,7 @@ const Login = () => {
 						<button
 							disabled={isLoading}
 							onClick={handleGuestSubmit}
-							className='w-44 py-3 px-5 bg-primary border text-white whitespace-nowrap flex justify-center rounded-lg'
+							className='w-44 py-3 px-5  bg-primary border text-white whitespace-nowrap flex justify-center rounded-lg'
 						>
 							<div>Log in as guest</div>
 						</button>
