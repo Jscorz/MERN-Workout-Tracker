@@ -6,10 +6,6 @@
 
 ![screen-gif](./frontend/src/assets/ezgif.com-gif-workout-tracker.gif)
 
-<!-- |                        Desktop                        |                         Mobile                         |
-| :---------------------------------------------------: | :----------------------------------------------------: |
-| ![Reps Logger](frontend/src/assets/DT-screenshot.png) | ![Reps Logger](frontend/src/assets//MB-screenshot.png) | -->
-
 ---
 
 ## **How It's Made:**
