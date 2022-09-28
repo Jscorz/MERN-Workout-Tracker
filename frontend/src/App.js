@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import GenerateWorkout from "./pages/GenerateWorkout";
 
 function App() {
 	const { user } = useAuthContext();
@@ -25,6 +26,10 @@ function App() {
 						<Route
 							path='/signup'
 							element={!user ? <Signup /> : <Navigate to='/' />}
+						/>
+						<Route
+							path='/generateworkout'
+							element={!user ? <Signup /> : <GenerateWorkout />}
 						/>
 					</Routes>
 				</div>

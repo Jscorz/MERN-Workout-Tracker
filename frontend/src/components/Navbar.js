@@ -35,6 +35,12 @@ const Navbar = () => {
 				<nav className='flex items-center'>
 					{user && (
 						<div className='flex items-center '>
+							<Link
+								to='/generateworkout'
+								className='hidden text-white uppercase mr-16 md:block'
+							>
+								Generate Custom Workouts
+							</Link>
 							{user.user.userpicture === "1" && (
 								<img
 									src={userImage1}
@@ -76,7 +82,7 @@ const Navbar = () => {
 								/>
 							)}
 
-							<span className='hidden text-white text-sm mr-4 md:block'>
+							<span className='hidden text-white text-xs mr-4 md:block'>
 								{user.user.email}
 							</span>
 							<button
