@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutContext";
 import { useAuthContext } from "../hooks/useAuthContext";
-import { useTotalWeightContext } from "../hooks/useTotalWeightContext";
 import WorkoutDetails from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
 import TotalWeightModal from "../components/TotalWeightModal";
