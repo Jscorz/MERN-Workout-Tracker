@@ -41,6 +41,12 @@ const Navbar = () => {
 							>
 								Generate Workout
 							</Link>
+							<Link
+								to='/'
+								className='hidden text-white uppercase mr-16 md:block'
+							>
+								Add Workout
+							</Link>
 							{user.user.userpicture === "1" && (
 								<img
 									src={userImage1}
