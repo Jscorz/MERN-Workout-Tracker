@@ -19,76 +19,88 @@ const GenerateWorkout = () => {
 				"X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
 			},
 		};
-		// Fetch Abs Exercises
-		fetch("https://exercisedb.p.rapidapi.com/exercises/target/abs", options)
-			.then((response) => response.json())
-			.then((response) => setAbsExercises(response))
-			.catch((err) => console.error(err));
-		// Fetch Pectorals Exercises
-		fetch(
-			"https://exercisedb.p.rapidapi.com/exercises/target/pectorals",
-			options
-		)
-			.then((response) => response.json())
-			.then((response) => setPectoralsExercises(response))
-			.catch((err) => console.error(err));
-		// Fetch Biceps Exercises
-		fetch(
-			"https://exercisedb.p.rapidapi.com/exercises/target/biceps",
-			options
-		)
-			.then((response) => response.json())
-			.then((response) => setBicepsExercises(response))
-			.catch((err) => console.error(err));
-		// Fetch Triceps Exercises
-		fetch(
-			"https://exercisedb.p.rapidapi.com/exercises/target/triceps",
-			options
-		)
-			.then((response) => response.json())
-			.then((response) => setTricepsExercises(response))
-			.catch((err) => console.error(err));
-		// Fetch Calves Exercises
-		fetch(
-			"https://exercisedb.p.rapidapi.com/exercises/target/calves",
-			options
-		)
-			.then((response) => response.json())
-			.then((response) => setCalvesExercises(response))
-			.catch((err) => console.error(err));
-		// Fetch Quads Exercises
-		fetch(
-			"https://exercisedb.p.rapidapi.com/exercises/target/quads",
-			options
-		)
-			.then((response) => response.json())
-			.then((response) => setQuadsExercises(response))
-			.catch((err) => console.error(err));
-		// Fetch Hamstring Exercises
-		fetch(
-			"https://exercisedb.p.rapidapi.com/exercises/target/hamstrings",
-			options
-		)
-			.then((response) => response.json())
-			.then((response) => setHamstringsExercises(response))
-			.catch((err) => console.error(err));
+		// // Fetch Abs Exercises
+		// fetch("https://exercisedb.p.rapidapi.com/exercises/target/abs", options)
+		// 	.then((response) => response.json())
+		// 	.then((response) => setAbsExercises(response))
+		// 	.catch((err) => console.error(err));
+		// // Fetch Pectorals Exercises
+		// fetch(
+		// 	"https://exercisedb.p.rapidapi.com/exercises/target/pectorals",
+		// 	options
+		// )
+		// 	.then((response) => response.json())
+		// 	.then((response) => setPectoralsExercises(response))
+		// 	.catch((err) => console.error(err));
+		// // Fetch Biceps Exercises
+		// fetch(
+		// 	"https://exercisedb.p.rapidapi.com/exercises/target/biceps",
+		// 	options
+		// )
+		// 	.then((response) => response.json())
+		// 	.then((response) => setBicepsExercises(response))
+		// 	.catch((err) => console.error(err));
+		// // Fetch Triceps Exercises
+		// fetch(
+		// 	"https://exercisedb.p.rapidapi.com/exercises/target/triceps",
+		// 	options
+		// )
+		// 	.then((response) => response.json())
+		// 	.then((response) => setTricepsExercises(response))
+		// 	.catch((err) => console.error(err));
+		// // Fetch Calves Exercises
+		// fetch(
+		// 	"https://exercisedb.p.rapidapi.com/exercises/target/calves",
+		// 	options
+		// )
+		// 	.then((response) => response.json())
+		// 	.then((response) => setCalvesExercises(response))
+		// 	.catch((err) => console.error(err));
+		// // Fetch Quads Exercises
+		// fetch(
+		// 	"https://exercisedb.p.rapidapi.com/exercises/target/quads",
+		// 	options
+		// )
+		// 	.then((response) => response.json())
+		// 	.then((response) => setQuadsExercises(response))
+		// 	.catch((err) => console.error(err));
+		// // Fetch Hamstring Exercises
+		// fetch(
+		// 	"https://exercisedb.p.rapidapi.com/exercises/target/hamstrings",
+		// 	options
+		// )
+		// 	.then((response) => response.json())
+		// 	.then((response) => setHamstringsExercises(response))
+		// 	.catch((err) => console.error(err));
 	}, []);
 
 	return (
-		<div
-			onClick={console.log(
-				absExercises,
-				pectoralsExercises,
-				bicepsExercises,
-				tricepsExercises,
-				calvesExercises,
-				quadsExercises,
-				hamstringsExercises
-			)}
-			className='h-full border-2 border-slate-600'
-		>
-			GenerateWorkout
-		</div>
+		<section className='h-full border-2 border-slate-600 flex flex-col space-y-10 items-center'>
+			<button className='py-3 px-16 border-red-500 border mx-auto gradient'>
+				Generate Workout
+			</button>
+			<div className='w-full flex items-center max-w-prose gap-3'>
+				<span className='h-0.5 flex-1 bg-slate-900'></span>
+				<h2 className='uppercase text-center select-none text-slate-900 text-lg md:text-3xl'>
+					Step 1. workout type
+				</h2>
+				<span className='h-0.5 flex-1 bg-slate-900'></span>
+			</div>
+			<div className='flex w-full max-w-prose'>
+				<button className='w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80'>
+					Individual
+				</button>
+				<button className='w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80'>
+					Upper/Lower
+				</button>
+				<button className='w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80'>
+					Bro Split
+				</button>
+				<button className='w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80'>
+					Bodybuilder
+				</button>
+			</div>
+		</section>
 	);
 };
 
