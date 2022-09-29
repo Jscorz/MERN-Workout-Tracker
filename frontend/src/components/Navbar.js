@@ -39,7 +39,7 @@ const Navbar = () => {
 								to='/generateworkout'
 								className='hidden text-white uppercase mr-16 md:block'
 							>
-								Generate Custom Workouts
+								Generate Workout
 							</Link>
 							{user.user.userpicture === "1" && (
 								<img
