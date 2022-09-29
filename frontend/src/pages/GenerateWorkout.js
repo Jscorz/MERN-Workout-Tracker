@@ -94,7 +94,7 @@ const GenerateWorkout = () => {
 	}, []);
 
 	return (
-		<section className='h-full mt-5  flex flex-col space-y-10 items-center'>
+		<section className='h-full mt-5 mb-20 flex flex-col space-y-10 items-center'>
 			<button className='py-3 px-16 border-slate-500 border mx-auto gradient transition hover:bg-slate-700 hover:text-white hover:border-white'>
 				Generate Workout
 			</button>
