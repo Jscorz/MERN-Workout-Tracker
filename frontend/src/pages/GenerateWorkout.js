@@ -246,8 +246,8 @@ const GenerateWorkout = () => {
 					onClick={HandleClickTwo}
 					className={
 						activeButtonTwo === "1"
-							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
-							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
+							? "options_step-2 w-full mt-4 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
+							: "options_step-2 w-full mt-4 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
 					}
 				>
 					Strength And Power
@@ -257,8 +257,8 @@ const GenerateWorkout = () => {
 					onClick={HandleClickTwo}
 					className={
 						activeButtonTwo === "2"
-							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
-							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
+							? "options_step-2 w-full mt-4 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
+							: "options_step-2 w-full mt-4 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
 					}
 				>
 					Growth And Hypertrophy
@@ -268,8 +268,8 @@ const GenerateWorkout = () => {
 					onClick={HandleClickTwo}
 					className={
 						activeButtonTwo === "3"
-							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
-							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
+							? "options_step-2 w-full mt-4 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
+							: "options_step-2 w-full mt-4 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
 					}
 				>
 					Cardiovascular And Endurance
