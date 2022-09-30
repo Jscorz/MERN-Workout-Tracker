@@ -17,6 +17,81 @@ const GenerateWorkout = () => {
 	const [activeButton, setActiveButton] = useState(0);
 	const [activeButtonTwo, setActiveButtonTwo] = useState(0);
 
+	const [
+		randomStrengthAndPowerNumberOne,
+		setRandomStrengthAndPowerNumberOne,
+	] = useState("");
+	const [
+		randomStrengthAndPowerNumberTwo,
+		setRandomStrengthAndPowerNumberTwo,
+	] = useState("");
+	const [
+		randomStrengthAndPowerNumberThree,
+		setRandomStrengthAndPowerNumberThree,
+	] = useState("");
+	const [
+		randomStrengthAndPowerNumberFour,
+		setRandomStrengthAndPowerNumberFour,
+	] = useState("");
+	const [
+		randomStrengthAndPowerNumberFive,
+		setRandomStrengthAndPowerNumberFive,
+	] = useState("");
+	const [
+		randomStrengthAndPowerNumberSix,
+		setRandomStrengthAndPowerNumberSix,
+	] = useState("");
+
+	const [
+		randomGrowthAndHypertrophyNumberOne,
+		setRandomGrowthAndHypertrophyNumberOne,
+	] = useState("");
+	const [
+		randomGrowthAndHypertrophyNumberTwo,
+		setRandomGrowthAndHypertrophyNumberTwo,
+	] = useState("");
+	const [
+		randomGrowthAndHypertrophyNumberThree,
+		setRandomGrowthAndHypertrophyNumberThree,
+	] = useState("");
+	const [
+		randomGrowthAndHypertrophyNumberFour,
+		setRandomGrowthAndHypertrophyNumberFour,
+	] = useState("");
+	const [
+		randomGrowthAndHypertrophyNumberFive,
+		setRandomGrowthAndHypertrophyNumberFive,
+	] = useState("");
+	const [
+		randomGrowthAndHypertrophyNumberSix,
+		setRandomGrowthAndHypertrophyNumberSix,
+	] = useState("");
+
+	const [
+		randomCardioAndEnduranceNumberOne,
+		setRandomCardioAndEnduranceNumberOne,
+	] = useState("");
+	const [
+		randomCardioAndEnduranceNumberTwo,
+		setRandomCardioAndEnduranceNumberTwo,
+	] = useState("");
+	const [
+		randomCardioAndEnduranceNumberThree,
+		setRandomCardioAndEnduranceNumberThree,
+	] = useState("");
+	const [
+		randomCardioAndEnduranceNumberFour,
+		setRandomCardioAndEnduranceNumberFour,
+	] = useState("");
+	const [
+		randomCardioAndEnduranceNumberFive,
+		setRandomCardioAndEnduranceNumberFive,
+	] = useState("");
+	const [
+		randomCardioAndEnduranceNumberSix,
+		setRandomCardioAndEnduranceNumberSix,
+	] = useState("");
+
 	const HandleClick = (e) => {
 		e.preventDefault();
 		let activeButtonNumber = e.target.id;
@@ -29,6 +104,114 @@ const GenerateWorkout = () => {
 		let activeButtonNumber = e.target.id;
 
 		setActiveButtonTwo(activeButtonNumber);
+	};
+
+	const generateGrowthReps = () => {
+		setRandomGrowthAndHypertrophyNumberOne(
+			Math.trunc(Math.random() * 4 + 8)
+		);
+		setRandomGrowthAndHypertrophyNumberTwo(
+			Math.trunc(Math.random() * 4 + 8)
+		);
+		setRandomGrowthAndHypertrophyNumberThree(
+			Math.trunc(Math.random() * 4 + 8)
+		);
+		setRandomGrowthAndHypertrophyNumberFour(
+			Math.trunc(Math.random() * 4 + 8)
+		);
+		setRandomGrowthAndHypertrophyNumberFive(
+			Math.trunc(Math.random() * 4 + 8)
+		);
+		setRandomGrowthAndHypertrophyNumberSix(
+			Math.trunc(Math.random() * 4 + 8)
+		);
+	};
+
+	const generateStrengthReps = () => {
+		setRandomStrengthAndPowerNumberOne(Math.trunc(Math.random() * 4 + 3));
+		setRandomStrengthAndPowerNumberTwo(Math.trunc(Math.random() * 4 + 3));
+		setRandomStrengthAndPowerNumberThree(Math.trunc(Math.random() * 4 + 3));
+		setRandomStrengthAndPowerNumberFour(Math.trunc(Math.random() * 4 + 3));
+		setRandomStrengthAndPowerNumberFive(Math.trunc(Math.random() * 4 + 3));
+		setRandomStrengthAndPowerNumberSix(Math.trunc(Math.random() * 4 + 3));
+	};
+
+	const generateEnduranceReps = () => {
+		setRandomCardioAndEnduranceNumberOne(
+			Math.trunc(Math.random() * 4 + 12)
+		);
+		setRandomCardioAndEnduranceNumberTwo(
+			Math.trunc(Math.random() * 4 + 12)
+		);
+		setRandomCardioAndEnduranceNumberThree(
+			Math.trunc(Math.random() * 4 + 12)
+		);
+		setRandomCardioAndEnduranceNumberFour(
+			Math.trunc(Math.random() * 4 + 12)
+		);
+		setRandomCardioAndEnduranceNumberFive(
+			Math.trunc(Math.random() * 4 + 12)
+		);
+		setRandomCardioAndEnduranceNumberSix(
+			Math.trunc(Math.random() * 4 + 12)
+		);
+	};
+
+	const HandleSubmit = (e) => {
+		e.preventDefault();
+
+		if (filterValue === "abs") {
+			console.log("abs");
+		}
+		if (filterValue === "pectorals") {
+			console.log("pectorals");
+		}
+		if (filterValue === "back") {
+			console.log("back");
+		}
+		if (filterValue === "traps") {
+			console.log("traps");
+		}
+		if (filterValue === "biceps") {
+			console.log("biceps");
+		}
+		if (filterValue === "triceps") {
+			console.log("triceps");
+		}
+		if (filterValue === "calves") {
+			console.log("calves");
+		}
+		if (filterValue === "quads") {
+			console.log("quads");
+		}
+		if (filterValue === "hamstrings") {
+			console.log("hamstrings");
+		}
+
+		console.log(
+			"generate workout success",
+			activeButton,
+			filterValue,
+			activeButtonTwo,
+			randomStrengthAndPowerNumberOne,
+			randomStrengthAndPowerNumberTwo,
+			randomStrengthAndPowerNumberThree,
+			randomStrengthAndPowerNumberFour,
+			randomStrengthAndPowerNumberFive,
+			randomStrengthAndPowerNumberSix,
+			randomGrowthAndHypertrophyNumberOne,
+			randomGrowthAndHypertrophyNumberTwo,
+			randomGrowthAndHypertrophyNumberThree,
+			randomGrowthAndHypertrophyNumberFour,
+			randomGrowthAndHypertrophyNumberFive,
+			randomGrowthAndHypertrophyNumberSix,
+			randomCardioAndEnduranceNumberOne,
+			randomCardioAndEnduranceNumberTwo,
+			randomCardioAndEnduranceNumberThree,
+			randomCardioAndEnduranceNumberFour,
+			randomCardioAndEnduranceNumberFive,
+			randomCardioAndEnduranceNumberSix
+		);
 	};
 
 	useEffect(() => {
@@ -108,6 +291,12 @@ const GenerateWorkout = () => {
 		// 	.then((response) => response.json())
 		// 	.then((response) => setHamstringsExercises(response))
 		// 	.catch((err) => console.error(err));
+	}, []);
+
+	useEffect(() => {
+		generateStrengthReps();
+		generateGrowthReps();
+		generateEnduranceReps();
 	}, []);
 
 	return (
@@ -275,7 +464,10 @@ const GenerateWorkout = () => {
 					Cardiovascular And Endurance
 				</button>
 			</div>
-			<button className='py-3 px-16 border-slate-500 border mx-auto gradient rounded-lg transition hover:bg-slate-700 hover:text-white hover:border-white'>
+			<button
+				onClick={HandleSubmit}
+				className='py-3 px-16 border-slate-500 border mx-auto gradient rounded-lg transition hover:bg-slate-700 hover:text-white hover:border-white'
+			>
 				Generate Workout
 			</button>
 		</section>
