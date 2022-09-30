@@ -12,7 +12,24 @@ const GenerateWorkout = () => {
 	const [calvesExercises, setCalvesExercises] = useState();
 	const [quadsExercises, setQuadsExercises] = useState();
 	const [hamstringsExercises, setHamstringsExercises] = useState();
+
 	const [filterValue, setFilterValue] = useState();
+	const [activeButton, setActiveButton] = useState(0);
+	const [activeButtonTwo, setActiveButtonTwo] = useState(0);
+
+	const HandleClick = (e) => {
+		e.preventDefault();
+		let activeButtonNumber = e.target.id;
+
+		setActiveButton(activeButtonNumber);
+	};
+
+	const HandleClickTwo = (e) => {
+		e.preventDefault();
+		let activeButtonNumber = e.target.id;
+
+		setActiveButtonTwo(activeButtonNumber);
+	};
 
 	useEffect(() => {
 		const options = {
@@ -106,16 +123,48 @@ const GenerateWorkout = () => {
 				<span className='h-0.5 flex-1 bg-slate-900'></span>
 			</div>
 			<div className='flex w-full max-w-prose'>
-				<button className='w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80'>
+				<button
+					id='1'
+					onClick={HandleClick}
+					className={
+						activeButton === "1"
+							? "options w-[25%] p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
+							: "options w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+					}
+				>
 					Individual
 				</button>
-				<button className='w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80'>
+				<button
+					id='2'
+					onClick={HandleClick}
+					className={
+						activeButton === "2"
+							? "options w-[25%] p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
+							: "options w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+					}
+				>
 					Upper/Lower
 				</button>
-				<button className='w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80'>
+				<button
+					id='3'
+					onClick={HandleClick}
+					className={
+						activeButton === "3"
+							? "options w-[25%] p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
+							: "options w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+					}
+				>
 					Bro Split
 				</button>
-				<button className='w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80'>
+				<button
+					id='4'
+					onClick={HandleClick}
+					className={
+						activeButton === "4"
+							? "options w-[25%] p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
+							: "options w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+					}
+				>
 					Bodybuilder
 				</button>
 			</div>
@@ -131,7 +180,7 @@ const GenerateWorkout = () => {
 					<select
 						onChange={(e) => setFilterValue(e.target.value)}
 						value={filterValue}
-						className='w-[100%] bg-slate-800 text-white text-center uppercase p-4'
+						className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer'
 					>
 						<option value='Select muscle group'>
 							Please Select muscle group
@@ -195,13 +244,37 @@ const GenerateWorkout = () => {
 				<span className='h-0.5 flex-1 bg-slate-900'></span>
 			</div>
 			<div className='flex flex-col w-full max-w-prose'>
-				<button className='w-full mt-2 p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80'>
+				<button
+					id='1'
+					onClick={HandleClickTwo}
+					className={
+						activeButtonTwo === "1"
+							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
+							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+					}
+				>
 					Strength And Power
 				</button>
-				<button className='w-full mt-2 p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80'>
+				<button
+					id='2'
+					onClick={HandleClickTwo}
+					className={
+						activeButtonTwo === "2"
+							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
+							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+					}
+				>
 					Growth And Hypertrophy
 				</button>
-				<button className='w-full mt-2 p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80'>
+				<button
+					id='3'
+					onClick={HandleClickTwo}
+					className={
+						activeButtonTwo === "3"
+							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
+							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+					}
+				>
 					Cardiovascular And Endurance
 				</button>
 			</div>
