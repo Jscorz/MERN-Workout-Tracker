@@ -17,7 +17,7 @@ const UserPictureModal = ({ onRequestClose }) => {
 	};
 
 	return (
-		<section className='absolute top-20 left-45 z-40 h-24 min-w-56 p-5 mr-2 border-2 border-white bg-slate-700 shadow-2xl rounded-lg flex flex-col items-center justify-center'>
+		<section className='absolute top-20 right-36 z-40 h-24 min-w-56 p-5 mr-2 border-2 border-white bg-slate-700 shadow-2xl rounded-lg flex flex-col items-center justify-center'>
 			<h1 className='text-center text-white pb-1'>
 				Change Your User Picture
 			</h1>
