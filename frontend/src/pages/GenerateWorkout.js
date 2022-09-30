@@ -112,7 +112,7 @@ const GenerateWorkout = () => {
 
 	return (
 		<section className='h-full mt-5 mb-20 flex flex-col space-y-10 items-center'>
-			<button className='py-3 px-16 border-slate-500 border mx-auto gradient transition hover:bg-slate-700 hover:text-white hover:border-white'>
+			<button className='py-3 px-16 border-slate-500 border mx-auto gradient rounded-lg transition hover:bg-slate-700 hover:text-white hover:border-white'>
 				Generate Workout
 			</button>
 			<div className='w-full flex items-center max-w-prose gap-3'>
@@ -122,14 +122,14 @@ const GenerateWorkout = () => {
 				</h2>
 				<span className='h-0.5 flex-1 bg-slate-900'></span>
 			</div>
-			<div className='flex w-full max-w-prose'>
+			<div className='flex w-full max-w-prose '>
 				<button
 					id='1'
 					onClick={HandleClick}
 					className={
 						activeButton === "1"
-							? "options w-[25%] p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
-							: "options w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+							? "options w-[25%] p-4 bg-white text-slate-900 uppercase rounded-tl-lg rounded-bl-lg transition hover:bg-opacity-80"
+							: "options w-[25%] p-4 bg-slate-800 text-white uppercase rounded-tl-lg rounded-bl-lg transition hover:bg-opacity-80"
 					}
 				>
 					Individual
@@ -161,8 +161,8 @@ const GenerateWorkout = () => {
 					onClick={HandleClick}
 					className={
 						activeButton === "4"
-							? "options w-[25%] p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
-							: "options w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+							? "options w-[25%] p-4 bg-white text-slate-900 uppercase rounded-tr-lg rounded-br-lg transition hover:bg-opacity-80"
+							: "options w-[25%] p-4 bg-slate-800 text-white uppercase rounded-tr-lg rounded-br-lg transition hover:bg-opacity-80"
 					}
 				>
 					Bodybuilder
@@ -180,7 +180,7 @@ const GenerateWorkout = () => {
 					<select
 						onChange={(e) => setFilterValue(e.target.value)}
 						value={filterValue}
-						className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer'
+						className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 					>
 						<option value='Select muscle group'>
 							Please Select muscle group
@@ -249,8 +249,8 @@ const GenerateWorkout = () => {
 					onClick={HandleClickTwo}
 					className={
 						activeButtonTwo === "1"
-							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
-							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
+							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
 					}
 				>
 					Strength And Power
@@ -260,8 +260,8 @@ const GenerateWorkout = () => {
 					onClick={HandleClickTwo}
 					className={
 						activeButtonTwo === "2"
-							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
-							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
+							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
 					}
 				>
 					Growth And Hypertrophy
@@ -271,8 +271,8 @@ const GenerateWorkout = () => {
 					onClick={HandleClickTwo}
 					className={
 						activeButtonTwo === "3"
-							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
-							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+							? "options_step-2 w-full mt-2 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
+							: "options_step-2 w-full mt-2 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
 					}
 				>
 					Cardiovascular And Endurance
