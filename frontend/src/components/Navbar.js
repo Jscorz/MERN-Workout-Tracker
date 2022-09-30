@@ -92,7 +92,7 @@ const Navbar = () => {
 								{user.user.email}
 							</span>
 							<button
-								className='text-white font-bold px-3 py-1 border-2 border-white rounded-lg md:-mr-8  '
+								className='text-white uppercase  px-3 py-1 border-2 border-white rounded-lg md:-mr-8  '
 								onClick={handleClick}
 							>
 								Log out
@@ -103,13 +103,13 @@ const Navbar = () => {
 						<div className='flex flex-col md:flex-row '>
 							<Link
 								to='/login'
-								className='text-xl text-white mr-12 md:text-2xl font-bold'
+								className='text-xl uppercase text-white mr-12 md:text-2xl font-bold'
 							>
 								Login
 							</Link>
 							<Link
 								to='/signup'
-								className='text-xl text-white md:text-2xl font-bold'
+								className='text-xl uppercase text-white md:text-2xl font-bold'
 							>
 								Signup
 							</Link>
