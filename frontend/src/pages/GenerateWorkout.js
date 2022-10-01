@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const GenerateWorkout = () => {
 	const API_KEY = process.env.REACT_APP_API_KEY;
 
+	// State values for exercises by body parts
 	const [absExercises, setAbsExercises] = useState();
 	const [pectoralsExercises, setPectoralsExercises] = useState();
 	const [backExercises, setBackExercises] = useState();
@@ -13,10 +14,12 @@ const GenerateWorkout = () => {
 	const [quadsExercises, setQuadsExercises] = useState();
 	const [hamstringsExercises, setHamstringsExercises] = useState();
 
-	const [filterValue, setFilterValue] = useState();
+	// State values for form values(workout-type, body-part, goals and objectives)
 	const [activeButton, setActiveButton] = useState(0);
+	const [filterValue, setFilterValue] = useState();
 	const [activeButtonTwo, setActiveButtonTwo] = useState(0);
 
+	// State values for rep amounts for Strength and Power
 	const [
 		randomStrengthAndPowerNumberOne,
 		setRandomStrengthAndPowerNumberOne,
@@ -42,6 +45,7 @@ const GenerateWorkout = () => {
 		setRandomStrengthAndPowerNumberSix,
 	] = useState("");
 
+	// State values for rep amounts for Growth and Hypertrophy
 	const [
 		randomGrowthAndHypertrophyNumberOne,
 		setRandomGrowthAndHypertrophyNumberOne,
@@ -67,6 +71,7 @@ const GenerateWorkout = () => {
 		setRandomGrowthAndHypertrophyNumberSix,
 	] = useState("");
 
+	// State values for rep amounts for Cardio and Endurance
 	const [
 		randomCardioAndEnduranceNumberOne,
 		setRandomCardioAndEnduranceNumberOne,
@@ -182,7 +187,7 @@ const GenerateWorkout = () => {
 		}
 
 		console.log(
-			"generate workout success    ",
+			"generate workout success",
 			`strength reps:`,
 			randomStrengthAndPowerNumberOne,
 			randomStrengthAndPowerNumberTwo,
