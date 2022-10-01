@@ -160,51 +160,44 @@ const GenerateWorkout = () => {
 	const HandleSubmit = (e) => {
 		e.preventDefault();
 
-		if (filterValue === "abs") {
-			console.log("abs");
+		if (activeButton === "1") {
+			console.log(
+				`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
+			);
 		}
-		if (filterValue === "pectorals") {
-			console.log("pectorals");
+		if (activeButton === "2") {
+			console.log(
+				`workout-type:upper/lower bodypart:${filterValue} goals:${activeButtonTwo}`
+			);
 		}
-		if (filterValue === "back") {
-			console.log("back");
+		if (activeButton === "3") {
+			console.log(
+				`workout-type:bro split bodypart:${filterValue} goals:${activeButtonTwo}`
+			);
 		}
-		if (filterValue === "traps") {
-			console.log("traps");
-		}
-		if (filterValue === "biceps") {
-			console.log("biceps");
-		}
-		if (filterValue === "triceps") {
-			console.log("triceps");
-		}
-		if (filterValue === "calves") {
-			console.log("calves");
-		}
-		if (filterValue === "quads") {
-			console.log("quads");
-		}
-		if (filterValue === "hamstrings") {
-			console.log("hamstrings");
+		if (activeButton === "4") {
+			console.log(
+				`workout-type:bodybuilder bodypart:${filterValue} goals:${activeButtonTwo}`
+			);
 		}
 
 		console.log(
-			"generate workout success",
-			activeButton,
-			filterValue,
-			activeButtonTwo,
+			"generate workout success    ",
+			`strength reps:`,
 			randomStrengthAndPowerNumberOne,
 			randomStrengthAndPowerNumberTwo,
 			randomStrengthAndPowerNumberThree,
 			randomStrengthAndPowerNumberFour,
 			randomStrengthAndPowerNumberFive,
 			randomStrengthAndPowerNumberSix,
+			`growth reps:`,
 			randomGrowthAndHypertrophyNumberOne,
 			randomGrowthAndHypertrophyNumberTwo,
 			randomGrowthAndHypertrophyNumberThree,
 			randomGrowthAndHypertrophyNumberFour,
 			randomGrowthAndHypertrophyNumberFive,
 			randomGrowthAndHypertrophyNumberSix,
+			`endurance reps:`,
 			randomCardioAndEnduranceNumberOne,
 			randomCardioAndEnduranceNumberTwo,
 			randomCardioAndEnduranceNumberThree,
