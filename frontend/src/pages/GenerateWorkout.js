@@ -286,7 +286,7 @@ const GenerateWorkout = () => {
 
 	const HandleSubmit = (e) => {
 		e.preventDefault();
-		// let exerciseSelectionOne = Math.trunc(Math.random() * 100 + 1);
+
 		console.log(exerciseSelectionOne);
 		if (activeButton === "1") {
 			if (filterValue === "abs") {
