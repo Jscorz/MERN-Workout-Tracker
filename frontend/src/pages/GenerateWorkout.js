@@ -442,13 +442,13 @@ const GenerateWorkout = () => {
 		// 	.then((response) => setShouldersExercises(response))
 		// 	.catch((err) => console.error(err));
 		// Fetch Biceps Exercises
-		fetch(
-			"https://exercisedb.p.rapidapi.com/exercises/target/biceps",
-			options
-		)
-			.then((response) => response.json())
-			.then((response) => setBicepsExercises(response))
-			.catch((err) => console.error(err));
+		// fetch(
+		// 	"https://exercisedb.p.rapidapi.com/exercises/target/biceps",
+		// 	options
+		// )
+		// 	.then((response) => response.json())
+		// 	.then((response) => setBicepsExercises(response))
+		// 	.catch((err) => console.error(err));
 		// // Fetch Triceps Exercises
 		// fetch(
 		// 	"https://exercisedb.p.rapidapi.com/exercises/target/triceps",
