@@ -282,14 +282,6 @@ const GenerateWorkout = () => {
 			setExerciseFive(hamstringsExercises[exerciseSelectionFive]);
 			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
 		}
-		console.log(
-			exerciseOne,
-			exerciseTwo,
-			exerciseThree,
-			exerciseFour,
-			exerciseFive,
-			exerciseSix
-		);
 	};
 
 	const HandleSubmit = (e) => {
@@ -369,7 +361,14 @@ const GenerateWorkout = () => {
 			);
 		}
 
-		console.log(exerciseOne);
+		console.log(
+			exerciseOne,
+			exerciseTwo,
+			exerciseThree,
+			exerciseFour,
+			exerciseFive,
+			exerciseSix
+		);
 		console.log(
 			"generate workout success",
 			`strength reps:`,
@@ -434,22 +433,22 @@ const GenerateWorkout = () => {
 		// 	.then((response) => response.json())
 		// 	.then((response) => setTrapsExercises(response))
 		// 	.catch((err) => console.error(err));
-		// // Fetch Shoulders Exercises
+		// Fetch Shoulders Exercises
 		// fetch(
-		// 	"https://exercisedb.p.rapidapi.com/exercises/target/shoulders",
+		// 	"https://exercisedb.p.rapidapi.com/exercises/target/delts",
 		// 	options
 		// )
 		// 	.then((response) => response.json())
 		// 	.then((response) => setShouldersExercises(response))
 		// 	.catch((err) => console.error(err));
-		// // Fetch Biceps Exercises
-		// fetch(
-		// 	"https://exercisedb.p.rapidapi.com/exercises/target/biceps",
-		// 	options
-		// )
-		// 	.then((response) => response.json())
-		// 	.then((response) => setBicepsExercises(response))
-		// 	.catch((err) => console.error(err));
+		// Fetch Biceps Exercises
+		fetch(
+			"https://exercisedb.p.rapidapi.com/exercises/target/biceps",
+			options
+		)
+			.then((response) => response.json())
+			.then((response) => setBicepsExercises(response))
+			.catch((err) => console.error(err));
 		// // Fetch Triceps Exercises
 		// fetch(
 		// 	"https://exercisedb.p.rapidapi.com/exercises/target/triceps",
@@ -589,9 +588,9 @@ const GenerateWorkout = () => {
 						</option>
 						<option
 							className='p-4 bg-white text-slate-900'
-							value='shoulders'
+							value='delts'
 						>
-							shoulders
+							delts
 						</option>
 						<option
 							className='p-4 bg-white text-slate-900'
