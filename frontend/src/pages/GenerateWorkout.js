@@ -404,11 +404,11 @@ const GenerateWorkout = () => {
 				"X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
 			},
 		};
-		// // Fetch Abs Exercises
-		// fetch("https://exercisedb.p.rapidapi.com/exercises/target/abs", options)
-		// 	.then((response) => response.json())
-		// 	.then((response) => setAbsExercises(response))
-		// 	.catch((err) => console.error(err));
+		// Fetch Abs Exercises
+		fetch("https://exercisedb.p.rapidapi.com/exercises/target/abs", options)
+			.then((response) => response.json())
+			.then((response) => setAbsExercises(response))
+			.catch((err) => console.error(err));
 		// // Fetch Pectorals Exercises
 		// fetch(
 		// 	"https://exercisedb.p.rapidapi.com/exercises/target/pectorals",
