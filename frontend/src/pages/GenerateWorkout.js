@@ -282,6 +282,94 @@ const GenerateWorkout = () => {
 			setExerciseFive(hamstringsExercises[exerciseSelectionFive]);
 			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
 		}
+		if (e.target.value === "upper" && activeButton === "2") {
+			setExerciseOne(pectoralsExercises[exerciseSelectionOne]);
+			setExerciseTwo(backExercises[exerciseSelectionTwo]);
+			setExerciseSix(trapsExercises[exerciseSelectionSix]);
+			setExerciseThree(shouldersExercises[exerciseSelectionThree]);
+			setExerciseFour(bicepsExercises[exerciseSelectionFour]);
+			setExerciseFive(tricepsExercises[exerciseSelectionFive]);
+		}
+		if (e.target.value === "lower" && activeButton === "2") {
+			setExerciseOne(quadsExercises[exerciseSelectionOne]);
+			setExerciseTwo(hamstringsExercises[exerciseSelectionTwo]);
+			setExerciseThree(calvesExercises[exerciseSelectionThree]);
+			setExerciseFour(quadsExercises[exerciseSelectionFour]);
+			setExerciseFive(calvesExercises[exerciseSelectionFive]);
+			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
+		}
+		if (e.target.value === "push" && activeButton === "3") {
+			setExerciseOne(pectoralsExercises[exerciseSelectionOne]);
+			setExerciseTwo(pectoralsExercises[exerciseSelectionTwo]);
+			setExerciseSix(shouldersExercises[exerciseSelectionSix]);
+			setExerciseThree(shouldersExercises[exerciseSelectionThree]);
+			setExerciseFour(tricepsExercises[exerciseSelectionFour]);
+			setExerciseFive(tricepsExercises[exerciseSelectionFive]);
+		}
+		if (e.target.value === "pull" && activeButton === "3") {
+			setExerciseOne(backExercises[exerciseSelectionOne]);
+			setExerciseTwo(backExercises[exerciseSelectionTwo]);
+			setExerciseThree(backExercises[exerciseSelectionThree]);
+			setExerciseFour(trapsExercises[exerciseSelectionFour]);
+			setExerciseFive(bicepsExercises[exerciseSelectionFive]);
+			setExerciseSix(bicepsExercises[exerciseSelectionSix]);
+		}
+		if (e.target.value === "legs" && activeButton === "3") {
+			setExerciseOne(quadsExercises[exerciseSelectionOne]);
+			setExerciseTwo(hamstringsExercises[exerciseSelectionTwo]);
+			setExerciseThree(calvesExercises[exerciseSelectionThree]);
+			setExerciseFour(quadsExercises[exerciseSelectionFour]);
+			setExerciseFive(calvesExercises[exerciseSelectionFive]);
+			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
+		}
+		if (e.target.value === "chest" && activeButton === "4") {
+			setExerciseOne(pectoralsExercises[exerciseSelectionOne]);
+			setExerciseTwo(pectoralsExercises[exerciseSelectionTwo]);
+			setExerciseSix(pectoralsExercises[exerciseSelectionSix]);
+			setExerciseThree(pectoralsExercises[exerciseSelectionThree]);
+			setExerciseFour(pectoralsExercises[exerciseSelectionFour]);
+			setExerciseFive(pectoralsExercises[exerciseSelectionFive]);
+		}
+		if (e.target.value === "back" && activeButton === "4") {
+			setExerciseOne(backExercises[exerciseSelectionOne]);
+			setExerciseTwo(backExercises[exerciseSelectionTwo]);
+			setExerciseThree(backExercises[exerciseSelectionThree]);
+			setExerciseFour(backExercises[exerciseSelectionFour]);
+			setExerciseFive(trapsExercises[exerciseSelectionFive]);
+			setExerciseSix(trapsExercises[exerciseSelectionSix]);
+		}
+		if (e.target.value === "shoulders" && activeButton === "4") {
+			setExerciseOne(shouldersExercises[exerciseSelectionOne]);
+			setExerciseTwo(shouldersExercises[exerciseSelectionTwo]);
+			setExerciseThree(shouldersExercises[exerciseSelectionThree]);
+			setExerciseFour(shouldersExercises[exerciseSelectionFour]);
+			setExerciseFive(shouldersExercises[exerciseSelectionFive]);
+			setExerciseSix(shouldersExercises[exerciseSelectionSix]);
+		}
+		if (e.target.value === "legs" && activeButton === "4") {
+			setExerciseOne(quadsExercises[exerciseSelectionOne]);
+			setExerciseTwo(quadsExercises[exerciseSelectionTwo]);
+			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
+			setExerciseThree(hamstringsExercises[exerciseSelectionThree]);
+			setExerciseFour(calvesExercises[exerciseSelectionFour]);
+			setExerciseFive(calvesExercises[exerciseSelectionFive]);
+		}
+		if (e.target.value === "arms" && activeButton === "4") {
+			setExerciseOne(bicepsExercises[exerciseSelectionOne]);
+			setExerciseTwo(bicepsExercises[exerciseSelectionTwo]);
+			setExerciseThree(bicepsExercises[exerciseSelectionThree]);
+			setExerciseFour(tricepsExercises[exerciseSelectionFour]);
+			setExerciseFive(tricepsExercises[exerciseSelectionFive]);
+			setExerciseSix(tricepsExercises[exerciseSelectionSix]);
+		}
+		if (e.target.value === "abs" && activeButton === "4") {
+			setExerciseOne(absExercises[exerciseSelectionOne]);
+			setExerciseTwo(absExercises[exerciseSelectionTwo]);
+			setExerciseThree(absExercises[exerciseSelectionThree]);
+			setExerciseFour(absExercises[exerciseSelectionFour]);
+			setExerciseFive(absExercises[exerciseSelectionFive]);
+			setExerciseSix(absExercises[exerciseSelectionSix]);
+		}
 	};
 
 	const HandleSubmit = (e) => {
