@@ -421,7 +421,7 @@ const GenerateWorkout = () => {
 				"X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
 			},
 		};
-		// // Fetch Abs Exercises
+		// // Fetch Ab Exercises
 		// fetch("https://exercisedb.p.rapidapi.com/exercises/target/abs", options)
 		// 	.then((response) => response.json())
 		// 	.then((response) => setAbsExercises(response))
