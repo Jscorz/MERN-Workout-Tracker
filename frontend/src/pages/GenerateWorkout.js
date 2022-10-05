@@ -450,7 +450,7 @@ const GenerateWorkout = () => {
 		// 	.then((response) => response.json())
 		// 	.then((response) => setTrapsExercises(response))
 		// 	.catch((err) => console.error(err));
-		// Fetch Shoulders Exercises
+		// // Fetch Shoulders Exercises
 		// fetch(
 		// 	"https://exercisedb.p.rapidapi.com/exercises/target/delts",
 		// 	options
@@ -458,7 +458,7 @@ const GenerateWorkout = () => {
 		// 	.then((response) => response.json())
 		// 	.then((response) => setShouldersExercises(response))
 		// 	.catch((err) => console.error(err));
-		// Fetch Biceps Exercises
+		// // Fetch Biceps Exercises
 		// fetch(
 		// 	"https://exercisedb.p.rapidapi.com/exercises/target/biceps",
 		// 	options
