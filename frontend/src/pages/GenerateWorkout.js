@@ -202,7 +202,7 @@ const GenerateWorkout = () => {
 
 	const HandleChange = (e) => {
 		setFilterValue(e.target.value);
-		if (e.target.value === "abs") {
+		if (e.target.value === "abs" && activeButton === "1") {
 			setExerciseOne(absExercises[exerciseSelectionOne]);
 			setExerciseTwo(absExercises[exerciseSelectionTwo]);
 			setExerciseThree(absExercises[exerciseSelectionThree]);
@@ -210,7 +210,7 @@ const GenerateWorkout = () => {
 			setExerciseFive(absExercises[exerciseSelectionFive]);
 			setExerciseSix(absExercises[exerciseSelectionSix]);
 		}
-		if (e.target.value === "pectorals") {
+		if (e.target.value === "pectorals" && activeButton === "1") {
 			setExerciseOne(pectoralsExercises[exerciseSelectionOne]);
 			setExerciseTwo(pectoralsExercises[exerciseSelectionTwo]);
 			setExerciseThree(pectoralsExercises[exerciseSelectionThree]);
@@ -218,7 +218,7 @@ const GenerateWorkout = () => {
 			setExerciseFive(pectoralsExercises[exerciseSelectionFive]);
 			setExerciseSix(pectoralsExercises[exerciseSelectionSix]);
 		}
-		if (e.target.value === "back") {
+		if (e.target.value === "back" && activeButton === "1") {
 			setExerciseOne(backExercises[exerciseSelectionOne]);
 			setExerciseTwo(backExercises[exerciseSelectionTwo]);
 			setExerciseThree(backExercises[exerciseSelectionThree]);
@@ -226,7 +226,7 @@ const GenerateWorkout = () => {
 			setExerciseFive(backExercises[exerciseSelectionFive]);
 			setExerciseSix(backExercises[exerciseSelectionSix]);
 		}
-		if (e.target.value === "traps") {
+		if (e.target.value === "traps" && activeButton === "1") {
 			setExerciseOne(trapsExercises[exerciseSelectionOne]);
 			setExerciseTwo(trapsExercises[exerciseSelectionTwo]);
 			setExerciseThree(trapsExercises[exerciseSelectionThree]);
@@ -234,7 +234,7 @@ const GenerateWorkout = () => {
 			setExerciseFive(trapsExercises[exerciseSelectionFive]);
 			setExerciseSix(trapsExercises[exerciseSelectionSix]);
 		}
-		if (e.target.value === "shoulders") {
+		if (e.target.value === "shoulders" && activeButton === "1") {
 			setExerciseOne(shouldersExercises[exerciseSelectionOne]);
 			setExerciseTwo(shouldersExercises[exerciseSelectionTwo]);
 			setExerciseThree(shouldersExercises[exerciseSelectionThree]);
@@ -242,7 +242,7 @@ const GenerateWorkout = () => {
 			setExerciseFive(shouldersExercises[exerciseSelectionFive]);
 			setExerciseSix(shouldersExercises[exerciseSelectionSix]);
 		}
-		if (e.target.value === "biceps") {
+		if (e.target.value === "biceps" && activeButton === "1") {
 			setExerciseOne(bicepsExercises[exerciseSelectionOne]);
 			setExerciseTwo(bicepsExercises[exerciseSelectionTwo]);
 			setExerciseThree(bicepsExercises[exerciseSelectionThree]);
@@ -250,7 +250,7 @@ const GenerateWorkout = () => {
 			setExerciseFive(bicepsExercises[exerciseSelectionFive]);
 			setExerciseSix(bicepsExercises[exerciseSelectionSix]);
 		}
-		if (e.target.value === "triceps") {
+		if (e.target.value === "triceps" && activeButton === "1") {
 			setExerciseOne(tricepsExercises[exerciseSelectionOne]);
 			setExerciseTwo(tricepsExercises[exerciseSelectionTwo]);
 			setExerciseThree(tricepsExercises[exerciseSelectionThree]);
@@ -258,7 +258,7 @@ const GenerateWorkout = () => {
 			setExerciseFive(tricepsExercises[exerciseSelectionFive]);
 			setExerciseSix(tricepsExercises[exerciseSelectionSix]);
 		}
-		if (e.target.value === "calves") {
+		if (e.target.value === "calves" && activeButton === "1") {
 			setExerciseOne(calvesExercises[exerciseSelectionOne]);
 			setExerciseTwo(calvesExercises[exerciseSelectionTwo]);
 			setExerciseThree(calvesExercises[exerciseSelectionThree]);
@@ -266,7 +266,7 @@ const GenerateWorkout = () => {
 			setExerciseFive(calvesExercises[exerciseSelectionFive]);
 			setExerciseSix(calvesExercises[exerciseSelectionSix]);
 		}
-		if (e.target.value === "quads") {
+		if (e.target.value === "quads" && activeButton === "1") {
 			setExerciseOne(quadsExercises[exerciseSelectionOne]);
 			setExerciseTwo(quadsExercises[exerciseSelectionTwo]);
 			setExerciseThree(quadsExercises[exerciseSelectionThree]);
@@ -274,7 +274,7 @@ const GenerateWorkout = () => {
 			setExerciseFive(quadsExercises[exerciseSelectionFive]);
 			setExerciseSix(quadsExercises[exerciseSelectionSix]);
 		}
-		if (e.target.value === "hamstrings") {
+		if (e.target.value === "hamstrings" && activeButton === "1") {
 			setExerciseOne(hamstringsExercises[exerciseSelectionOne]);
 			setExerciseTwo(hamstringsExercises[exerciseSelectionTwo]);
 			setExerciseThree(hamstringsExercises[exerciseSelectionThree]);
@@ -287,77 +287,24 @@ const GenerateWorkout = () => {
 	const HandleSubmit = (e) => {
 		e.preventDefault();
 
-		console.log(exerciseSelectionOne);
 		if (activeButton === "1") {
-			if (filterValue === "abs") {
-				console.log("abs selected");
-				console.log(
-					`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-				);
-			}
-			if (filterValue === "pectorals") {
-				console.log("pectorals selected");
-				console.log(
-					`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-				);
-			}
-			if (filterValue === "back") {
-				console.log("back selected");
-				console.log(
-					`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-				);
-			}
-			if (filterValue === "traps") {
-				console.log("traps selected");
-				console.log(
-					`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-				);
-			}
-			if (filterValue === "biceps") {
-				console.log("biceps selected");
-				console.log(
-					`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-				);
-			}
-			if (filterValue === "triceps") {
-				console.log("triceps selected");
-				console.log(
-					`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-				);
-			}
-			if (filterValue === "calves") {
-				console.log("calves selected");
-				console.log(
-					`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-				);
-			}
-			if (filterValue === "quads") {
-				console.log("quads selected");
-				console.log(
-					`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-				);
-			}
-			if (filterValue === "hamstrings") {
-				console.log("hamstrings selected");
-				console.log(
-					`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-				);
-			}
+			console.log(
+				`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
+			);
 		}
-
 		if (activeButton === "2") {
 			console.log(
-				`workout-type:upper/lower bodypart:${filterValue} goals:${activeButtonTwo}`
+				`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
 			);
 		}
 		if (activeButton === "3") {
 			console.log(
-				`workout-type:bro split bodypart:${filterValue} goals:${activeButtonTwo}`
+				`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
 			);
 		}
 		if (activeButton === "4") {
 			console.log(
-				`workout-type:bodybuilder bodypart:${filterValue} goals:${activeButtonTwo}`
+				`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
 			);
 		}
 
@@ -404,11 +351,11 @@ const GenerateWorkout = () => {
 				"X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
 			},
 		};
-		// Fetch Abs Exercises
-		fetch("https://exercisedb.p.rapidapi.com/exercises/target/abs", options)
-			.then((response) => response.json())
-			.then((response) => setAbsExercises(response))
-			.catch((err) => console.error(err));
+		// // Fetch Abs Exercises
+		// fetch("https://exercisedb.p.rapidapi.com/exercises/target/abs", options)
+		// 	.then((response) => response.json())
+		// 	.then((response) => setAbsExercises(response))
+		// 	.catch((err) => console.error(err));
 		// // Fetch Pectorals Exercises
 		// fetch(
 		// 	"https://exercisedb.p.rapidapi.com/exercises/target/pectorals",
@@ -554,69 +501,235 @@ const GenerateWorkout = () => {
 			</div>
 			<div className='flex w-full max-w-prose'>
 				<form className='w-full'>
-					<select
-						onChange={HandleChange}
-						value={filterValue}
-						className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
-					>
-						<option value='Select muscle group'>
-							Please Select muscle group
-						</option>
-						<option
-							className='p-4 bg-white text-slate-900'
-							value='abs'
+					{activeButton === 0 && (
+						<select
+							onChange={HandleChange}
+							value={filterValue}
+							className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 						>
-							abs
-						</option>
-						<option
-							className='p-4 bg-white text-slate-900'
-							value='pectorals'
+							<option value='Select muscle group'>
+								Please Select muscle group
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='abs'
+							>
+								abs
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='pectorals'
+							>
+								pectorals
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='back'
+							>
+								back
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='traps'
+							>
+								traps
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='delts'
+							>
+								delts
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='biceps'
+							>
+								biceps
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='calves'
+							>
+								calves
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='quads'
+							>
+								quads
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='hamstrings'
+							>
+								hamstrings
+							</option>
+						</select>
+					)}
+					{activeButton === "1" && (
+						<select
+							onChange={HandleChange}
+							value={filterValue}
+							className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 						>
-							pectorals
-						</option>
-						<option
-							className='p-4 bg-white text-slate-900'
-							value='back'
+							<option value='Select muscle group'>
+								Please Select muscle group
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='abs'
+							>
+								abs
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='pectorals'
+							>
+								pectorals
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='back'
+							>
+								back
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='traps'
+							>
+								traps
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='delts'
+							>
+								delts
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='biceps'
+							>
+								biceps
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='calves'
+							>
+								calves
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='quads'
+							>
+								quads
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='hamstrings'
+							>
+								hamstrings
+							</option>
+						</select>
+					)}
+					{activeButton === "2" && (
+						<select
+							onChange={HandleChange}
+							value={filterValue}
+							className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 						>
-							back
-						</option>
-						<option
-							className='p-4 bg-white text-slate-900'
-							value='traps'
+							<option value='Select muscle group'>
+								Please Select muscle group
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='upper'
+							>
+								upper
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='lower'
+							>
+								lower
+							</option>
+						</select>
+					)}
+					{activeButton === "3" && (
+						<select
+							onChange={HandleChange}
+							value={filterValue}
+							className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 						>
-							traps
-						</option>
-						<option
-							className='p-4 bg-white text-slate-900'
-							value='delts'
+							<option value='Select muscle group'>
+								Please Select muscle group
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='push'
+							>
+								push
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='pull'
+							>
+								pull
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='legs'
+							>
+								legs
+							</option>
+						</select>
+					)}
+					{activeButton === "4" && (
+						<select
+							onChange={HandleChange}
+							value={filterValue}
+							className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 						>
-							delts
-						</option>
-						<option
-							className='p-4 bg-white text-slate-900'
-							value='biceps'
-						>
-							biceps
-						</option>
-						<option
-							className='p-4 bg-white text-slate-900'
-							value='calves'
-						>
-							calves
-						</option>
-						<option
-							className='p-4 bg-white text-slate-900'
-							value='quads'
-						>
-							quads
-						</option>
-						<option
-							className='p-4 bg-white text-slate-900'
-							value='hamstrings'
-						>
-							hamstrings
-						</option>
-					</select>
+							<option value='Select muscle group'>
+								Please Select muscle group
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='chest'
+							>
+								chest
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='back'
+							>
+								back
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='delts'
+							>
+								shoulders
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='legs'
+							>
+								legs
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='arms'
+							>
+								arms
+							</option>
+							<option
+								className='p-4 bg-white text-slate-900'
+								value='abs'
+							>
+								abs
+							</option>
+						</select>
+					)}
 				</form>
 			</div>
 			<div className='w-full flex items-center max-w-prose gap-3'>
