@@ -375,27 +375,9 @@ const GenerateWorkout = () => {
 	const HandleSubmit = (e) => {
 		e.preventDefault();
 
-		if (activeButton === "1") {
-			console.log(
-				`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-			);
-		}
-		if (activeButton === "2") {
-			console.log(
-				`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-			);
-		}
-		if (activeButton === "3") {
-			console.log(
-				`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-			);
-		}
-		if (activeButton === "4") {
-			console.log(
-				`workout-type:individual bodypart:${filterValue} goals:${activeButtonTwo}`
-			);
-		}
-
+		console.log(
+			`workout-type:${activeButton} bodypart:${filterValue} goals:${activeButtonTwo}`
+		);
 		console.log(
 			exerciseOne,
 			exerciseTwo,
