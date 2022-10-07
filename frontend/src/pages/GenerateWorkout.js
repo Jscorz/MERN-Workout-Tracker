@@ -513,10 +513,12 @@ const GenerateWorkout = () => {
 
 	return (
 		<section className='h-full mt-10 mb-20 flex flex-col space-y-10 items-center relative'>
-			<button onClick={() => setIsWorkoutModalOpen(true)}>
-				open workout modal
+			<button onClick={() => setIsWorkoutModalOpen(!isWorkoutModalOpen)}>
+				open/close workout modal
 			</button>
+
 			{isWorkoutModalOpen && <WorkoutModal />}
+
 			<div className='w-full flex items-center max-w-prose gap-3'>
 				<span className='h-0.5 flex-1 bg-slate-900'></span>
 				<h2 className='uppercase text-center select-none text-slate-900 text-lg md:text-3xl'>
