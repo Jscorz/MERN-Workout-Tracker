@@ -29,7 +29,10 @@ function WorkoutModal({
 	randomCardioAndEnduranceNumberFive,
 	randomCardioAndEnduranceNumberSix,
 }) {
+	// State value for goals
 	const [goals, setGoals] = useState("strength and power");
+
+	// State value for determined reps for exercises 1 - 6
 	const [repsOne, setRepsOne] = useState();
 	const [repsTwo, setRepsTwo] = useState();
 	const [repsThree, setRepsThree] = useState();
@@ -37,6 +40,13 @@ function WorkoutModal({
 	const [repsFive, setRepsFive] = useState();
 	const [repsSix, setRepsSix] = useState();
 
+	// State value for determined tempos and rest periods
+	const [tempo, setTempo] = useState("1-0-1");
+	const [tempoTwo, setTempoTwo] = useState("1-0-1");
+	const [rest, setRest] = useState("120s");
+	const [restTwo, setRestTwo] = useState("120s");
+
+	// useEffect to set initial state values for goals, reps, tempos, and rest periods
 	useEffect(() => {
 		if (activeButtonTwo === "1") {
 			setGoals("strength and power");
@@ -46,6 +56,10 @@ function WorkoutModal({
 			setRepsFour(randomStrengthAndPowerNumberFour);
 			setRepsFive(randomStrengthAndPowerNumberFive);
 			setRepsSix(randomStrengthAndPowerNumberSix);
+			setTempo("3-1-1");
+			setTempoTwo("1-2-1");
+			setRest("120s");
+			setRestTwo("90s");
 		}
 		if (activeButtonTwo === "2") {
 			setGoals("growth and hypertrophy");
@@ -55,6 +69,10 @@ function WorkoutModal({
 			setRepsFour(randomGrowthAndHypertrophyNumberFour);
 			setRepsFive(randomGrowthAndHypertrophyNumberFive);
 			setRepsSix(randomGrowthAndHypertrophyNumberSix);
+			setTempo("2-1-2");
+			setTempoTwo("2-2-1");
+			setRest("45s");
+			setRestTwo("60s");
 		}
 		if (activeButtonTwo === "3") {
 			setGoals("cardiovascular and endurance");
@@ -65,6 +83,10 @@ function WorkoutModal({
 			setRepsFour(randomCardioAndEnduranceNumberFour);
 			setRepsFive(randomCardioAndEnduranceNumberFive);
 			setRepsSix(randomCardioAndEnduranceNumberSix);
+			setTempo("1-0-1");
+			setTempoTwo("1-1-1");
+			setRest("30s");
+			setRestTwo("20s");
 		}
 	}, []);
 
@@ -83,11 +105,11 @@ function WorkoutModal({
 						</reps>
 						<tempo>
 							<p>tempo</p>
-							<p>1-0-1</p>
+							<p>{tempo}</p>
 						</tempo>
 						<rest>
 							<p>rest</p>
-							<p>120s</p>
+							<p>{rest}</p>
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
@@ -107,11 +129,11 @@ function WorkoutModal({
 						</reps>
 						<tempo>
 							<p>tempo</p>
-							<p>1-0-1</p>
+							<p>{tempoTwo}</p>
 						</tempo>
 						<rest>
 							<p>rest</p>
-							<p>120s</p>
+							<p>{rest}</p>
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
@@ -131,11 +153,11 @@ function WorkoutModal({
 						</reps>
 						<tempo>
 							<p>tempo</p>
-							<p>1-0-1</p>
+							<p>{tempo}</p>
 						</tempo>
 						<rest>
 							<p>rest</p>
-							<p>120s</p>
+							<p>{restTwo}</p>
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
@@ -155,11 +177,11 @@ function WorkoutModal({
 						</reps>
 						<tempo>
 							<p>tempo</p>
-							<p>1-0-1</p>
+							<p>{tempoTwo}</p>
 						</tempo>
 						<rest>
 							<p>rest</p>
-							<p>120s</p>
+							<p>{rest}</p>
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
@@ -179,11 +201,11 @@ function WorkoutModal({
 						</reps>
 						<tempo>
 							<p>tempo</p>
-							<p>1-0-1</p>
+							<p>{tempo}</p>
 						</tempo>
 						<rest>
 							<p>rest</p>
-							<p>120s</p>
+							<p>{rest}</p>
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
@@ -203,11 +225,11 @@ function WorkoutModal({
 						</reps>
 						<tempo>
 							<p>tempo</p>
-							<p>1-0-1</p>
+							<p>{tempoTwo}</p>
 						</tempo>
 						<rest>
 							<p>rest</p>
-							<p>120s</p>
+							<p>{restTwo}</p>
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
