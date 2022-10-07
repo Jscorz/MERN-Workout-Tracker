@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import WorkoutModal from "../components/WorkoutModal";
 
 const GenerateWorkout = () => {
 	const API_KEY = process.env.REACT_APP_API_KEY;
@@ -19,6 +20,9 @@ const GenerateWorkout = () => {
 	const [activeButton, setActiveButton] = useState(0);
 	const [filterValue, setFilterValue] = useState();
 	const [activeButtonTwo, setActiveButtonTwo] = useState(0);
+
+	// State value for Modal containing custom workout
+	const [isWorkoutModalOpen, setIsWorkoutModalOpen] = useState(false);
 
 	// State values for six exercises for custom workout
 	const [exerciseOne, setExerciseOne] = useState();
@@ -508,7 +512,11 @@ const GenerateWorkout = () => {
 	}, []);
 
 	return (
-		<section className='h-full mt-10 mb-20 flex flex-col space-y-10 items-center'>
+		<section className='h-full mt-10 mb-20 flex flex-col space-y-10 items-center relative'>
+			<button onClick={() => setIsWorkoutModalOpen(true)}>
+				open workout modal
+			</button>
+			{isWorkoutModalOpen && <WorkoutModal />}
 			<div className='w-full flex items-center max-w-prose gap-3'>
 				<span className='h-0.5 flex-1 bg-slate-900'></span>
 				<h2 className='uppercase text-center select-none text-slate-900 text-lg md:text-3xl'>
