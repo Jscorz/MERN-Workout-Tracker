@@ -53,82 +53,37 @@ const GenerateWorkout = () => {
 	);
 
 	// State values for rep amounts for Strength and Power
-	const [
-		randomStrengthAndPowerNumberOne,
-		setRandomStrengthAndPowerNumberOne,
-	] = useState("");
-	const [
-		randomStrengthAndPowerNumberTwo,
-		setRandomStrengthAndPowerNumberTwo,
-	] = useState("");
-	const [
-		randomStrengthAndPowerNumberThree,
-		setRandomStrengthAndPowerNumberThree,
-	] = useState("");
-	const [
-		randomStrengthAndPowerNumberFour,
-		setRandomStrengthAndPowerNumberFour,
-	] = useState("");
-	const [
-		randomStrengthAndPowerNumberFive,
-		setRandomStrengthAndPowerNumberFive,
-	] = useState("");
-	const [
-		randomStrengthAndPowerNumberSix,
-		setRandomStrengthAndPowerNumberSix,
-	] = useState("");
+	const [randomStrengthAndPowerNumberOne, setRandomStrengthAndPowerNumberOne] = useState("");
+	const [randomStrengthAndPowerNumberTwo, setRandomStrengthAndPowerNumberTwo] = useState("");
+	const [randomStrengthAndPowerNumberThree, setRandomStrengthAndPowerNumberThree] = useState("");
+	const [randomStrengthAndPowerNumberFour, setRandomStrengthAndPowerNumberFour] = useState("");
+	const [randomStrengthAndPowerNumberFive, setRandomStrengthAndPowerNumberFive] = useState("");
+	const [randomStrengthAndPowerNumberSix, setRandomStrengthAndPowerNumberSix] = useState("");
 
 	// State values for rep amounts for Growth and Hypertrophy
-	const [
-		randomGrowthAndHypertrophyNumberOne,
-		setRandomGrowthAndHypertrophyNumberOne,
-	] = useState("");
-	const [
-		randomGrowthAndHypertrophyNumberTwo,
-		setRandomGrowthAndHypertrophyNumberTwo,
-	] = useState("");
-	const [
-		randomGrowthAndHypertrophyNumberThree,
-		setRandomGrowthAndHypertrophyNumberThree,
-	] = useState("");
-	const [
-		randomGrowthAndHypertrophyNumberFour,
-		setRandomGrowthAndHypertrophyNumberFour,
-	] = useState("");
-	const [
-		randomGrowthAndHypertrophyNumberFive,
-		setRandomGrowthAndHypertrophyNumberFive,
-	] = useState("");
-	const [
-		randomGrowthAndHypertrophyNumberSix,
-		setRandomGrowthAndHypertrophyNumberSix,
-	] = useState("");
+	const [randomGrowthAndHypertrophyNumberOne, setRandomGrowthAndHypertrophyNumberOne] =
+		useState("");
+	const [randomGrowthAndHypertrophyNumberTwo, setRandomGrowthAndHypertrophyNumberTwo] =
+		useState("");
+	const [randomGrowthAndHypertrophyNumberThree, setRandomGrowthAndHypertrophyNumberThree] =
+		useState("");
+	const [randomGrowthAndHypertrophyNumberFour, setRandomGrowthAndHypertrophyNumberFour] =
+		useState("");
+	const [randomGrowthAndHypertrophyNumberFive, setRandomGrowthAndHypertrophyNumberFive] =
+		useState("");
+	const [randomGrowthAndHypertrophyNumberSix, setRandomGrowthAndHypertrophyNumberSix] =
+		useState("");
 
 	// State values for rep amounts for Cardio and Endurance
-	const [
-		randomCardioAndEnduranceNumberOne,
-		setRandomCardioAndEnduranceNumberOne,
-	] = useState("");
-	const [
-		randomCardioAndEnduranceNumberTwo,
-		setRandomCardioAndEnduranceNumberTwo,
-	] = useState("");
-	const [
-		randomCardioAndEnduranceNumberThree,
-		setRandomCardioAndEnduranceNumberThree,
-	] = useState("");
-	const [
-		randomCardioAndEnduranceNumberFour,
-		setRandomCardioAndEnduranceNumberFour,
-	] = useState("");
-	const [
-		randomCardioAndEnduranceNumberFive,
-		setRandomCardioAndEnduranceNumberFive,
-	] = useState("");
-	const [
-		randomCardioAndEnduranceNumberSix,
-		setRandomCardioAndEnduranceNumberSix,
-	] = useState("");
+	const [randomCardioAndEnduranceNumberOne, setRandomCardioAndEnduranceNumberOne] = useState("");
+	const [randomCardioAndEnduranceNumberTwo, setRandomCardioAndEnduranceNumberTwo] = useState("");
+	const [randomCardioAndEnduranceNumberThree, setRandomCardioAndEnduranceNumberThree] =
+		useState("");
+	const [randomCardioAndEnduranceNumberFour, setRandomCardioAndEnduranceNumberFour] =
+		useState("");
+	const [randomCardioAndEnduranceNumberFive, setRandomCardioAndEnduranceNumberFive] =
+		useState("");
+	const [randomCardioAndEnduranceNumberSix, setRandomCardioAndEnduranceNumberSix] = useState("");
 
 	const HandleClick = (e) => {
 		e.preventDefault();
@@ -145,24 +100,12 @@ const GenerateWorkout = () => {
 	};
 
 	const generateGrowthReps = () => {
-		setRandomGrowthAndHypertrophyNumberOne(
-			Math.trunc(Math.random() * 4 + 8)
-		);
-		setRandomGrowthAndHypertrophyNumberTwo(
-			Math.trunc(Math.random() * 4 + 8)
-		);
-		setRandomGrowthAndHypertrophyNumberThree(
-			Math.trunc(Math.random() * 4 + 8)
-		);
-		setRandomGrowthAndHypertrophyNumberFour(
-			Math.trunc(Math.random() * 4 + 8)
-		);
-		setRandomGrowthAndHypertrophyNumberFive(
-			Math.trunc(Math.random() * 4 + 8)
-		);
-		setRandomGrowthAndHypertrophyNumberSix(
-			Math.trunc(Math.random() * 4 + 8)
-		);
+		setRandomGrowthAndHypertrophyNumberOne(Math.trunc(Math.random() * 4 + 8));
+		setRandomGrowthAndHypertrophyNumberTwo(Math.trunc(Math.random() * 4 + 8));
+		setRandomGrowthAndHypertrophyNumberThree(Math.trunc(Math.random() * 4 + 8));
+		setRandomGrowthAndHypertrophyNumberFour(Math.trunc(Math.random() * 4 + 8));
+		setRandomGrowthAndHypertrophyNumberFive(Math.trunc(Math.random() * 4 + 8));
+		setRandomGrowthAndHypertrophyNumberSix(Math.trunc(Math.random() * 4 + 8));
 	};
 
 	const generateStrengthReps = () => {
@@ -175,24 +118,12 @@ const GenerateWorkout = () => {
 	};
 
 	const generateEnduranceReps = () => {
-		setRandomCardioAndEnduranceNumberOne(
-			Math.trunc(Math.random() * 4 + 12)
-		);
-		setRandomCardioAndEnduranceNumberTwo(
-			Math.trunc(Math.random() * 4 + 12)
-		);
-		setRandomCardioAndEnduranceNumberThree(
-			Math.trunc(Math.random() * 4 + 12)
-		);
-		setRandomCardioAndEnduranceNumberFour(
-			Math.trunc(Math.random() * 4 + 12)
-		);
-		setRandomCardioAndEnduranceNumberFive(
-			Math.trunc(Math.random() * 4 + 12)
-		);
-		setRandomCardioAndEnduranceNumberSix(
-			Math.trunc(Math.random() * 4 + 12)
-		);
+		setRandomCardioAndEnduranceNumberOne(Math.trunc(Math.random() * 4 + 12));
+		setRandomCardioAndEnduranceNumberTwo(Math.trunc(Math.random() * 4 + 12));
+		setRandomCardioAndEnduranceNumberThree(Math.trunc(Math.random() * 4 + 12));
+		setRandomCardioAndEnduranceNumberFour(Math.trunc(Math.random() * 4 + 12));
+		setRandomCardioAndEnduranceNumberFive(Math.trunc(Math.random() * 4 + 12));
+		setRandomCardioAndEnduranceNumberSix(Math.trunc(Math.random() * 4 + 12));
 	};
 
 	const generateExerciseNumbers = () => {
@@ -517,7 +448,36 @@ const GenerateWorkout = () => {
 				open/close workout modal
 			</button>
 
-			{isWorkoutModalOpen && <WorkoutModal />}
+			{isWorkoutModalOpen && (
+				<WorkoutModal
+					exerciseOne={exerciseOne}
+					exerciseTwo={exerciseTwo}
+					exerciseThree={exerciseThree}
+					exerciseFour={exerciseFour}
+					exerciseFive={exerciseFive}
+					exerciseSix={exerciseSix}
+					filterValue={filterValue}
+					activeButtonTwo={activeButtonTwo}
+					randomStrengthAndPowerNumberOne={randomStrengthAndPowerNumberOne}
+					randomStrengthAndPowerNumberTwo={randomStrengthAndPowerNumberTwo}
+					randomStrengthAndPowerNumberThree={randomStrengthAndPowerNumberThree}
+					randomStrengthAndPowerNumberFour={randomStrengthAndPowerNumberFour}
+					randomStrengthAndPowerNumberFive={randomStrengthAndPowerNumberFive}
+					randomStrengthAndPowerNumberSix={randomStrengthAndPowerNumberSix}
+					randomGrowthAndHypertrophyNumberOne={randomGrowthAndHypertrophyNumberOne}
+					randomGrowthAndHypertrophyNumberTwo={randomGrowthAndHypertrophyNumberTwo}
+					randomGrowthAndHypertrophyNumberThree={randomGrowthAndHypertrophyNumberThree}
+					randomGrowthAndHypertrophyNumberFour={randomGrowthAndHypertrophyNumberFour}
+					randomGrowthAndHypertrophyNumberFive={randomGrowthAndHypertrophyNumberFive}
+					randomGrowthAndHypertrophyNumberSix={randomGrowthAndHypertrophyNumberOne}
+					randomCardioAndEnduranceNumberOne={randomCardioAndEnduranceNumberOne}
+					randomCardioAndEnduranceNumberTwo={randomCardioAndEnduranceNumberTwo}
+					randomCardioAndEnduranceNumberThree={randomCardioAndEnduranceNumberThree}
+					randomCardioAndEnduranceNumberFour={randomCardioAndEnduranceNumberFour}
+					randomCardioAndEnduranceNumberFive={randomCardioAndEnduranceNumberOne}
+					randomCardioAndEnduranceNumberSix={randomCardioAndEnduranceNumberOne}
+				/>
+			)}
 
 			<div className='w-full flex items-center max-w-prose gap-3'>
 				<span className='h-0.5 flex-1 bg-slate-900'></span>
@@ -587,61 +547,32 @@ const GenerateWorkout = () => {
 							value={filterValue}
 							className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 						>
-							<option value='Select muscle group'>
-								Please Select muscle group
-							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='abs'
-							>
+							<option value='Select muscle group'>Please Select muscle group</option>
+							<option className='p-4 bg-white text-slate-900' value='abs'>
 								abs
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='pectorals'
-							>
+							<option className='p-4 bg-white text-slate-900' value='pectorals'>
 								pectorals
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='back'
-							>
+							<option className='p-4 bg-white text-slate-900' value='back'>
 								back
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='traps'
-							>
+							<option className='p-4 bg-white text-slate-900' value='traps'>
 								traps
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='delts'
-							>
+							<option className='p-4 bg-white text-slate-900' value='delts'>
 								delts
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='biceps'
-							>
+							<option className='p-4 bg-white text-slate-900' value='biceps'>
 								biceps
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='calves'
-							>
+							<option className='p-4 bg-white text-slate-900' value='calves'>
 								calves
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='quads'
-							>
+							<option className='p-4 bg-white text-slate-900' value='quads'>
 								quads
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='hamstrings'
-							>
+							<option className='p-4 bg-white text-slate-900' value='hamstrings'>
 								hamstrings
 							</option>
 						</select>
@@ -652,61 +583,32 @@ const GenerateWorkout = () => {
 							value={filterValue}
 							className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 						>
-							<option value='Select muscle group'>
-								Please Select muscle group
-							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='abs'
-							>
+							<option value='Select muscle group'>Please Select muscle group</option>
+							<option className='p-4 bg-white text-slate-900' value='abs'>
 								abs
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='pectorals'
-							>
+							<option className='p-4 bg-white text-slate-900' value='pectorals'>
 								pectorals
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='back'
-							>
+							<option className='p-4 bg-white text-slate-900' value='back'>
 								back
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='traps'
-							>
+							<option className='p-4 bg-white text-slate-900' value='traps'>
 								traps
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='delts'
-							>
+							<option className='p-4 bg-white text-slate-900' value='delts'>
 								delts
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='biceps'
-							>
+							<option className='p-4 bg-white text-slate-900' value='biceps'>
 								biceps
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='calves'
-							>
+							<option className='p-4 bg-white text-slate-900' value='calves'>
 								calves
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='quads'
-							>
+							<option className='p-4 bg-white text-slate-900' value='quads'>
 								quads
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='hamstrings'
-							>
+							<option className='p-4 bg-white text-slate-900' value='hamstrings'>
 								hamstrings
 							</option>
 						</select>
@@ -717,19 +619,11 @@ const GenerateWorkout = () => {
 							value={filterValue}
 							className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 						>
-							<option value='Select muscle group'>
-								Please Select muscle group
-							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='upper'
-							>
+							<option value='Select muscle group'>Please Select muscle group</option>
+							<option className='p-4 bg-white text-slate-900' value='upper'>
 								upper
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='lower'
-							>
+							<option className='p-4 bg-white text-slate-900' value='lower'>
 								lower
 							</option>
 						</select>
@@ -740,25 +634,14 @@ const GenerateWorkout = () => {
 							value={filterValue}
 							className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 						>
-							<option value='Select muscle group'>
-								Please Select muscle group
-							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='push'
-							>
+							<option value='Select muscle group'>Please Select muscle group</option>
+							<option className='p-4 bg-white text-slate-900' value='push'>
 								push
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='pull'
-							>
+							<option className='p-4 bg-white text-slate-900' value='pull'>
 								pull
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='legs'
-							>
+							<option className='p-4 bg-white text-slate-900' value='legs'>
 								legs
 							</option>
 						</select>
@@ -769,43 +652,23 @@ const GenerateWorkout = () => {
 							value={filterValue}
 							className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 						>
-							<option value='Select muscle group'>
-								Please Select muscle group
-							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='chest'
-							>
+							<option value='Select muscle group'>Please Select muscle group</option>
+							<option className='p-4 bg-white text-slate-900' value='chest'>
 								chest
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='back'
-							>
+							<option className='p-4 bg-white text-slate-900' value='back'>
 								back
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='delts'
-							>
+							<option className='p-4 bg-white text-slate-900' value='delts'>
 								shoulders
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='legs'
-							>
+							<option className='p-4 bg-white text-slate-900' value='legs'>
 								legs
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='arms'
-							>
+							<option className='p-4 bg-white text-slate-900' value='arms'>
 								arms
 							</option>
-							<option
-								className='p-4 bg-white text-slate-900'
-								value='abs'
-							>
+							<option className='p-4 bg-white text-slate-900' value='abs'>
 								abs
 							</option>
 						</select>
