@@ -92,7 +92,7 @@ function WorkoutModal({
 
 	//     // Working example with dyanmic exercise data pulled from API
 	// 	return (
-	// 		<section className='absolute h-[120%] top-0 bottom-0 left-0 right-0 bg-[#f1f1f1] z-30'>
+	// 		<section className='absolute h-[130%] top-0 bottom-0 left-0 right-0 bg-[#f1f1f1] z-30'>
 	// 			<div className='border-2 h-full mx-auto max-w-prose flex flex-col items-center bg-white space-y-3 uppercase  rounded-lg'>
 	// 				<h1 className=' text-sm text-slate-900 uppercase font-bold md:text-2xl py-3'>
 	// 					{goals} {filterValue} Workout
@@ -114,7 +114,7 @@ function WorkoutModal({
 	// 						</div>
 	// 					</div>
 	// 					<div className='flex items-center w-full h-full px-3 md:px-10'>
-	// 						<p className='pr-2'>sets</p>
+	// 						<p className='pr-2'>sets:</p>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
@@ -138,7 +138,7 @@ function WorkoutModal({
 	// 						</div>
 	// 					</div>
 	// 					<div className='flex items-center w-full h-full px-3 md:px-10'>
-	// 						<p className='pr-2'>sets</p>
+	// 						<p className='pr-2'>sets:</p>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
@@ -162,7 +162,7 @@ function WorkoutModal({
 	// 						</div>
 	// 					</div>
 	// 					<div className='flex items-center w-full h-full px-3 md:px-10'>
-	// 						<p className='pr-2'>sets</p>
+	// 						<p className='pr-2'>sets:</p>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
@@ -186,7 +186,7 @@ function WorkoutModal({
 	// 						</div>
 	// 					</div>
 	// 					<div className='flex items-center w-full h-full px-3 md:px-10'>
-	// 						<p className='pr-2'>sets</p>
+	// 						<p className='pr-2'>sets:</p>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
@@ -210,7 +210,7 @@ function WorkoutModal({
 	// 						</div>
 	// 					</div>
 	// 					<div className='flex items-center w-full h-full px-3 md:px-10'>
-	// 						<p className='pr-2'>sets</p>
+	// 						<p className='pr-2'>sets:</p>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
@@ -234,7 +234,7 @@ function WorkoutModal({
 	// 						</div>
 	// 					</div>
 	// 					<div className='flex items-center w-full h-full px-3 md:px-10'>
-	// 						<p className='pr-2'>sets</p>
+	// 						<p className='pr-2'>sets:</p>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 	// 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
@@ -248,7 +248,7 @@ function WorkoutModal({
 
 	// Example not using variables to save API call amount during development
 	return (
-		<section className='absolute h-[120%] top-0 bottom-0 left-0 right-0 bg-[#f1f1f1] z-30'>
+		<section className='absolute h-[130%] top-0 bottom-0 left-0 right-0 bg-[#f1f1f1] z-30'>
 			<div className='border-2 h-full mx-auto max-w-prose flex flex-col items-center bg-white space-y-3 uppercase  rounded-lg'>
 				<h1 className=' text-sm text-slate-900 uppercase font-bold md:text-2xl py-3'>
 					{goals} {filterValue} Workout
