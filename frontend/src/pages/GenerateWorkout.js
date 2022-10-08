@@ -340,10 +340,7 @@ const GenerateWorkout = () => {
 		// 	.then((response) => setAbsExercises(response))
 		// 	.catch((err) => console.error(err));
 		// // Fetch Pectorals Exercises
-		// fetch(
-		// 	"https://exercisedb.p.rapidapi.com/exercises/target/pectorals",
-		// 	options
-		// )
+		// fetch("https://exercisedb.p.rapidapi.com/exercises/target/pectorals", options)
 		// 	.then((response) => response.json())
 		// 	.then((response) => setPectoralsExercises(response))
 		// 	.catch((err) => console.error(err));
@@ -364,10 +361,7 @@ const GenerateWorkout = () => {
 		// 	.then((response) => setTrapsExercises(response))
 		// 	.catch((err) => console.error(err));
 		// // Fetch Shoulders Exercises
-		// fetch(
-		// 	"https://exercisedb.p.rapidapi.com/exercises/target/delts",
-		// 	options
-		// )
+		// fetch("https://exercisedb.p.rapidapi.com/exercises/target/delts", options)
 		// 	.then((response) => response.json())
 		// 	.then((response) => setShouldersExercises(response))
 		// 	.catch((err) => console.error(err));
@@ -380,10 +374,7 @@ const GenerateWorkout = () => {
 		// 	.then((response) => setBicepsExercises(response))
 		// 	.catch((err) => console.error(err));
 		// // Fetch Triceps Exercises
-		// fetch(
-		// 	"https://exercisedb.p.rapidapi.com/exercises/target/triceps",
-		// 	options
-		// )
+		// fetch("https://exercisedb.p.rapidapi.com/exercises/target/triceps", options)
 		// 	.then((response) => response.json())
 		// 	.then((response) => setTricepsExercises(response))
 		// 	.catch((err) => console.error(err));
