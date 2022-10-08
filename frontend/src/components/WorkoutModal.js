@@ -270,7 +270,7 @@ function WorkoutModal({
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
-						<p className='pr-2'>sets</p>
+						<p className='pr-2'>sets:</p>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
@@ -294,7 +294,7 @@ function WorkoutModal({
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
-						<p className='pr-2'>sets</p>
+						<p className='pr-2'>sets:</p>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
@@ -318,7 +318,7 @@ function WorkoutModal({
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
-						<p className='pr-2'>sets</p>
+						<p className='pr-2'>sets:</p>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
@@ -342,7 +342,7 @@ function WorkoutModal({
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
-						<p className='pr-2'>sets</p>
+						<p className='pr-2'>sets:</p>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
@@ -366,7 +366,7 @@ function WorkoutModal({
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
-						<p className='pr-2'>sets</p>
+						<p className='pr-2'>sets:</p>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
@@ -390,7 +390,7 @@ function WorkoutModal({
 						</rest>
 					</div>
 					<sets className='flex items-center w-full h-full px-3 md:px-10'>
-						<p className='pr-2'>sets</p>
+						<p className='pr-2'>sets:</p>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
