@@ -321,30 +321,8 @@ const GenerateWorkout = () => {
 			exerciseFive,
 			exerciseSix
 		);
-		console.log(
-			"generate workout success",
-			`strength reps:`,
-			randomStrengthAndPowerNumberOne,
-			randomStrengthAndPowerNumberTwo,
-			randomStrengthAndPowerNumberThree,
-			randomStrengthAndPowerNumberFour,
-			randomStrengthAndPowerNumberFive,
-			randomStrengthAndPowerNumberSix,
-			`growth reps:`,
-			randomGrowthAndHypertrophyNumberOne,
-			randomGrowthAndHypertrophyNumberTwo,
-			randomGrowthAndHypertrophyNumberThree,
-			randomGrowthAndHypertrophyNumberFour,
-			randomGrowthAndHypertrophyNumberFive,
-			randomGrowthAndHypertrophyNumberSix,
-			`endurance reps:`,
-			randomCardioAndEnduranceNumberOne,
-			randomCardioAndEnduranceNumberTwo,
-			randomCardioAndEnduranceNumberThree,
-			randomCardioAndEnduranceNumberFour,
-			randomCardioAndEnduranceNumberFive,
-			randomCardioAndEnduranceNumberSix
-		);
+
+		setIsWorkoutModalOpen(true);
 	};
 
 	// Fetch exercises from Exercise DB API
