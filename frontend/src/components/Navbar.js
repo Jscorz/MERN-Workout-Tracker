@@ -41,50 +41,65 @@ const Navbar = () => {
 							>
 								Generate Workout
 							</Link>
-							<Link
-								to='/'
-								className='hidden text-white uppercase mr-16 md:block'
-							>
+							<Link to='/' className='hidden text-white uppercase mr-16 md:block'>
 								Add Workout
 							</Link>
 							{user.user.userpicture === "1" && (
-								<img
-									src={userImage1}
-									alt=''
-									className='hidden rounded-full h-12 mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block relative'
-									onClick={handlePictureClick}
-								/>
+								<div className='relative group'>
+									<img
+										src={userImage1}
+										alt=''
+										className='hidden rounded-full h-12 mr-2 border-2 transition hover:opacity-50 cursor-pointer relative md:block'
+										onClick={handlePictureClick}
+									/>
+									<div className='absolute top-10 right-0 -left-1 h-full w-full hidden text-white text-sm text-center transition rounded-full lowercase group-hover:block'>
+										CHANGE
+									</div>
+								</div>
 							)}
 							{user.user.userpicture === "2" && (
-								<img
-									src={userImage2}
-									alt=''
-									className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
-									onClick={handlePictureClick}
-								/>
+								<div className='relative group'>
+									<img
+										src={userImage2}
+										alt=''
+										className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
+										onClick={handlePictureClick}
+									/>
+									<div className='absolute top-10 right-0 -left-1 h-full w-full hidden text-white text-sm text-center transition rounded-full lowercase group-hover:block'>
+										CHANGE
+									</div>
+								</div>
 							)}
 							{user.user.userpicture === "3" && (
-								<img
-									src={userImage3}
-									alt=''
-									className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
-									onClick={handlePictureClick}
-								/>
+								<div className='relative group'>
+									<img
+										src={userImage3}
+										alt=''
+										className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
+										onClick={handlePictureClick}
+									/>
+									<div className='absolute top-10 right-0 -left-1 h-full w-full hidden text-white text-sm text-center transition rounded-full lowercase group-hover:block'>
+										CHANGE
+									</div>
+								</div>
 							)}
 							{user.user.userpicture === "4" && (
-								<img
-									src={userImage4}
-									alt=''
-									className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
-									onClick={handlePictureClick}
-								/>
+								<div className='relative group'>
+									<img
+										src={userImage4}
+										alt=''
+										className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
+										onClick={handlePictureClick}
+									/>
+									<div className='absolute top-10 right-0 -left-1 h-full hidden text-white text-sm text-center transition rounded-full lowercase group-hover:block'>
+										CHANGE
+									</div>
+								</div>
 							)}
 
 							{isUserPictureModelOpen && (
 								<UserPictureModal
-									onRequestClose={() =>
-										setIsUserPictureModelOpen(false)
-									}
+									onRequestClose={() => setIsUserPictureModelOpen(false)}
 								/>
 							)}
 
