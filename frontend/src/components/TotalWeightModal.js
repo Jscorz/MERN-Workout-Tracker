@@ -74,7 +74,7 @@ const TotalWeightModal = ({ onRequestClose }) => {
 						/>
 						<button
 							onClick={onRequestClose}
-							className='text-center absolute top-5 right-5 text-xl w-8 h-8 bg-white bg-opacity-20 text-red-600 border-2 border-red-600  lg:w-11 lg:h-11 lg:text-2xl rounded-full'
+							className='text-center absolute top-5 right-5 text-xl w-8 h-8 bg-white bg-opacity-20 text-red-600 border-2 border-red-600  lg:w-11 lg:h-11 lg:text-2xl rounded-full transition hover:scale-110'
 						>
 							X
 						</button>
