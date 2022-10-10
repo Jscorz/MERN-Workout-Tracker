@@ -49,7 +49,7 @@ const Navbar = () => {
 									<img
 										src={userImage1}
 										alt=''
-										className='hidden rounded-full h-12 mr-2 border-2 transition hover:opacity-50 cursor-pointer relative md:block'
+										className='hidden rounded-full h-12 mr-2 border-2 border-purple-500 transition hover:opacity-50 cursor-pointer relative md:block'
 										onClick={handlePictureClick}
 									/>
 									<div className='absolute top-10 right-0 -left-1 h-full w-full hidden text-white text-sm text-center transition rounded-full group-hover:block'>
@@ -62,7 +62,7 @@ const Navbar = () => {
 									<img
 										src={userImage2}
 										alt=''
-										className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
+										className='hidden rounded-full h-12   mr-2 border-2 border-purple-500 transition hover:opacity-50 cursor-pointer md:block'
 										onClick={handlePictureClick}
 									/>
 									<div className='absolute top-10 right-0 -left-1 h-full w-full hidden text-white text-sm text-center transition rounded-full group-hover:block'>
@@ -75,7 +75,7 @@ const Navbar = () => {
 									<img
 										src={userImage3}
 										alt=''
-										className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
+										className='hidden rounded-full h-12   mr-2 border-2 border-purple-500 transition hover:opacity-50 cursor-pointer md:block'
 										onClick={handlePictureClick}
 									/>
 									<div className='absolute top-10 right-0 -left-1 h-full w-full hidden text-white text-sm text-center transition rounded-full group-hover:block'>
@@ -88,7 +88,7 @@ const Navbar = () => {
 									<img
 										src={userImage4}
 										alt=''
-										className='hidden rounded-full h-12   mr-2 border-2 transition hover:opacity-50 cursor-pointer md:block'
+										className='hidden rounded-full h-12   mr-2 border-2 border-purple-500 transition hover:opacity-50 cursor-pointer md:block'
 										onClick={handlePictureClick}
 									/>
 									<div className='absolute top-10 right-0 -left-1 h-full hidden text-white text-sm text-center transition rounded-full group-hover:block'>
