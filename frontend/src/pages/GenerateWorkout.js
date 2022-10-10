@@ -413,10 +413,6 @@ const GenerateWorkout = () => {
 
 	return (
 		<section className='h-full mt-10 mb-20 flex flex-col space-y-10 items-center relative'>
-			<button onClick={() => setIsWorkoutModalOpen(!isWorkoutModalOpen)}>
-				open/close workout modal
-			</button>
-
 			{isWorkoutModalOpen && (
 				<WorkoutModal
 					exerciseOne={exerciseOne}
@@ -688,9 +684,15 @@ const GenerateWorkout = () => {
 			</div>
 			<button
 				onClick={HandleSubmit}
-				className='py-3 px-16 border-slate-500 border mx-auto gradient rounded-lg transition hover:bg-slate-700 hover:text-white hover:border-white'
+				className='py-5 px-12 border-2 text-xl border-purple-500 bg-white text-purple-500 mx-auto rounded-lg transition uppercase hover:scale-105 hover:bg-purple-600 hover:text-white'
 			>
 				Generate Workout
+			</button>
+			<button
+				className='py-5 px-12 border-2 text-xl border-purple-500 bg-white text-purple-500 mx-auto rounded-lg transition uppercase hover:scale-105 hover:bg-purple-600 z-50 hover:text-white'
+				onClick={() => setIsWorkoutModalOpen(!isWorkoutModalOpen)}
+			>
+				open/close workout modal
 			</button>
 		</section>
 	);
