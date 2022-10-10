@@ -154,7 +154,7 @@ const WorkoutDetails = ({ workout, reFetchWorkouts }) => {
 						}
 					/>
 					<div className='pt-3'>
-						<button className='text-slate-900 bg-white rounded-md py-2 px-4 w-full hover:bg-purple-500 hover:text-white'>
+						<button className='text-white bg-purple-500 rounded-md py-2 px-4 w-full transition hover:bg-purple-600'>
 							Edit Workout
 						</button>
 					</div>

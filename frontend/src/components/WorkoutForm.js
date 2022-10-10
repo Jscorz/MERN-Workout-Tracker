@@ -85,7 +85,7 @@ const WorkoutForm = () => {
 						: "block p-2 mt-5 mb-5 w-full border rounded-md "
 				}
 			/>
-			<button className=' bg-white text-slate-900 py-2 px-5 rounded-md border border-slate-900 cursor-pointer transition duration-300 hover:bg-purple-500 hover:text-[#f1f1f1]'>
+			<button className=' bg-purple-500 text-white py-2 px-5 rounded-md border border-slate-900 cursor-pointer transition duration-300 hover:bg-purple-600'>
 				Add Workout
 			</button>
 			{error && (
