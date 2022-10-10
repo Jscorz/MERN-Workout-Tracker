@@ -87,9 +87,7 @@ const WorkoutDetails = ({ workout, reFetchWorkouts }) => {
 
 	return (
 		<div className='gradient flex flex-col  items-center space-y-1 bg-primary rounded-md my-16 mx-auto p-8 relative shadow-md md:items-start'>
-			<h4 className=' text-xl text-primary mb-3 font-bold capitalize'>
-				{workout.title}
-			</h4>
+			<h4 className=' text-xl text-primary mb-3 font-bold capitalize'>{workout.title}</h4>
 			<p className='text-md text-slate-800'>
 				<strong>Weight (lbs): </strong>
 				{workout.load}
@@ -119,7 +117,7 @@ const WorkoutDetails = ({ workout, reFetchWorkouts }) => {
 			{isEditModalOpen && (
 				<form
 					onSubmit={HandleSubmitEditWorkout}
-					className='flex flex-col space-y-2 p-2 border-2 bg-slate-700 absolute -top-2 left-0 right-20 rounded-lg z-40'
+					className='flex flex-col space-y-2 p-8 border-2 border-purple-500 bg-slate-800 absolute -top-2 left-0 right-20 rounded-lg z-40'
 				>
 					<h3 className='text-white text-xl pb-2'>Edit Workout</h3>
 					<label className='block text-white'>Exercise Title:</label>
@@ -156,7 +154,7 @@ const WorkoutDetails = ({ workout, reFetchWorkouts }) => {
 						}
 					/>
 					<div className='pt-3'>
-						<button className='text-slate-900 bg-green-400 rounded-md py-2 px-4 w-full'>
+						<button className='text-slate-900 bg-white rounded-md py-2 px-4 w-full hover:bg-purple-500 hover:text-white'>
 							Edit Workout
 						</button>
 					</div>
