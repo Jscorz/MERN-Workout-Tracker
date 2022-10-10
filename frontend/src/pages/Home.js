@@ -14,7 +14,7 @@ const Home = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setIsTotalWeightModalOpen(true);
-		}, 3000);
+		}, 5000);
 	}, []);
 
 	useEffect(() => {
@@ -60,9 +60,7 @@ const Home = () => {
 				open modal
 			</button> */}
 			{isTotalWeightModalOpen && (
-				<TotalWeightModal
-					onRequestClose={() => setIsTotalWeightModalOpen(false)}
-				/>
+				<TotalWeightModal onRequestClose={() => setIsTotalWeightModalOpen(false)} />
 			)}
 			<div className='md:grid md:grid-cols-4 md:gap-24'>
 				<WorkoutForm />

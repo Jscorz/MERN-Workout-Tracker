@@ -17,7 +17,7 @@ const Signup = () => {
 		<section className='w-full '>
 			<div className='flex justify-center align-center h-[38rem] md:w-[1000px] mx-auto login-gradient'>
 				<form
-					className='gradient flex-1 max-w-[400px] mt-20 p-5 py-10 bg-[#fff]  border-2 border-primary rounded-lg flex flex-col space-y-6 lg:w-[1500px]'
+					className='gradient flex-1 max-w-[400px] mt-20 p-5 py-10 bg-[#fff]  border-2 border-purple-500 rounded-lg flex flex-col space-y-6 lg:w-[1500px]'
 					onSubmit={handleSubmit}
 				>
 					<h3 className='font-extrabold tracking-wider text-2xl text-slate-700'>
@@ -50,7 +50,7 @@ const Signup = () => {
 						</div>
 					)}
 				</form>
-				<div className='hidden w-[500px] mt-20 rounded-lg overflow-hidden border-t-2 border-r-2 border-b-2 border-primary md:block'>
+				<div className='hidden w-[500px] mt-20 rounded-lg overflow-hidden border-t-2 border-r-2 border-b-2 border-purple-500 md:block'>
 					<img src={weightsImage} alt='' className='max-h-full min-w-full relative' />
 					<span className='absolute bg-slate-800/50 top-52 right-32 text-5xl text-white font-bold z-20 p-2 shadow-lg rounded-lg leading-relaxed'>
 						Sign Up <br></br> and Start <br></br>Working Out!

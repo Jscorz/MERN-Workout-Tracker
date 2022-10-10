@@ -22,7 +22,7 @@ const Login = () => {
 		<section className='w-full '>
 			<div className='flex justify-center align-center h-[38rem] md:w-[1000px] mx-auto login-gradient'>
 				<form
-					className='flex-1 max-w-[400px] mt-20 p-5 py-10 bg-[#fff]  border-2 border-primary rounded-lg flex flex-col space-y-6 lg:w-[500px]'
+					className='flex-1 max-w-[400px] mt-20 p-5 py-10 bg-[#fff]  border-2 border-purple-500 rounded-lg flex flex-col space-y-6 lg:w-[500px]'
 					onSubmit={handleSubmit}
 				>
 					<h3 className='font-extrabold tracking-wider text-2xl text-slate-700'>
@@ -63,12 +63,8 @@ const Login = () => {
 						</div>
 					)}
 				</form>
-				<div className='hidden w-[500px] mt-20 rounded-lg overflow-hidden border-t-2 border-r-2 border-b-2 border-primary md:block'>
-					<img
-						src={weightsImage}
-						alt=''
-						className='max-h-full min-w-full relative'
-					/>
+				<div className='hidden w-[500px] mt-20 rounded-lg overflow-hidden border-t-2 border-r-2 border-b-2 border-purple-500 md:block'>
+					<img src={weightsImage} alt='' className='max-h-full min-w-full relative' />
 					<span className='absolute bg-slate-800/50 top-72 right-24 text-5xl text-white font-bold z-20 p-2 shadow-lg rounded-lg'>
 						Welcome Back!
 					</span>

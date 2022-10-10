@@ -25,17 +25,13 @@ const TotalWeightModal = ({ onRequestClose }) => {
 	}, []);
 
 	return (
-		<section
-			id='top'
-			className='w-full h-[200%] z-30 absolute top-20 left-0'
-		>
+		<section id='top' className='w-full h-[200%] z-30 absolute top-20 left-0'>
 			<div className='-z-20 absolute left-0 inset-0 bg-white w-full h-full'></div>
 			<div className='total-weight-gradient relative'>
-				<div className='bg-white   mx-3 mt-10 border-2 z-60 border-primary rounded-lg flex  flex-col md:mx-auto md:flex-row md:w-[700px] md:h-[30rem] md:mt-20'>
+				<div className='bg-white   mx-3 mt-10 border-2 z-60 border-purple-500 rounded-lg flex  flex-col md:mx-auto md:flex-row md:w-[700px] md:h-[30rem] md:mt-20'>
 					<div className='w-full order-2 md:order-1'>
 						<h1 className='text-slate-800 font-bold text-3xl text-center p-3'>
-							You have lifted {totalWeight}lbs in the last 24
-							hours
+							You have lifted {totalWeight}lbs in the last 24 hours
 						</h1>
 						{randomNumber === 1 && (
 							<div>
@@ -48,8 +44,7 @@ const TotalWeightModal = ({ onRequestClose }) => {
 						{randomNumber === 2 && (
 							<div>
 								<h2 className='text-slate-800  text-3xl text-center p-3'>
-									That is the same as {crocodileWeight}{" "}
-									Crocodiles
+									That is the same as {crocodileWeight} Crocodiles
 								</h2>
 								<img src={crocodileImage} alt='' />
 							</div>
@@ -57,8 +52,7 @@ const TotalWeightModal = ({ onRequestClose }) => {
 						{randomNumber === 3 && (
 							<div>
 								<h2 className='text-slate-800  text-3xl text-center p-3'>
-									That is the same as {motorcyleWeight}{" "}
-									Motorcycyles
+									That is the same as {motorcyleWeight} Motorcycyles
 								</h2>
 								<img src={motorcycleImage} alt='' />
 							</div>
@@ -66,8 +60,7 @@ const TotalWeightModal = ({ onRequestClose }) => {
 						{randomNumber === 4 && (
 							<div>
 								<h2 className='text-slate-800  text-3xl text-center p-3'>
-									That is the same as {elephantWeight}{" "}
-									Elephants
+									That is the same as {elephantWeight} Elephants
 								</h2>
 								<img src={elephantImage} alt='' />
 							</div>
@@ -77,7 +70,7 @@ const TotalWeightModal = ({ onRequestClose }) => {
 						<img
 							src={kettlebellsImage}
 							alt=''
-							className='h-96 min-w-full md:min-h-full rounded-tr-lg rounded-br-lg border-l-2 border-l-primary'
+							className='h-96 min-w-full md:min-h-full rounded-tr-lg rounded-br-lg border-l-2 border-l-purple-500'
 						/>
 						<button
 							onClick={onRequestClose}
