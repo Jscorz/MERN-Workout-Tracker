@@ -49,12 +49,10 @@ const WorkoutForm = () => {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className='h-[32rem] border-2 border-slate-500 col-span-2 mt-10 p-8 rounded-lg workout-form'
+			className='h-[32rem] border-2 bg-slate-800 border-purple-500 col-span-2 mt-10 p-8 rounded-lg workout-form'
 		>
-			<h3 className='text-xl my-5 text-slate-800 font-bold'>
-				Add a New Workout
-			</h3>
-			<label className='block'>Exercise Title:</label>
+			<h3 className='text-xl my-5 text-[#f1f1f1] font-bold'>Add a New Workout</h3>
+			<label className='block text-[#f1f1f1]'>Exercise Title:</label>
 			<input
 				type='text'
 				onChange={(e) => setTitle(e.target.value)}
@@ -65,7 +63,7 @@ const WorkoutForm = () => {
 						: "block p-2 mt-5 mb-5 w-full border rounded-md "
 				}
 			/>
-			<label className='block'>Weight (in lbs):</label>
+			<label className='block text-[#f1f1f1]'>Weight (in lbs):</label>
 			<input
 				type='number'
 				onChange={(e) => setLoad(e.target.value)}
@@ -76,7 +74,7 @@ const WorkoutForm = () => {
 						: "block p-2 mt-5 mb-5 w-full border rounded-md "
 				}
 			/>
-			<label className='block'>Reps:</label>
+			<label className='block text-[#f1f1f1]'>Reps:</label>
 			<input
 				type='number'
 				onChange={(e) => setReps(e.target.value)}
@@ -87,7 +85,7 @@ const WorkoutForm = () => {
 						: "block p-2 mt-5 mb-5 w-full border rounded-md "
 				}
 			/>
-			<button className=' bg-white text-slate-900 py-2 px-5 rounded-md border border-slate-900 cursor-pointer transition duration-300 hover:bg-primary hover:text-slate-900'>
+			<button className=' bg-white text-slate-900 py-2 px-5 rounded-md border border-slate-900 cursor-pointer transition duration-300 hover:bg-purple-500 hover:text-[#f1f1f1]'>
 				Add Workout
 			</button>
 			{error && (
