@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 // Variables used in this example to display exercise data from props drilling
 function WorkoutModal({
+	loading,
 	exerciseOne,
 	exerciseTwo,
 	exerciseThree,

@@ -16,10 +16,11 @@ const GenerateWorkout = () => {
 	const [quadsExercises, setQuadsExercises] = useState();
 	const [hamstringsExercises, setHamstringsExercises] = useState();
 
-	// State values for form values(workout-type, body-part, goals and objectives)
+	// State values for form values(workout-type, body-part, goals, objectives) + loading state
 	const [activeButton, setActiveButton] = useState(0);
 	const [filterValue, setFilterValue] = useState();
 	const [activeButtonTwo, setActiveButtonTwo] = useState(0);
+	const [loading, setLoading] = useState(false);
 
 	// State value for Modal containing custom workout
 	const [isWorkoutModalOpen, setIsWorkoutModalOpen] = useState(false);
@@ -321,8 +322,13 @@ const GenerateWorkout = () => {
 			exerciseFive,
 			exerciseSix
 		);
-
-		setIsWorkoutModalOpen(true);
+		setLoading(true);
+		setTimeout(() => {
+			setLoading(false);
+		}, 2000);
+		setTimeout(() => {
+			setIsWorkoutModalOpen(true);
+		}, 2000);
 	};
 
 	// Fetch exercises from Exercise DB API
@@ -413,8 +419,14 @@ const GenerateWorkout = () => {
 
 	return (
 		<section className='h-full mt-10 mb-20 flex flex-col space-y-10 items-center relative'>
+			{loading && (
+				<section className='absolute h-[130%] top-0 bottom-0 left-0 right-0 bg-[#f1f1f1] z-30'>
+					loading component
+				</section>
+			)}
 			{isWorkoutModalOpen && (
 				<WorkoutModal
+					loading={loading}
 					exerciseOne={exerciseOne}
 					exerciseTwo={exerciseTwo}
 					exerciseThree={exerciseThree}
