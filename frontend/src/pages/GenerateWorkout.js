@@ -422,7 +422,7 @@ const GenerateWorkout = () => {
 		<section className='h-full mt-10 mb-20 flex flex-col space-y-10 items-center relative'>
 			{loading && (
 				<section className='absolute h-[130%] top-0 bottom-0 left-0 right-0 bg-[#f1f1f1] z-30'>
-					<div className='flex justify-center mt-20'>
+					<div className='flex justify-center mt-40'>
 						<img src={loadingIcon} alt='' className='transition animate-bounce' />
 					</div>
 				</section>
