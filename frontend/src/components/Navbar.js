@@ -14,6 +14,7 @@ const Navbar = () => {
 	const { logout } = useLogout();
 	const { user } = useAuthContext();
 	const [isUserPictureModelOpen, setIsUserPictureModelOpen] = useState(false);
+	const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
 
 	const handleClick = () => {
 		logout();
@@ -97,22 +98,72 @@ const Navbar = () => {
 									</div>
 								</div>
 							)}
-
 							{isUserPictureModelOpen && (
 								<UserPictureModal
 									onRequestClose={() => setIsUserPictureModelOpen(false)}
 								/>
 							)}
-
 							<span className='hidden text-white text-xs mr-4 md:block'>
 								{user.user.email}
 							</span>
 							<button
-								className='text-white uppercase  px-3 py-1 border-2 border-white rounded-lg md:-mr-8  '
-								onClick={handleClick}
+								className='text-3xl text-purple-500 cursor-pointer md:hidden'
+								onClick={() => setIsHamburgerMenuOpen(true)}
 							>
-								Log out
+								&#9776;
 							</button>
+							<nav className='hidden space-x-8 text-xl md:block'>
+								<Link
+									className='text-white uppercase  px-3 py-1 border-2 border-white rounded-lg md:-mr-8  '
+									to='/generateworkout'
+								>
+									Generate Workout
+								</Link>
+								<Link
+									className='text-white uppercase  px-3 py-1 border-2 border-white rounded-lg md:-mr-8  '
+									to='/'
+								>
+									Track Workout
+								</Link>
+								<button
+									className='text-white uppercase  px-3 py-1 border-2 border-white rounded-lg md:-mr-8  '
+									onClick={handleClick}
+								>
+									Log out
+								</button>
+							</nav>
+							{/* {isHamburgerMenuOpen && (
+								<section className='absolute top-0 right-0 left-0 bg-slate-800 w-full text-5xl flex flex-col justify-content-center z-50'>
+									<button
+										onClick={() => setIsHamburgerMenuOpen(false)}
+										className='text-8xl text-red-500 self-end px-6'
+									>
+										&times;
+									</button>
+									<nav className='flex flex-col min-h-[120vh] w-full items-center py-8'>
+										<Link
+											to='/'
+											onClick={() => setIsHamburgerMenuOpen(false)}
+											className='w-full text-center text-white py-6 hover:opacity-90'
+										>
+											Track Workout
+										</Link>
+										<Link
+											to='/generateworkout'
+											onClick={() => setIsHamburgerMenuOpen(false)}
+											className='w-full text-center text-white py-6 hover:opacity-90'
+										>
+											Generate Workout
+										</Link>
+										<button
+											className='text-white text-md px-8 py-3 border-2 border-white rounded-lg mt-2'
+											onClick={handleClick}
+										>
+											Log out
+										</button>
+									</nav>
+								</section>
+							)} */}
 						</div>
 					)}
 					{!user && (
