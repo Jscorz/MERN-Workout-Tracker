@@ -151,31 +151,35 @@ const Navbar = () => {
 											: "absolute top-0 right-0 left-0 bg-slate-800 w-full text-5xl hidden flex-col justify-content-center z-40 origin-top animate-open-menu"
 									}
 								>
-									<nav className='flex flex-col min-h-[120vh] w-full items-center py-8'>
-										<Link
-											to='/'
-											onClick={() => setIsHamburgerMenuOpen(false)}
-											className='w-full text-center text-white mt-16 py-6 hover:opacity-90 hover:bg-slate-700'
-										>
-											Track Workout
-										</Link>
-										<Link
-											to='/generateworkout'
-											onClick={() => setIsHamburgerMenuOpen(false)}
-											className='w-full text-center text-white py-6 hover:opacity-90 hover:bg-slate-700'
-										>
-											Generate Workout
-										</Link>
-										<div className='text-white text-sm px-8 py-3 rounded-lg'>
+									<ul className='flex flex-col min-h-[120vh] w-full items-center py-8 sidebar-links'>
+										<li className='w-full text-center text-white mt-16 py-6 hover:opacity-90 hover:bg-slate-700'>
+											<Link
+												to='/'
+												onClick={() => setIsHamburgerMenuOpen(false)}
+											>
+												Track Workout
+											</Link>
+										</li>
+										<li className='w-full text-center text-white py-6 hover:opacity-90 hover:bg-slate-700'>
+											<Link
+												to='/generateworkout'
+												onClick={() => setIsHamburgerMenuOpen(false)}
+											>
+												Generate Workout
+											</Link>
+										</li>
+										<li className='text-white text-sm px-8 py-3 rounded-lg'>
 											{user.user.email}
-										</div>
-										<button
-											className='text-white text-md px-8 py-3 border-2 border-white rounded-lg mt-1 hover:bg-purple-500 hover:text-white hover:bg-opacity-60'
-											onClick={handleClick}
-										>
-											Log out
-										</button>
-									</nav>
+										</li>
+										<li>
+											<button
+												className='text-white text-md px-8 py-3 border-2 border-white rounded-lg mt-1 hover:bg-purple-500 hover:text-white hover:bg-opacity-60'
+												onClick={handleClick}
+											>
+												Log out
+											</button>
+										</li>
+									</ul>
 								</section>
 							)}
 						</div>
