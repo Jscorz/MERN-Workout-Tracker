@@ -249,7 +249,7 @@ function WorkoutModal({
 
 	// Example not using variables to save API call amount during development
 	return (
-		<section className='absolute h-[130%] top-0 bottom-0 left-0 right-0 bg-red-500 z-30'>
+		<section className='absolute h-[130%] top-0 bottom-0 left-0 right-0 bg-[#f1f1f1]z-30'>
 			<div className='border-2 h-full mx-auto max-w-prose flex flex-col items-center bg-white space-y-3 uppercase  rounded-lg'>
 				<h1 className=' text-sm text-slate-900 uppercase font-bold md:text-2xl py-3'>
 					{goals} {filterValue} Workout
