@@ -40,12 +40,15 @@ const Navbar = () => {
 				<nav className='flex items-center'>
 					{user && (
 						<div className='flex items-center '>
-							<Link to='/' className='hidden text-white uppercase mr-16 md:block'>
+							<Link
+								to='/'
+								className='hidden text-white whitespace-nowrap text-sm uppercase mr-4 md:block lg:text-base lg:mr-14'
+							>
 								Track Workout
 							</Link>
 							<Link
 								to='/generateworkout'
-								className='hidden text-white uppercase mr-16 md:block'
+								className='hidden text-white whitespace-nowrap text-sm uppercase mr-6 md:block lg:text-base lg:mr-14'
 							>
 								Generate Workout
 							</Link>
@@ -106,7 +109,7 @@ const Navbar = () => {
 									onRequestClose={() => setIsUserPictureModelOpen(false)}
 								/>
 							)}
-							<span className='hidden text-white text-xs mr-4 md:block'>
+							<span className='hidden text-white text-xs mr-4 lg:block'>
 								{user.user.email}
 							</span>
 							<button
