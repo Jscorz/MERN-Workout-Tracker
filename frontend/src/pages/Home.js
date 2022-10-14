@@ -14,7 +14,7 @@ const Home = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setIsTotalWeightModalOpen(true);
-		}, 5000);
+		}, 3000);
 	}, []);
 
 	useEffect(() => {

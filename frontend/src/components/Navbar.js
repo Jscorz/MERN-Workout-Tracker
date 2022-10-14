@@ -20,7 +20,7 @@ const Navbar = () => {
 
 	const handleClick = () => {
 		logout();
-		setIsHamburgerMenuOpen(!isHamburgerMenuOpen);
+		setIsHamburgerMenuOpen(false);
 	};
 
 	const handlePictureClick = () => {
