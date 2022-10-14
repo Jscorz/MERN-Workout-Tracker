@@ -26,7 +26,54 @@ const Sidebar = ({ isHamburgerMenuOpen, setIsHamburgerMenuOpen, handleClick, use
 						Generate Workout
 					</Link>
 				</li>
-				<li className='text-white text-sm px-8 py-3 rounded-lg'>{user.user.email}</li>
+				{user.user.userpicture === "1" && (
+					<li className='relative group flex py-3 items-center'>
+						<img
+							src={userImage1}
+							alt=''
+							className='rounded-full h-12 border-2 border-purple-500 md:block'
+						/>
+						<span className='text-white text-sm px-2 mt-4 mb-4 rounded-lg'>
+							{user.user.email}
+						</span>
+					</li>
+				)}
+				{user.user.userpicture === "2" && (
+					<li className='relative group flex py-3 items-center'>
+						<img
+							src={userImage2}
+							alt=''
+							className='rounded-full h-12 border-2 border-purple-500 md:block'
+						/>
+						<span className='text-white text-sm px-2 mt-4 mb-4 rounded-lg'>
+							{user.user.email}
+						</span>
+					</li>
+				)}
+				{user.user.userpicture === "3" && (
+					<li className='relative group flex py-3 items-center'>
+						<img
+							src={userImage3}
+							alt=''
+							className='rounded-full h-12 border-2 border-purple-500 md:block'
+						/>
+						<span className='text-white text-sm px-2 mt-4 mb-4 rounded-lg'>
+							{user.user.email}
+						</span>
+					</li>
+				)}
+				{user.user.userpicture === "4" && (
+					<li className='relative group flex py-3 items-center'>
+						<img
+							src={userImage4}
+							alt=''
+							className='rounded-full h-12 border-2 border-purple-500 md:block'
+						/>
+						<span className='text-white text-sm px-2 mt-4 mb-4 rounded-lg'>
+							{user.user.email}
+						</span>
+					</li>
+				)}
 				<li>
 					<button
 						className='text-white text-md px-8 py-3 border-2 border-white rounded-lg mt-1 hover:bg-purple-500 hover:text-white hover:bg-opacity-60'
