@@ -16,6 +16,8 @@ const Navbar = () => {
 	const [isUserPictureModelOpen, setIsUserPictureModelOpen] = useState(false);
 	const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
 
+	const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-white transition ease transform duration-300`;
+
 	const handleClick = () => {
 		logout();
 	};
@@ -37,14 +39,14 @@ const Navbar = () => {
 				<nav className='flex items-center'>
 					{user && (
 						<div className='flex items-center '>
+							<Link to='/' className='hidden text-white uppercase mr-16 md:block'>
+								Track Workout
+							</Link>
 							<Link
 								to='/generateworkout'
 								className='hidden text-white uppercase mr-16 md:block'
 							>
 								Generate Workout
-							</Link>
-							<Link to='/' className='hidden text-white uppercase mr-16 md:block'>
-								Track Workout
 							</Link>
 							{user.user.userpicture === "1" && (
 								<div className='relative group'>
@@ -107,44 +109,53 @@ const Navbar = () => {
 								{user.user.email}
 							</span>
 							<button
-								className='text-3xl text-purple-500 cursor-pointer md:hidden'
-								onClick={() => setIsHamburgerMenuOpen(true)}
+								className='flex flex-col bg-purple-500 rounded h-12 w-12 justify-center items-center group z-50 md:hidden'
+								onClick={() => setIsHamburgerMenuOpen(!isHamburgerMenuOpen)}
 							>
-								&#9776;
+								<div
+									className={`${genericHamburgerLine} ${
+										isHamburgerMenuOpen
+											? "rotate-45 translate-y-3 opacity-60 group-hover:opacity-100"
+											: "opacity-60 group-hover:opacity-100"
+									}`}
+								/>
+								<div
+									className={`${genericHamburgerLine} ${
+										isHamburgerMenuOpen
+											? "opacity-0"
+											: "opacity-60 group-hover:opacity-100"
+									}`}
+								/>
+								<div
+									className={`${genericHamburgerLine} ${
+										isHamburgerMenuOpen
+											? "-rotate-45 -translate-y-3 opacity-60 group-hover:opacity-100"
+											: "opacity-60 group-hover:opacity-100"
+									}`}
+								/>
 							</button>
-							<nav className='hidden space-x-8 text-xl md:block'>
-								<Link
-									className='text-white uppercase  px-3 py-1 border-2 border-white rounded-lg md:-mr-8  '
-									to='/generateworkout'
+
+							<button
+								className='hidden text-white uppercase  px-3 py-1 border-2 border-white rounded-lg md:-mr-8 md:block'
+								onClick={handleClick}
+							>
+								Log out
+							</button>
+
+							{isHamburgerMenuOpen && (
+								<section
+									id='hamburger'
+									className={
+										isHamburgerMenuOpen
+											? "absolute top-0 right-0 left-0 bg-slate-800 w-full text-5xl flex flex-col justify-content-center z-40 origin-top animate-open-menu"
+											: "absolute top-0 right-0 left-0 bg-slate-800 w-full text-5xl hidden flex-col justify-content-center z-40 origin-top animate-open-menu"
+									}
 								>
-									Generate Workout
-								</Link>
-								<Link
-									className='text-white uppercase  px-3 py-1 border-2 border-white rounded-lg md:-mr-8  '
-									to='/'
-								>
-									Track Workout
-								</Link>
-								<button
-									className='text-white uppercase  px-3 py-1 border-2 border-white rounded-lg md:-mr-8  '
-									onClick={handleClick}
-								>
-									Log out
-								</button>
-							</nav>
-							{/* {isHamburgerMenuOpen && (
-								<section className='absolute top-0 right-0 left-0 bg-slate-800 w-full text-5xl flex flex-col justify-content-center z-50'>
-									<button
-										onClick={() => setIsHamburgerMenuOpen(false)}
-										className='text-8xl text-red-500 self-end px-6'
-									>
-										&times;
-									</button>
 									<nav className='flex flex-col min-h-[120vh] w-full items-center py-8'>
 										<Link
 											to='/'
 											onClick={() => setIsHamburgerMenuOpen(false)}
-											className='w-full text-center text-white py-6 hover:opacity-90'
+											className='w-full text-center text-white mt-16 py-6 hover:opacity-90'
 										>
 											Track Workout
 										</Link>
@@ -155,15 +166,18 @@ const Navbar = () => {
 										>
 											Generate Workout
 										</Link>
+										<div className='text-white text-sm px-8 py-3 rounded-lg'>
+											{user.user.email}
+										</div>
 										<button
-											className='text-white text-md px-8 py-3 border-2 border-white rounded-lg mt-2'
+											className='text-white text-md px-8 py-3 border-2 border-white rounded-lg mt-1'
 											onClick={handleClick}
 										>
 											Log out
 										</button>
 									</nav>
 								</section>
-							)} */}
+							)}
 						</div>
 					)}
 					{!user && (
