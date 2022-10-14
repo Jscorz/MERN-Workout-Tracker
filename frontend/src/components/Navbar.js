@@ -110,7 +110,7 @@ const Navbar = () => {
 								{user.user.email}
 							</span>
 							<button
-								className='flex flex-col bg-purple-500 rounded h-12 w-12 justify-center items-center group z-50 md:hidden'
+								className='flex flex-col bg-purple-500 rounded h-12 w-12 mr-2 justify-center items-center group z-50 md:hidden'
 								onClick={() => setIsHamburgerMenuOpen(!isHamburgerMenuOpen)}
 							>
 								<div
