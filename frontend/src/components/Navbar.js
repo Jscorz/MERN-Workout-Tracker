@@ -155,14 +155,14 @@ const Navbar = () => {
 										<Link
 											to='/'
 											onClick={() => setIsHamburgerMenuOpen(false)}
-											className='w-full text-center text-white mt-16 py-6 hover:opacity-90'
+											className='w-full text-center text-white mt-16 py-6 hover:opacity-90 hover:bg-slate-700'
 										>
 											Track Workout
 										</Link>
 										<Link
 											to='/generateworkout'
 											onClick={() => setIsHamburgerMenuOpen(false)}
-											className='w-full text-center text-white py-6 hover:opacity-90'
+											className='w-full text-center text-white py-6 hover:opacity-90 hover:bg-slate-700'
 										>
 											Generate Workout
 										</Link>
@@ -170,7 +170,7 @@ const Navbar = () => {
 											{user.user.email}
 										</div>
 										<button
-											className='text-white text-md px-8 py-3 border-2 border-white rounded-lg mt-1'
+											className='text-white text-md px-8 py-3 border-2 border-white rounded-lg mt-1 hover:bg-purple-500 hover:text-white '
 											onClick={handleClick}
 										>
 											Log out
