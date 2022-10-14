@@ -15,51 +15,51 @@ const Sidebar = ({ isHamburgerMenuOpen, setIsHamburgerMenuOpen, handleClick, use
 					: "absolute top-0 right-0 left-0 bg-slate-800 w-full text-5xl hidden flex-col justify-content-center z-40 origin-top animate-open-menu"
 			}
 		>
-			<ul className='flex flex-col min-h-[120vh] w-full items-center sidebar-links'>
+			<ul className='flex flex-col min-h-[180vh] w-full items-center sidebar-links'>
 				{user.user.userpicture === "1" && (
-					<li className='relative group flex py-3 pr-20 items-center'>
+					<li className='relative group flex py-3 pr-16 items-center'>
 						<img
 							src={userImage1}
 							alt=''
 							className='rounded-full h-12 border-2 border-purple-500 md:block'
 						/>
-						<span className='text-white text-sm px-2 mt-4 mb-4 rounded-lg'>
+						<span className='text-white text-xs px-2 mt-4 mb-4 rounded-lg'>
 							{user.user.email}
 						</span>
 					</li>
 				)}
 				{user.user.userpicture === "2" && (
-					<li className='relative group flex py-3 pr-20 items-center'>
+					<li className='relative group flex py-3 pr-16 items-center'>
 						<img
 							src={userImage2}
 							alt=''
 							className='rounded-full h-12 border-2 border-purple-500 md:block'
 						/>
-						<span className='text-white text-sm px-2 mt-4 mb-4 rounded-lg'>
+						<span className='text-white text-xs px-2 mt-4 mb-4 rounded-lg'>
 							{user.user.email}
 						</span>
 					</li>
 				)}
 				{user.user.userpicture === "3" && (
-					<li className='relative group flex py-3 pr-20 items-center'>
+					<li className='relative group flex py-3 pr-16 items-center'>
 						<img
 							src={userImage3}
 							alt=''
 							className='rounded-full h-12 border-2 border-purple-500 md:block'
 						/>
-						<span className='text-white text-sm px-2 mt-4 mb-4 rounded-lg'>
+						<span className='text-white text-xs px-2 mt-4 mb-4 rounded-lg'>
 							{user.user.email}
 						</span>
 					</li>
 				)}
 				{user.user.userpicture === "4" && (
-					<li className='relative group flex py-3 pr-20 items-center'>
+					<li className='relative group flex py-3 pr-16 items-center'>
 						<img
 							src={userImage4}
 							alt=''
 							className='rounded-full h-12 border-2 border-purple-500 md:block'
 						/>
-						<span className='text-white text-sm px-2 mt-4 mb-4 rounded-lg'>
+						<span className='text-white text-xs px-2 mt-4 mb-4 rounded-lg'>
 							{user.user.email}
 						</span>
 					</li>
