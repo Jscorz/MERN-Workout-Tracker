@@ -474,14 +474,14 @@ const GenerateWorkout = () => {
 				</h2>
 				<span className='h-0.5 flex-1 bg-slate-900'></span>
 			</div>
-			<div className='flex w-full max-w-prose '>
+			<div className='flex w-full max-w-prose overflow-hidden'>
 				<button
 					id='1'
 					onClick={HandleClick}
 					className={
 						activeButton === "1"
-							? "options w-[25%] p-4 bg-white text-slate-900 uppercase rounded-tl-lg rounded-bl-lg transition hover:bg-opacity-80"
-							: "options w-[25%] p-4 bg-slate-800 text-white uppercase rounded-tl-lg rounded-bl-lg transition hover:bg-opacity-80"
+							? "options w-[25%] p-4 bg-white text-[.65rem] text-slate-900 uppercase rounded-tl-lg rounded-bl-lg transition hover:bg-opacity-80 md:text-base"
+							: "options w-[25%] p-4 bg-slate-800 text-[.65rem] text-white uppercase rounded-tl-lg rounded-bl-lg transition hover:bg-opacity-80 md:text-base"
 					}
 				>
 					Individual
@@ -491,8 +491,8 @@ const GenerateWorkout = () => {
 					onClick={HandleClick}
 					className={
 						activeButton === "2"
-							? "options w-[25%] p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
-							: "options w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+							? "options w-[25%] p-4 bg-white text-[.65rem] text-slate-900 uppercase transition hover:bg-opacity-80 md:text-base"
+							: "options w-[25%] p-4 bg-slate-800 text-[.65rem] text-white uppercase transition hover:bg-opacity-80 md:text-base"
 					}
 				>
 					Upper/Lower
@@ -502,8 +502,8 @@ const GenerateWorkout = () => {
 					onClick={HandleClick}
 					className={
 						activeButton === "3"
-							? "options w-[25%] p-4 bg-white text-slate-900 uppercase transition hover:bg-opacity-80"
-							: "options w-[25%] p-4 bg-slate-800 text-white uppercase transition hover:bg-opacity-80"
+							? "options w-[25%] p-4 bg-white text-[.65rem] text-slate-900 uppercase transition hover:bg-opacity-80 md:text-base"
+							: "options w-[25%] p-4 bg-slate-800 text-[.65rem] text-white uppercase transition hover:bg-opacity-80 md:text-base"
 					}
 				>
 					Bro Split
@@ -513,8 +513,8 @@ const GenerateWorkout = () => {
 					onClick={HandleClick}
 					className={
 						activeButton === "4"
-							? "options w-[25%] p-4 bg-white text-slate-900 uppercase rounded-tr-lg rounded-br-lg transition hover:bg-opacity-80"
-							: "options w-[25%] p-4 bg-slate-800 text-white uppercase rounded-tr-lg rounded-br-lg transition hover:bg-opacity-80"
+							? "options w-[25%] p-4 bg-white text-[.65rem] text-slate-900 uppercase rounded-tr-lg rounded-br-lg transition hover:bg-opacity-80 md:text-base"
+							: "options w-[25%] p-4 bg-slate-800 text-[.65rem] text-white uppercase rounded-tr-lg rounded-br-lg transition hover:bg-opacity-80 md:text-base"
 					}
 				>
 					Bodybuilder
