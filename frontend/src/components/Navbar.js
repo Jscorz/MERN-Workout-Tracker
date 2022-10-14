@@ -170,7 +170,7 @@ const Navbar = () => {
 											{user.user.email}
 										</div>
 										<button
-											className='text-white text-md px-8 py-3 border-2 border-white rounded-lg mt-1 hover:bg-purple-500 hover:text-white '
+											className='text-white text-md px-8 py-3 border-2 border-white rounded-lg mt-1 hover:bg-purple-500 hover:text-white hover:bg-opacity-60'
 											onClick={handleClick}
 										>
 											Log out
