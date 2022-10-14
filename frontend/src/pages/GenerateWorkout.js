@@ -101,6 +101,13 @@ const GenerateWorkout = () => {
 		setActiveButtonTwo(activeButtonNumber);
 	};
 
+	const goToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
+
 	const generateGrowthReps = () => {
 		setRandomGrowthAndHypertrophyNumberOne(Math.trunc(Math.random() * 4 + 8));
 		setRandomGrowthAndHypertrophyNumberTwo(Math.trunc(Math.random() * 4 + 8));
@@ -324,6 +331,7 @@ const GenerateWorkout = () => {
 			exerciseSix
 		);
 		setLoading(true);
+		goToTop();
 		setTimeout(() => {
 			setLoading(false);
 		}, 2000);
