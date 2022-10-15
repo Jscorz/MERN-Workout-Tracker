@@ -318,23 +318,13 @@ const GenerateWorkout = () => {
 
 	const HandleSubmit = (e) => {
 		e.preventDefault();
-
-		console.log(
-			`workout-type:${activeButton} bodypart:${filterValue} goals:${activeButtonTwo}`
-		);
-		console.log(
-			exerciseOne,
-			exerciseTwo,
-			exerciseThree,
-			exerciseFour,
-			exerciseFive,
-			exerciseSix
-		);
 		setLoading(true);
 		goToTop();
+
 		setTimeout(() => {
 			setLoading(false);
 		}, 2000);
+
 		setTimeout(() => {
 			setIsWorkoutModalOpen(true);
 		}, 2000);
