@@ -360,24 +360,6 @@ const GenerateWorkout = () => {
 
 	const HandleSubmit = (e) => {
 		e.preventDefault();
-		console.log(
-			absExercises,
-			pectoralsExercises,
-			backExercises,
-			trapsExercises,
-			shouldersExercises,
-			bicepsExercises,
-			tricepsExercises,
-			quadsExercises,
-			hamstringsExercises,
-			calvesExercises,
-			exerciseOne,
-			exerciseTwo,
-			exerciseThree,
-			exerciseFour,
-			exerciseFive,
-			exerciseSix
-		);
 		setLoading(true);
 		goToTop();
 
