@@ -6,6 +6,7 @@ const GenerateWorkout = () => {
 	const API_KEY = process.env.REACT_APP_API_KEY;
 
 	// State values for exercises by body parts
+	const [allExercises, setAllExercises] = useState();
 	const [absExercises, setAbsExercises] = useState();
 	const [pectoralsExercises, setPectoralsExercises] = useState();
 	const [backExercises, setBackExercises] = useState();
@@ -22,6 +23,7 @@ const GenerateWorkout = () => {
 	const [filterValue, setFilterValue] = useState();
 	const [activeButtonTwo, setActiveButtonTwo] = useState(0);
 	const [loading, setLoading] = useState(false);
+	const [search, setSearch] = useState();
 
 	// State value for Modal containing custom workout
 	const [isWorkoutModalOpen, setIsWorkoutModalOpen] = useState(false);
@@ -52,6 +54,46 @@ const GenerateWorkout = () => {
 	);
 	const [exerciseSelectionSix, setExerciseSelectionSix] = useState(
 		Math.trunc(Math.random() * 100 + 1)
+	);
+
+	// State values for six exercises for custom workout for biceps, triceps, and calves
+	const [exerciseShorterSelectionOne, setExerciseShorterSelectionOne] = useState(
+		Math.trunc(Math.random() * 43 + 1)
+	);
+	const [exerciseShorterSelectionTwo, setExerciseShorterSelectionTwo] = useState(
+		Math.trunc(Math.random() * 43 + 1)
+	);
+	const [exerciseShorterSelectionThree, setExerciseShorterSelectionThree] = useState(
+		Math.trunc(Math.random() * 43 + 1)
+	);
+	const [exerciseShorterSelectionFour, setExerciseShorterSelectionFour] = useState(
+		Math.trunc(Math.random() * 43 + 1)
+	);
+	const [exerciseShorterSelectionFive, setExerciseShorterSelectionFive] = useState(
+		Math.trunc(Math.random() * 43 + 1)
+	);
+	const [exerciseShorterSelectionSix, setExerciseShorterSelectionSix] = useState(
+		Math.trunc(Math.random() * 43 + 1)
+	);
+
+	// State values for six exercises for custom workout for traps
+	const [exerciseShortestSelectionOne, setExerciseShortestSelectionOne] = useState(
+		Math.trunc(Math.random() * 11 + 1)
+	);
+	const [exerciseShortestSelectionTwo, setExerciseShortestSelectionTwo] = useState(
+		Math.trunc(Math.random() * 11 + 1)
+	);
+	const [exerciseShortestSelectionThree, setExerciseShortestSelectionThree] = useState(
+		Math.trunc(Math.random() * 11 + 1)
+	);
+	const [exerciseShortestSelectionFour, setExerciseShortestSelectionFour] = useState(
+		Math.trunc(Math.random() * 11 + 1)
+	);
+	const [exerciseShortestSelectionFive, setExerciseShortestSelectionFive] = useState(
+		Math.trunc(Math.random() * 11 + 1)
+	);
+	const [exerciseShortestSelectionSix, setExerciseShortestSelectionSix] = useState(
+		Math.trunc(Math.random() * 11 + 1)
 	);
 
 	// State values for rep amounts for Strength and Power
@@ -165,18 +207,18 @@ const GenerateWorkout = () => {
 		if (e.target.value === "back" && activeButton === "1") {
 			setExerciseOne(backExercises[exerciseSelectionOne]);
 			setExerciseTwo(backExercises[exerciseSelectionTwo]);
-			setExerciseThree(backExercises[exerciseSelectionThree]);
-			setExerciseFour(backExercises[exerciseSelectionFour]);
+			setExerciseThree(trapsExercises[exerciseShortestSelectionThree]);
+			setExerciseFour(trapsExercises[exerciseShortestSelectionFour]);
 			setExerciseFive(backExercises[exerciseSelectionFive]);
 			setExerciseSix(backExercises[exerciseSelectionSix]);
 		}
 		if (e.target.value === "traps" && activeButton === "1") {
-			setExerciseOne(trapsExercises[exerciseSelectionOne]);
-			setExerciseTwo(trapsExercises[exerciseSelectionTwo]);
-			setExerciseThree(trapsExercises[exerciseSelectionThree]);
-			setExerciseFour(trapsExercises[exerciseSelectionFour]);
-			setExerciseFive(trapsExercises[exerciseSelectionFive]);
-			setExerciseSix(trapsExercises[exerciseSelectionSix]);
+			setExerciseOne(trapsExercises[exerciseShortestSelectionOne]);
+			setExerciseTwo(trapsExercises[exerciseShortestSelectionTwo]);
+			setExerciseThree(trapsExercises[exerciseShortestSelectionThree]);
+			setExerciseFour(trapsExercises[exerciseShortestSelectionFour]);
+			setExerciseFive(trapsExercises[exerciseShortestSelectionFive]);
+			setExerciseSix(trapsExercises[exerciseShortestSelectionSix]);
 		}
 		if (e.target.value === "shoulders" && activeButton === "1") {
 			setExerciseOne(shouldersExercises[exerciseSelectionOne]);
@@ -187,28 +229,28 @@ const GenerateWorkout = () => {
 			setExerciseSix(shouldersExercises[exerciseSelectionSix]);
 		}
 		if (e.target.value === "biceps" && activeButton === "1") {
-			setExerciseOne(bicepsExercises[exerciseSelectionOne]);
-			setExerciseTwo(bicepsExercises[exerciseSelectionTwo]);
-			setExerciseThree(bicepsExercises[exerciseSelectionThree]);
-			setExerciseFour(bicepsExercises[exerciseSelectionFour]);
-			setExerciseFive(bicepsExercises[exerciseSelectionFive]);
-			setExerciseSix(bicepsExercises[exerciseSelectionSix]);
+			setExerciseOne(bicepsExercises[exerciseShorterSelectionOne]);
+			setExerciseTwo(bicepsExercises[exerciseShorterSelectionTwo]);
+			setExerciseThree(bicepsExercises[exerciseShorterSelectionThree]);
+			setExerciseFour(bicepsExercises[exerciseShorterSelectionFour]);
+			setExerciseFive(bicepsExercises[exerciseShorterSelectionFive]);
+			setExerciseSix(bicepsExercises[exerciseShorterSelectionSix]);
 		}
 		if (e.target.value === "triceps" && activeButton === "1") {
-			setExerciseOne(tricepsExercises[exerciseSelectionOne]);
-			setExerciseTwo(tricepsExercises[exerciseSelectionTwo]);
-			setExerciseThree(tricepsExercises[exerciseSelectionThree]);
-			setExerciseFour(tricepsExercises[exerciseSelectionFour]);
-			setExerciseFive(tricepsExercises[exerciseSelectionFive]);
-			setExerciseSix(tricepsExercises[exerciseSelectionSix]);
+			setExerciseOne(tricepsExercises[exerciseShorterSelectionOne]);
+			setExerciseTwo(tricepsExercises[exerciseShorterSelectionTwo]);
+			setExerciseThree(tricepsExercises[exerciseShorterSelectionThree]);
+			setExerciseFour(tricepsExercises[exerciseShorterSelectionFour]);
+			setExerciseFive(tricepsExercises[exerciseShorterSelectionFive]);
+			setExerciseSix(tricepsExercises[exerciseShorterSelectionSix]);
 		}
 		if (e.target.value === "calves" && activeButton === "1") {
-			setExerciseOne(calvesExercises[exerciseSelectionOne]);
-			setExerciseTwo(calvesExercises[exerciseSelectionTwo]);
-			setExerciseThree(calvesExercises[exerciseSelectionThree]);
-			setExerciseFour(calvesExercises[exerciseSelectionFour]);
-			setExerciseFive(calvesExercises[exerciseSelectionFive]);
-			setExerciseSix(calvesExercises[exerciseSelectionSix]);
+			setExerciseOne(calvesExercises[exerciseShorterSelectionOne]);
+			setExerciseTwo(calvesExercises[exerciseShorterSelectionTwo]);
+			setExerciseThree(calvesExercises[exerciseShorterSelectionThree]);
+			setExerciseFour(calvesExercises[exerciseShorterSelectionFour]);
+			setExerciseFive(calvesExercises[exerciseShorterSelectionFive]);
+			setExerciseSix(calvesExercises[exerciseShorterSelectionSix]);
 		}
 		if (e.target.value === "quads" && activeButton === "1") {
 			setExerciseOne(quadsExercises[exerciseSelectionOne]);
@@ -229,17 +271,17 @@ const GenerateWorkout = () => {
 		if (e.target.value === "upper" && activeButton === "2") {
 			setExerciseOne(pectoralsExercises[exerciseSelectionOne]);
 			setExerciseTwo(backExercises[exerciseSelectionTwo]);
-			setExerciseSix(trapsExercises[exerciseSelectionSix]);
+			setExerciseSix(backExercises[exerciseSelectionSix]);
 			setExerciseThree(shouldersExercises[exerciseSelectionThree]);
-			setExerciseFour(bicepsExercises[exerciseSelectionFour]);
-			setExerciseFive(tricepsExercises[exerciseSelectionFive]);
+			setExerciseFour(bicepsExercises[exerciseShorterSelectionFour]);
+			setExerciseFive(tricepsExercises[exerciseShorterSelectionFive]);
 		}
 		if (e.target.value === "lower" && activeButton === "2") {
 			setExerciseOne(quadsExercises[exerciseSelectionOne]);
 			setExerciseTwo(hamstringsExercises[exerciseSelectionTwo]);
-			setExerciseThree(calvesExercises[exerciseSelectionThree]);
+			setExerciseThree(calvesExercises[exerciseShorterSelectionThree]);
 			setExerciseFour(quadsExercises[exerciseSelectionFour]);
-			setExerciseFive(calvesExercises[exerciseSelectionFive]);
+			setExerciseFive(calvesExercises[exerciseShorterSelectionFive]);
 			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
 		}
 		if (e.target.value === "push" && activeButton === "3") {
@@ -247,23 +289,23 @@ const GenerateWorkout = () => {
 			setExerciseTwo(pectoralsExercises[exerciseSelectionTwo]);
 			setExerciseSix(shouldersExercises[exerciseSelectionSix]);
 			setExerciseThree(shouldersExercises[exerciseSelectionThree]);
-			setExerciseFour(tricepsExercises[exerciseSelectionFour]);
-			setExerciseFive(tricepsExercises[exerciseSelectionFive]);
+			setExerciseFour(tricepsExercises[exerciseShorterSelectionFour]);
+			setExerciseFive(tricepsExercises[exerciseShorterSelectionFive]);
 		}
 		if (e.target.value === "pull" && activeButton === "3") {
 			setExerciseOne(backExercises[exerciseSelectionOne]);
 			setExerciseTwo(backExercises[exerciseSelectionTwo]);
 			setExerciseThree(backExercises[exerciseSelectionThree]);
-			setExerciseFour(trapsExercises[exerciseSelectionFour]);
-			setExerciseFive(bicepsExercises[exerciseSelectionFive]);
-			setExerciseSix(bicepsExercises[exerciseSelectionSix]);
+			setExerciseFour(trapsExercises[exerciseShortestSelectionFour]);
+			setExerciseFive(bicepsExercises[exerciseShorterSelectionFive]);
+			setExerciseSix(bicepsExercises[exerciseShorterSelectionSix]);
 		}
 		if (e.target.value === "legs" && activeButton === "3") {
 			setExerciseOne(quadsExercises[exerciseSelectionOne]);
 			setExerciseTwo(hamstringsExercises[exerciseSelectionTwo]);
-			setExerciseThree(calvesExercises[exerciseSelectionThree]);
+			setExerciseThree(calvesExercises[exerciseShorterSelectionThree]);
 			setExerciseFour(quadsExercises[exerciseSelectionFour]);
-			setExerciseFive(calvesExercises[exerciseSelectionFive]);
+			setExerciseFive(calvesExercises[exerciseShorterSelectionFive]);
 			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
 		}
 		if (e.target.value === "chest" && activeButton === "4") {
@@ -277,10 +319,10 @@ const GenerateWorkout = () => {
 		if (e.target.value === "back" && activeButton === "4") {
 			setExerciseOne(backExercises[exerciseSelectionOne]);
 			setExerciseTwo(backExercises[exerciseSelectionTwo]);
-			setExerciseThree(backExercises[exerciseSelectionThree]);
-			setExerciseFour(backExercises[exerciseSelectionFour]);
-			setExerciseFive(trapsExercises[exerciseSelectionFive]);
-			setExerciseSix(trapsExercises[exerciseSelectionSix]);
+			setExerciseThree(trapsExercises[exerciseShortestSelectionThree]);
+			setExerciseFour(trapsExercises[exerciseShortestSelectionFour]);
+			setExerciseFive(backExercises[exerciseSelectionFive]);
+			setExerciseSix(backExercises[exerciseSelectionSix]);
 		}
 		if (e.target.value === "shoulders" && activeButton === "4") {
 			setExerciseOne(shouldersExercises[exerciseSelectionOne]);
@@ -295,16 +337,16 @@ const GenerateWorkout = () => {
 			setExerciseTwo(quadsExercises[exerciseSelectionTwo]);
 			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
 			setExerciseThree(hamstringsExercises[exerciseSelectionThree]);
-			setExerciseFour(calvesExercises[exerciseSelectionFour]);
-			setExerciseFive(calvesExercises[exerciseSelectionFive]);
+			setExerciseFour(calvesExercises[exerciseShorterSelectionFour]);
+			setExerciseFive(calvesExercises[exerciseShorterSelectionFive]);
 		}
 		if (e.target.value === "arms" && activeButton === "4") {
-			setExerciseOne(bicepsExercises[exerciseSelectionOne]);
-			setExerciseTwo(bicepsExercises[exerciseSelectionTwo]);
-			setExerciseThree(bicepsExercises[exerciseSelectionThree]);
-			setExerciseFour(tricepsExercises[exerciseSelectionFour]);
-			setExerciseFive(tricepsExercises[exerciseSelectionFive]);
-			setExerciseSix(tricepsExercises[exerciseSelectionSix]);
+			setExerciseOne(bicepsExercises[exerciseShorterSelectionOne]);
+			setExerciseTwo(bicepsExercises[exerciseShorterSelectionTwo]);
+			setExerciseThree(bicepsExercises[exerciseShorterSelectionThree]);
+			setExerciseFour(tricepsExercises[exerciseShorterSelectionFour]);
+			setExerciseFive(tricepsExercises[exerciseShorterSelectionFive]);
+			setExerciseSix(tricepsExercises[exerciseShorterSelectionSix]);
 		}
 		if (e.target.value === "abs" && activeButton === "4") {
 			setExerciseOne(absExercises[exerciseSelectionOne]);
@@ -318,6 +360,24 @@ const GenerateWorkout = () => {
 
 	const HandleSubmit = (e) => {
 		e.preventDefault();
+		console.log(
+			absExercises,
+			pectoralsExercises,
+			backExercises,
+			trapsExercises,
+			shouldersExercises,
+			bicepsExercises,
+			tricepsExercises,
+			quadsExercises,
+			hamstringsExercises,
+			calvesExercises,
+			exerciseOne,
+			exerciseTwo,
+			exerciseThree,
+			exerciseFour,
+			exerciseFive,
+			exerciseSix
+		);
 		setLoading(true);
 		goToTop();
 
@@ -330,6 +390,20 @@ const GenerateWorkout = () => {
 		}, 2000);
 	};
 
+	const handleSearch = () => {
+		if (search) {
+			const searchedExercises = allExercises.filter(
+				(exercise) =>
+					exercise.name.toLowerCase().includes(search) ||
+					exercise.target.toLowerCase().includes(search) ||
+					exercise.equipment.toLowerCase().includes(search) ||
+					exercise.bodyPart.toLowerCase().includes(search)
+			);
+			setSearch("");
+			setAllExercises(searchedExercises);
+		}
+	};
+
 	// Fetch exercises from Exercise DB API
 	useEffect(() => {
 		const options = {
@@ -339,73 +413,63 @@ const GenerateWorkout = () => {
 				"X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
 			},
 		};
-		// // Fetch Abs Exercises
-		// fetch("https://exercisedb.p.rapidapi.com/exercises/target/abs", options)
+		// // Fetch all exercises, then filtered by body part
+		// fetch("https://exercisedb.p.rapidapi.com/exercises", options)
 		// 	.then((response) => response.json())
-		// 	.then((response) => setAbsExercises(response))
-		// 	.catch((err) => console.error(err));
-		// // Fetch Pectorals Exercises
-		// fetch("https://exercisedb.p.rapidapi.com/exercises/target/pectorals", options)
-		// 	.then((response) => response.json())
-		// 	.then((response) => setPectoralsExercises(response))
-		// 	.catch((err) => console.error(err));
-		// // Fetch Upper Back Exercises
-		// fetch(
-		// 	"https://exercisedb.p.rapidapi.com/exercises/target/upper%20back",
-		// 	options
-		// )
-		// 	.then((response) => response.json())
-		// 	.then((response) => setBackExercises(response))
-		// 	.catch((err) => console.error(err));
-		// // Fetch Traps Exercises
-		// fetch(
-		// 	"https://exercisedb.p.rapidapi.com/exercises/target/traps",
-		// 	options
-		// )
-		// 	.then((response) => response.json())
-		// 	.then((response) => setTrapsExercises(response))
-		// 	.catch((err) => console.error(err));
-		// // Fetch Shoulders Exercises
-		// fetch("https://exercisedb.p.rapidapi.com/exercises/target/delts", options)
-		// 	.then((response) => response.json())
-		// 	.then((response) => setShouldersExercises(response))
-		// 	.catch((err) => console.error(err));
-		// // Fetch Biceps Exercises
-		// fetch(
-		// 	"https://exercisedb.p.rapidapi.com/exercises/target/biceps",
-		// 	options
-		// )
-		// 	.then((response) => response.json())
-		// 	.then((response) => setBicepsExercises(response))
-		// 	.catch((err) => console.error(err));
-		// // Fetch Triceps Exercises
-		// fetch("https://exercisedb.p.rapidapi.com/exercises/target/triceps", options)
-		// 	.then((response) => response.json())
-		// 	.then((response) => setTricepsExercises(response))
-		// 	.catch((err) => console.error(err));
-		// // Fetch Calves Exercises
-		// fetch(
-		// 	"https://exercisedb.p.rapidapi.com/exercises/target/calves",
-		// 	options
-		// )
-		// 	.then((response) => response.json())
-		// 	.then((response) => setCalvesExercises(response))
-		// 	.catch((err) => console.error(err));
-		// // Fetch Quads Exercises
-		// fetch(
-		// 	"https://exercisedb.p.rapidapi.com/exercises/target/quads",
-		// 	options
-		// )
-		// 	.then((response) => response.json())
-		// 	.then((response) => setQuadsExercises(response))
-		// 	.catch((err) => console.error(err));
-		// // Fetch Hamstring Exercises
-		// fetch(
-		// 	"https://exercisedb.p.rapidapi.com/exercises/target/hamstrings",
-		// 	options
-		// )
-		// 	.then((response) => response.json())
-		// 	.then((response) => setHamstringsExercises(response))
+		// 	.then((response) => {
+		// 		setAllExercises(response);
+		// 		setAbsExercises(
+		// 			response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("waist"))
+		// 		);
+		// 		setPectoralsExercises(
+		// 			response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("chest"))
+		// 		);
+		// 		setBackExercises(
+		// 			response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("back"))
+		// 		);
+		// 		setTrapsExercises(
+		// 			response.filter((exercise) => exercise.name.toLowerCase().includes("shrug"))
+		// 		);
+		// 		setShouldersExercises(
+		// 			response.filter((exercise) =>
+		// 				exercise.bodyPart.toLowerCase().includes("shoulders")
+		// 			)
+		// 		);
+		// 		setBicepsExercises(
+		// 			response.filter((exercise) => exercise.name.toLowerCase().includes("bicep"))
+		// 		);
+		// 		setTricepsExercises(
+		// 			response.filter((exercise) => exercise.name.toLowerCase().includes("tricep"))
+		// 		);
+		// 		setCalvesExercises(
+		// 			response.filter((exercise) =>
+		// 				exercise.bodyPart.toLowerCase().includes("lower legs")
+		// 			)
+		// 		);
+		// 		setQuadsExercises(
+		// 			response.filter((exercise) =>
+		// 				exercise.bodyPart.toLowerCase().includes("upper legs")
+		// 			)
+		// 		);
+		// 		setHamstringsExercises(
+		// 			response.filter((exercise) =>
+		// 				exercise.bodyPart.toLowerCase().includes("upper legs")
+		// 			)
+		// 		);
+		// 		console.log(
+		// 			response,
+		// 			absExercises,
+		// 			pectoralsExercises,
+		// 			backExercises,
+		// 			trapsExercises,
+		// 			shouldersExercises,
+		// 			bicepsExercises,
+		// 			tricepsExercises,
+		// 			quadsExercises,
+		// 			hamstringsExercises,
+		// 			calvesExercises
+		// 		);
+		// 	})
 		// 	.catch((err) => console.error(err));
 	}, []);
 
