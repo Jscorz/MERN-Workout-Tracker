@@ -271,7 +271,7 @@ const GenerateWorkout = () => {
 		if (e.target.value === "upper" && activeButton === "2") {
 			setExerciseOne(pectoralsExercises[exerciseSelectionOne]);
 			setExerciseTwo(backExercises[exerciseSelectionTwo]);
-			setExerciseSix(backExercises[exerciseSelectionSix]);
+			setExerciseSix(trapsExercises[exerciseShortestSelectionSix]);
 			setExerciseThree(shouldersExercises[exerciseSelectionThree]);
 			setExerciseFour(bicepsExercises[exerciseShorterSelectionFour]);
 			setExerciseFive(tricepsExercises[exerciseShorterSelectionFive]);
