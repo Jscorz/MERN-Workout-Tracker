@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 // Variables used in this example to display exercise data from props drilling
 function WorkoutModal({
 	loading,
+	isWorkoutModalOpen,
+	setIsWorkoutModalOpen,
 	exerciseOne,
 	exerciseTwo,
 	exerciseThree,
@@ -93,12 +95,12 @@ function WorkoutModal({
 
 	// Working example with dyanmic exercise data pulled from API
 	return (
-		<section className='absolute h-[200vh] top-0 bottom-0 left-0 right-0 bg-[#f1f1f1] z-30 flex flex-col'>
-			<div className='border-2 p-2 mx-auto max-w-prose grid gap-2 items-center bg-white uppercase rounded-lg md:grid-cols-2 lg:grid-cols-3 lg:max-w-[105ch]'>
-				<h1 className=' text-sm text-center text-slate-900 uppercase font-bold md:text-2xl py-3 md:col-span-2 lg:col-span-3'>
+		<section className='absolute h-[200vh] bg-[#f1f1f1] top-0 bottom-0 left-0 right-0 z-30 flex flex-col'>
+			<div className='p-2 mx-auto max-w-prose grid gap-2 items-center uppercase rounded-lg md:grid-cols-2 lg:grid-cols-3 lg:max-w-[105ch]'>
+				<h1 className=' text-sm text-center bg-slate-800 text-white uppercase rounded-lg md:text-2xl py-3 md:col-span-2 lg:col-span-3'>
 					{goals} {filterValue} Workout
 				</h1>
-				<div className='w-full flex flex-col items-center text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
+				<div className='w-full flex flex-col items-center bg-white text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
 					<h1 className=' h-12 text-sm lg:text-base'>1. {exerciseOne.name}</h1>
 					<img src={exerciseOne.gifUrl} alt={exerciseOne.name} loading='lazy' />
 					<div className='flex justify-between w-full h-1/2 py-2 px-8'>
@@ -123,7 +125,7 @@ function WorkoutModal({
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 					</div>
 				</div>
-				<div className='w-full flex flex-col items-center text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
+				<div className='w-full flex flex-col items-center bg-white text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
 					<h1 className=' h-12 text-sm lg:text-base'>2. {exerciseTwo.name}</h1>
 					<img src={exerciseTwo.gifUrl} alt={exerciseTwo.name} loading='lazy' />
 					<div className='flex justify-between w-full h-1/2 py-2 px-8'>
@@ -148,7 +150,7 @@ function WorkoutModal({
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 					</div>
 				</div>
-				<div className='w-full flex flex-col items-center text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
+				<div className='w-full flex flex-col items-center bg-white text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
 					<h1 className=' h-12 text-sm lg:text-base'>3. {exerciseThree.name}</h1>
 					<img src={exerciseThree.gifUrl} alt={exerciseThree.name} loading='lazy' />
 					<div className='flex justify-between w-full h-1/2 py-2 px-8'>
@@ -173,7 +175,7 @@ function WorkoutModal({
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 					</div>
 				</div>
-				<div className='w-full flex flex-col items-center text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
+				<div className='w-full flex flex-col items-center bg-white text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
 					<h1 className=' h-12 text-sm lg:text-base'>4. {exerciseFour.name}</h1>
 					<img src={exerciseFour.gifUrl} alt={exerciseFour.name} loading='lazy' />
 					<div className='flex justify-between w-full h-1/2 py-2 px-8'>
@@ -198,7 +200,7 @@ function WorkoutModal({
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 					</div>
 				</div>
-				<div className='w-full flex flex-col items-center text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
+				<div className='w-full flex flex-col items-center bg-white text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
 					<h1 className=' h-12 text-sm lg:text-base'>5. {exerciseFive.name}</h1>
 					<img src={exerciseFive.gifUrl} alt={exerciseFive.name} loading='lazy' />
 					<div className='flex justify-between w-full h-1/2 py-2 px-8'>
@@ -223,7 +225,7 @@ function WorkoutModal({
 						<span className='h-2 w-[25%] bg-slate-500/50 mr-0.5'></span>
 					</div>
 				</div>
-				<div className='w-full flex flex-col items-center text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
+				<div className='w-full flex flex-col items-center bg-white text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
 					<h1 className=' h-12 text-sm lg:text-base'>6. {exerciseSix.name}</h1>
 					<img src={exerciseSix.gifUrl} alt={exerciseSix.name} loading='lazy' />
 					<div className='flex justify-between w-full h-1/2 py-2 px-8'>
@@ -249,6 +251,12 @@ function WorkoutModal({
 					</div>
 				</div>
 			</div>
+			<button
+				className='py-5 px-12 mt-4 border-2 text-xl border-purple-500 bg-white text-purple-500 mx-auto rounded-lg transition uppercase hover:scale-105 hover:bg-purple-600 hover:text-white'
+				onClick={() => setIsWorkoutModalOpen(false)}
+			>
+				return to generate workout
+			</button>
 		</section>
 	);
 }
