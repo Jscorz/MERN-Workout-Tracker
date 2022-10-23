@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 
 // Variables used in this example to display exercise data from props drilling
 function WorkoutModal({
-	loading,
-	isWorkoutModalOpen,
+	goToTop,
 	setIsWorkoutModalOpen,
 	exerciseOne,
 	exerciseTwo,
@@ -48,6 +47,11 @@ function WorkoutModal({
 	const [tempoTwo, setTempoTwo] = useState("1-0-1");
 	const [rest, setRest] = useState("120s");
 	const [restTwo, setRestTwo] = useState("120s");
+
+	const handleReturnToGenerateClick = () => {
+		setIsWorkoutModalOpen(false);
+		goToTop();
+	};
 
 	// useEffect to set initial state values for goals, reps, tempos, and rest periods
 	useEffect(() => {
@@ -253,7 +257,7 @@ function WorkoutModal({
 			</div>
 			<button
 				className='py-5 px-12 mt-4 border-2 text-xl border-purple-500 bg-white text-purple-500 mx-auto rounded-lg transition uppercase hover:scale-105 hover:bg-purple-600 hover:text-white'
-				onClick={() => setIsWorkoutModalOpen(false)}
+				onClick={handleReturnToGenerateClick}
 			>
 				return to generate workout
 			</button>

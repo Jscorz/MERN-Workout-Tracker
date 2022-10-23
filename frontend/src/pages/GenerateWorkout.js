@@ -473,8 +473,7 @@ const GenerateWorkout = () => {
 			)}
 			{isWorkoutModalOpen && (
 				<WorkoutModal
-					loading={loading}
-					isWorkoutModalOpen={isWorkoutModalOpen}
+					goToTop={goToTop}
 					setIsWorkoutModalOpen={setIsWorkoutModalOpen}
 					exerciseOne={exerciseOne}
 					exerciseTwo={exerciseTwo}
