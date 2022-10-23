@@ -4,7 +4,7 @@
 
 <!-- **Link to project: [Live-demo]https://next-shoecommerce.netlify.app** -->
 
-![screen-gif](./frontend/src/assets/ezgif.gif)
+![screen-gif](./frontend/src/assets/ez.gif)
 
 ---
 

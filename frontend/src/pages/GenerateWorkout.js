@@ -395,64 +395,64 @@ const GenerateWorkout = () => {
 				"X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
 			},
 		};
-		// // Fetch all exercises, then filtered by body part
-		// fetch("https://exercisedb.p.rapidapi.com/exercises", options)
-		// 	.then((response) => response.json())
-		// 	.then((response) => {
-		// 		setAllExercises(response);
-		// 		setAbsExercises(
-		// 			response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("waist"))
-		// 		);
-		// 		setPectoralsExercises(
-		// 			response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("chest"))
-		// 		);
-		// 		setBackExercises(
-		// 			response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("back"))
-		// 		);
-		// 		setTrapsExercises(
-		// 			response.filter((exercise) => exercise.name.toLowerCase().includes("shrug"))
-		// 		);
-		// 		setShouldersExercises(
-		// 			response.filter((exercise) =>
-		// 				exercise.bodyPart.toLowerCase().includes("shoulders")
-		// 			)
-		// 		);
-		// 		setBicepsExercises(
-		// 			response.filter((exercise) => exercise.name.toLowerCase().includes("bicep"))
-		// 		);
-		// 		setTricepsExercises(
-		// 			response.filter((exercise) => exercise.name.toLowerCase().includes("tricep"))
-		// 		);
-		// 		setCalvesExercises(
-		// 			response.filter((exercise) =>
-		// 				exercise.bodyPart.toLowerCase().includes("lower legs")
-		// 			)
-		// 		);
-		// 		setQuadsExercises(
-		// 			response.filter((exercise) =>
-		// 				exercise.bodyPart.toLowerCase().includes("upper legs")
-		// 			)
-		// 		);
-		// 		setHamstringsExercises(
-		// 			response.filter((exercise) =>
-		// 				exercise.bodyPart.toLowerCase().includes("upper legs")
-		// 			)
-		// 		);
-		// 		console.log(
-		// 			response,
-		// 			absExercises,
-		// 			pectoralsExercises,
-		// 			backExercises,
-		// 			trapsExercises,
-		// 			shouldersExercises,
-		// 			bicepsExercises,
-		// 			tricepsExercises,
-		// 			quadsExercises,
-		// 			hamstringsExercises,
-		// 			calvesExercises
-		// 		);
-		// 	})
-		// 	.catch((err) => console.error(err));
+		// Fetch all exercises, then filtered by body part
+		fetch("https://exercisedb.p.rapidapi.com/exercises", options)
+			.then((response) => response.json())
+			.then((response) => {
+				setAllExercises(response);
+				setAbsExercises(
+					response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("waist"))
+				);
+				setPectoralsExercises(
+					response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("chest"))
+				);
+				setBackExercises(
+					response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("back"))
+				);
+				setTrapsExercises(
+					response.filter((exercise) => exercise.name.toLowerCase().includes("shrug"))
+				);
+				setShouldersExercises(
+					response.filter((exercise) =>
+						exercise.bodyPart.toLowerCase().includes("shoulders")
+					)
+				);
+				setBicepsExercises(
+					response.filter((exercise) => exercise.name.toLowerCase().includes("bicep"))
+				);
+				setTricepsExercises(
+					response.filter((exercise) => exercise.name.toLowerCase().includes("tricep"))
+				);
+				setCalvesExercises(
+					response.filter((exercise) =>
+						exercise.bodyPart.toLowerCase().includes("lower legs")
+					)
+				);
+				setQuadsExercises(
+					response.filter((exercise) =>
+						exercise.bodyPart.toLowerCase().includes("upper legs")
+					)
+				);
+				setHamstringsExercises(
+					response.filter((exercise) =>
+						exercise.bodyPart.toLowerCase().includes("upper legs")
+					)
+				);
+				console.log(
+					response,
+					absExercises,
+					pectoralsExercises,
+					backExercises,
+					trapsExercises,
+					shouldersExercises,
+					bicepsExercises,
+					tricepsExercises,
+					quadsExercises,
+					hamstringsExercises,
+					calvesExercises
+				);
+			})
+			.catch((err) => console.error(err));
 	}, []);
 
 	useEffect(() => {
