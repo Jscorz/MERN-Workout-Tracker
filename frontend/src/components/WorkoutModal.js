@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 function WorkoutModal({
 	goToTop,
 	setIsWorkoutModalOpen,
+	setActiveButton,
+	setActiveButtonTwo,
 	exerciseOne,
 	exerciseTwo,
 	exerciseThree,
@@ -49,6 +51,8 @@ function WorkoutModal({
 	const [restTwo, setRestTwo] = useState("120s");
 
 	const handleReturnToGenerateClick = () => {
+		setActiveButton(0);
+		setActiveButtonTwo(0);
 		setIsWorkoutModalOpen(false);
 		goToTop();
 	};

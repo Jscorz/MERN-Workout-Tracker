@@ -475,6 +475,8 @@ const GenerateWorkout = () => {
 				<WorkoutModal
 					goToTop={goToTop}
 					setIsWorkoutModalOpen={setIsWorkoutModalOpen}
+					setActiveButton={setActiveButton}
+					setActiveButtonTwo={setActiveButtonTwo}
 					exerciseOne={exerciseOne}
 					exerciseTwo={exerciseTwo}
 					exerciseThree={exerciseThree}
