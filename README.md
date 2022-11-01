@@ -2,7 +2,7 @@
 
 ## Built with MongoDB, Express, React, and Node (MERN Stack)
 
-<!-- **Link to project: [Live-demo]https://next-shoecommerce.netlify.app** -->
+**Link to project: [Live-demo]https://reps-logger.onrender.com**
 
 ![screen-gif](./frontend/src/assets/ez.gif)
 
