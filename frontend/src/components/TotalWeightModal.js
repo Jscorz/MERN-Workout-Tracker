@@ -25,10 +25,13 @@ const TotalWeightModal = ({ onRequestClose }) => {
 	}, []);
 
 	return (
-		<section id='top' className='w-full h-[200%] z-30 absolute top-20 left-0'>
+		<section
+			id='top'
+			className='w-full h-[120%] z-30 absolute top-20 left-0 border-2 border-b-slate-900 md:h-[200%]'
+		>
 			<div className='-z-20 absolute left-0 inset-0 bg-white w-full h-full'></div>
 			<div className='total-weight-gradient relative'>
-				<div className='bg-white   mx-3 mt-10 border-2 z-60 border-purple-500 rounded-lg flex  flex-col md:mx-auto md:flex-row md:w-[700px] md:h-[30rem] md:mt-20'>
+				<div className='bg-white mx-3 mt-10 border-2 z-60 border-purple-500 rounded-lg flex flex-col md:mx-auto md:flex-row md:w-[700px] md:h-[30rem] md:mt-20'>
 					<div className='w-full order-2 md:order-1'>
 						<h1 className='text-slate-800 font-bold text-3xl text-center p-3'>
 							You have lifted {totalWeight}lbs in the last 24 hours
@@ -70,7 +73,7 @@ const TotalWeightModal = ({ onRequestClose }) => {
 						<img
 							src={kettlebellsImage}
 							alt=''
-							className='h-96 min-w-full md:min-h-full rounded-tr-lg rounded-br-lg border-l-2 border-l-purple-500'
+							className='h-48 min-w-full rounded-t-lg border-l-2 border-b-purple-500 md:rounded-tr-lg md:rounded-tl-none md:min-h-full  md:rounded-br-lg md:border-l-purple-500'
 						/>
 						<button
 							onClick={onRequestClose}
@@ -81,15 +84,12 @@ const TotalWeightModal = ({ onRequestClose }) => {
 					</div>
 				</div>
 			</div>
-			<a href='#top'>
-				<button className='absolute bottom-48 left-[40%] text-center text-slate-900  py-2 px-4 border-2 border-slate-800 shadow-lg rounded-lg transition hover:bg-slate-900/25 md:left-[45%]'>
-					back to top
-				</button>
+			<a href='#top' className='flex flex-col items-center my-8 space-y-4'>
 				<button
 					onClick={onRequestClose}
-					className='absolute bottom-36 left-[40%] text-center text-slate-900  py-2 px-10 border-2 border-slate-800 shadow-lg rounded-lg transition hover:bg-slate-900/25 md:left-[45%]'
+					className='py-3 px-12 border-2 border-purple-500 bg-white text-purple-500 shadow-lg rounded-lg transition hover:scale-105 hover:bg-purple-600 hover:text-white'
 				>
-					close
+					back to track workout
 				</button>
 			</a>
 		</section>
