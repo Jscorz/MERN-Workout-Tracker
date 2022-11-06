@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import WorkoutModal from "../components/WorkoutModal";
 import loadingIcon from "../assets/weights-icon-loader.png";
+import { BsQuestionCircle } from "react-icons/bs";
 
 const GenerateWorkout = () => {
 	const API_KEY = process.env.REACT_APP_API_KEY;
@@ -27,6 +28,9 @@ const GenerateWorkout = () => {
 
 	// State value for Modal containing custom workout
 	const [isWorkoutModalOpen, setIsWorkoutModalOpen] = useState(false);
+	const [isExtraInfoOneModalOpen, setIsExtraInfoOneModalOpen] = useState(false);
+	const [isExtraInfoTwoModalOpen, setIsExtraInfoTwoModalOpen] = useState(false);
+	const [isExtraInfoThreeModalOpen, setIsExtraInfoThreeModalOpen] = useState(false);
 
 	// State values for six exercises for custom workout
 	const [exerciseOne, setExerciseOne] = useState();
@@ -710,39 +714,99 @@ const GenerateWorkout = () => {
 				<span className='h-0.5 flex-1 bg-slate-900'></span>
 			</div>
 			<div className='flex flex-col w-full max-w-prose'>
-				<button
-					id='1'
-					onClick={HandleClickTwo}
-					className={
-						activeButtonTwo === "1"
-							? "options_step-2 w-full mt-4 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
-							: "options_step-2 w-full mt-4 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
-					}
-				>
-					Strength And Power
-				</button>
-				<button
-					id='2'
-					onClick={HandleClickTwo}
-					className={
-						activeButtonTwo === "2"
-							? "options_step-2 w-full mt-4 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
-							: "options_step-2 w-full mt-4 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
-					}
-				>
-					Growth And Hypertrophy
-				</button>
-				<button
-					id='3'
-					onClick={HandleClickTwo}
-					className={
-						activeButtonTwo === "3"
-							? "options_step-2 w-full mt-4 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
-							: "options_step-2 w-full mt-4 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
-					}
-				>
-					Cardiovascular And Endurance
-				</button>
+				<div className='relative'>
+					<button
+						id='1'
+						onClick={HandleClickTwo}
+						className={
+							activeButtonTwo === "1"
+								? "options_step-2 w-full mt-4 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
+								: "options_step-2 w-full mt-4 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
+						}
+					>
+						Strength And Power
+					</button>
+					<div className='group'>
+						<BsQuestionCircle
+							className='absolute top-9 right-5 text-red-500 group cursor-pointer'
+							onClick={() => setIsExtraInfoOneModalOpen(!isExtraInfoOneModalOpen)}
+						/>
+						<div className='hidden absolute z-40 top-6 right-10 h-10 w-32 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg text-center py-[.35rem] group group-hover:block'>
+							more info
+						</div>
+					</div>
+					{isExtraInfoOneModalOpen && (
+						<div className='absolute z-40 top-4 right-10 min-h-44 w-10/12 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg'>
+							<p className='text-center p-3'>
+								Strength and Power in this context is referring to the number of
+								reps that will be chosen for the exercises. It will be chosen for
+								each exercise in the range of 3-6 reps
+							</p>
+						</div>
+					)}
+				</div>
+				<div className='relative'>
+					<button
+						id='2'
+						onClick={HandleClickTwo}
+						className={
+							activeButtonTwo === "2"
+								? "options_step-2 w-full mt-4 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
+								: "options_step-2 w-full mt-4 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
+						}
+					>
+						Growth And Hypertrophy
+					</button>
+					<div className='group'>
+						<BsQuestionCircle
+							className='absolute top-9 right-5 text-red-500 group cursor-pointer'
+							onClick={() => setIsExtraInfoTwoModalOpen(!isExtraInfoTwoModalOpen)}
+						/>
+						<div className='hidden absolute z-40 top-6 right-10 h-10 w-32 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg text-center py-[.35rem] group group-hover:block'>
+							more info
+						</div>
+					</div>
+					{isExtraInfoTwoModalOpen && (
+						<div className='absolute z-40 top-4 right-10 min-h-44 w-10/12 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg'>
+							<p className='text-center p-3'>
+								Growth and Hypertrophy in this context is referring to the number of
+								reps that will be chosen for the exercises. It will be chosen for
+								each exercise in the range of 8-11 reps
+							</p>
+						</div>
+					)}
+				</div>
+				<div className='relative'>
+					<button
+						id='3'
+						onClick={HandleClickTwo}
+						className={
+							activeButtonTwo === "3"
+								? "options_step-2 w-full mt-4 p-4 bg-white text-slate-900 uppercase rounded-lg transition hover:bg-opacity-80"
+								: "options_step-2 w-full mt-4 p-4 bg-slate-800 text-white uppercase rounded-lg transition hover:bg-opacity-80"
+						}
+					>
+						Cardio And Endurance
+					</button>
+					<div className='group'>
+						<BsQuestionCircle
+							className='absolute top-9 right-5 text-red-500 group cursor-pointer'
+							onClick={() => setIsExtraInfoThreeModalOpen(!isExtraInfoThreeModalOpen)}
+						/>
+						<div className='hidden absolute z-40 top-6 right-10 h-10 w-32 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg text-center py-[.35rem] group group-hover:block'>
+							more info
+						</div>
+					</div>
+					{isExtraInfoThreeModalOpen && (
+						<div className='absolute z-40 top-4 right-10 min-h-44 w-10/12 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg'>
+							<p className='text-center p-3'>
+								Cardio and Endurance in this context is referring to the number of
+								reps that will be chosen for the exercises. It will be chosen for
+								each exercise in the range of 12-16 reps
+							</p>
+						</div>
+					)}
+				</div>
 			</div>
 			<button
 				onClick={HandleSubmit}
