@@ -731,7 +731,7 @@ const GenerateWorkout = () => {
 							className='absolute top-9 right-5 text-red-500 group cursor-pointer'
 							onClick={() => setIsExtraInfoOneModalOpen(!isExtraInfoOneModalOpen)}
 						/>
-						<div className='hidden absolute z-40 top-6 right-10 h-10 w-32 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg text-center py-[.35rem] group group-hover:block'>
+						<div className='hidden absolute z-40 top-6 right-10 h-10 w-32 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg text-center py-[.35rem] group md:group-hover:block'>
 							more info
 						</div>
 					</div>
@@ -762,7 +762,7 @@ const GenerateWorkout = () => {
 							className='absolute top-9 right-5 text-red-500 group cursor-pointer'
 							onClick={() => setIsExtraInfoTwoModalOpen(!isExtraInfoTwoModalOpen)}
 						/>
-						<div className='hidden absolute z-40 top-6 right-10 h-10 w-32 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg text-center py-[.35rem] group group-hover:block'>
+						<div className='hidden absolute z-40 top-6 right-10 h-10 w-32 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg text-center py-[.35rem] group md:group-hover:block'>
 							more info
 						</div>
 					</div>
@@ -793,7 +793,7 @@ const GenerateWorkout = () => {
 							className='absolute top-9 right-5 text-red-500 group cursor-pointer'
 							onClick={() => setIsExtraInfoThreeModalOpen(!isExtraInfoThreeModalOpen)}
 						/>
-						<div className='hidden absolute z-40 top-6 right-10 h-10 w-32 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg text-center py-[.35rem] group group-hover:block'>
+						<div className='hidden absolute z-40 top-6 right-10 h-10 w-32 border-2 border-purple-500 bg-[#f1f1f1] rounded-lg text-center py-[.35rem] group md:group-hover:block'>
 							more info
 						</div>
 					</div>
