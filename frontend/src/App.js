@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import GenerateWorkout from "./pages/GenerateWorkout";
+import GenerateStretch from "./pages/GenerateStretch";
 
 function App() {
 	const { user } = useAuthContext();
@@ -15,21 +16,16 @@ function App() {
 				<Navbar />
 				<div className='max-w-full px-5 md:px-20 md:py-5'>
 					<Routes>
-						<Route
-							path='/'
-							element={user ? <Home /> : <Navigate to='/login' />}
-						/>
-						<Route
-							path='/login'
-							element={!user ? <Login /> : <Navigate to='/' />}
-						/>
-						<Route
-							path='/signup'
-							element={!user ? <Signup /> : <Navigate to='/' />}
-						/>
+						<Route path='/' element={user ? <Home /> : <Navigate to='/login' />} />
+						<Route path='/login' element={!user ? <Login /> : <Navigate to='/' />} />
+						<Route path='/signup' element={!user ? <Signup /> : <Navigate to='/' />} />
 						<Route
 							path='/generateworkout'
 							element={!user ? <Signup /> : <GenerateWorkout />}
+						/>
+						<Route
+							path='/generatestretch'
+							element={!user ? <Signup /> : <GenerateStretch />}
 						/>
 					</Routes>
 				</div>
