@@ -36,78 +36,52 @@ const GenerateStretch = () => {
 	const [exerciseFive, setExerciseFive] = useState();
 	const [exerciseSix, setExerciseSix] = useState();
 
-	// State values for six exercises for custom workout
-	const [exerciseSelectionOne, setExerciseSelectionOne] = useState(
-		Math.trunc(Math.random() * 100 + 1)
-	);
-	const [exerciseSelectionTwo, setExerciseSelectionTwo] = useState(
-		Math.trunc(Math.random() * 100 + 1)
-	);
-	const [exerciseSelectionThree, setExerciseSelectionThree] = useState(
-		Math.trunc(Math.random() * 100 + 1)
-	);
-	const [exerciseSelectionFour, setExerciseSelectionFour] = useState(
-		Math.trunc(Math.random() * 100 + 1)
-	);
-	const [exerciseSelectionFive, setExerciseSelectionFive] = useState(
-		Math.trunc(Math.random() * 100 + 1)
-	);
-	const [exerciseSelectionSix, setExerciseSelectionSix] = useState(
-		Math.trunc(Math.random() * 100 + 1)
-	);
-
-	// State values for six exercises for custom workout for biceps, triceps, and calves
-	const [exerciseShorterSelectionOne, setExerciseShorterSelectionOne] = useState(
-		Math.trunc(Math.random() * 43 + 1)
-	);
-	const [exerciseShorterSelectionTwo, setExerciseShorterSelectionTwo] = useState(
-		Math.trunc(Math.random() * 43 + 1)
-	);
-	const [exerciseShorterSelectionThree, setExerciseShorterSelectionThree] = useState(
-		Math.trunc(Math.random() * 43 + 1)
-	);
-	const [exerciseShorterSelectionFour, setExerciseShorterSelectionFour] = useState(
-		Math.trunc(Math.random() * 43 + 1)
-	);
-	const [exerciseShorterSelectionFive, setExerciseShorterSelectionFive] = useState(
-		Math.trunc(Math.random() * 43 + 1)
-	);
-	const [exerciseShorterSelectionSix, setExerciseShorterSelectionSix] = useState(
-		Math.trunc(Math.random() * 43 + 1)
-	);
-
-	// State values for six exercises for custom workout for traps
-	const [exerciseShortestSelectionOne, setExerciseShortestSelectionOne] = useState(
-		Math.trunc(Math.random() * 11 + 1)
-	);
-	const [exerciseShortestSelectionTwo, setExerciseShortestSelectionTwo] = useState(
-		Math.trunc(Math.random() * 11 + 1)
-	);
-	const [exerciseShortestSelectionThree, setExerciseShortestSelectionThree] = useState(
-		Math.trunc(Math.random() * 11 + 1)
-	);
-	const [exerciseShortestSelectionFour, setExerciseShortestSelectionFour] = useState(
-		Math.trunc(Math.random() * 11 + 1)
-	);
-	const [exerciseShortestSelectionFive, setExerciseShortestSelectionFive] = useState(
-		Math.trunc(Math.random() * 11 + 1)
-	);
-	const [exerciseShortestSelectionSix, setExerciseShortestSelectionSix] = useState(
-		Math.trunc(Math.random() * 11 + 1)
-	);
-
 	const HandleClick = (e) => {
 		e.preventDefault();
 		let activeButtonNumber = e.target.id;
 
 		setActiveButton(activeButtonNumber);
-	};
-
-	const HandleClickTwo = (e) => {
-		e.preventDefault();
-		let activeButtonNumber = e.target.id;
-
-		setActiveButtonTwo(activeButtonNumber);
+		if (activeButtonNumber === "1") {
+			setFilterValue("");
+			setExerciseOne(
+				pectoralsExercises[Math.trunc(Math.random() * 5)] || pectoralsExercises[1]
+			);
+			setExerciseTwo(
+				pectoralsExercises[Math.trunc(Math.random() * 5)] || pectoralsExercises[2]
+			);
+			setExerciseThree(
+				tricepsExercises[Math.trunc(Math.random() * 4)] || tricepsExercises[1]
+			);
+			setExerciseFour(tricepsExercises[Math.trunc(Math.random() * 4)] || tricepsExercises[2]);
+			setExerciseFive(
+				pectoralsExercises[Math.trunc(Math.random() * 5)] || pectoralsExercises[5]
+			);
+			setExerciseSix(tricepsExercises[Math.trunc(Math.random() * 4)] || tricepsExercises[3]);
+		}
+		if (activeButtonNumber === "2") {
+			setFilterValue("");
+			setExerciseOne(backExercises[Math.trunc(Math.random() * 13)] || backExercises[1]);
+			setExerciseTwo(backExercises[Math.trunc(Math.random() * 13)] || backExercises[2]);
+			setExerciseThree(backExercises[Math.trunc(Math.random() * 13)] || backExercises[3]);
+			setExerciseFour(
+				shouldersExercises[Math.trunc(Math.random() * 1)] || shouldersExercises[0]
+			);
+			setExerciseFive(backExercises[Math.trunc(Math.random() * 13)] || backExercises[4]);
+			setExerciseSix(backExercises[Math.trunc(Math.random() * 13)] || backExercises[5]);
+		}
+		if (activeButtonNumber === "3") {
+			setFilterValue("");
+			setExerciseOne(quadsExercises[Math.trunc(Math.random() * 24)] || quadsExercises[1]);
+			setExerciseTwo(
+				hamstringsExercises[Math.trunc(Math.random() * 24)] || hamstringsExercises[1]
+			);
+			setExerciseThree(calvesExercises[Math.trunc(Math.random() * 10)] || calvesExercises[1]);
+			setExerciseFour(quadsExercises[Math.trunc(Math.random() * 24)] || quadsExercises[2]);
+			setExerciseFive(
+				hamstringsExercises[Math.trunc(Math.random() * 24)] || hamstringsExercises[2]
+			);
+			setExerciseSix(calvesExercises[Math.trunc(Math.random() * 10)] || calvesExercises[2]);
+		}
 	};
 
 	const goToTop = () => {
@@ -117,96 +91,97 @@ const GenerateStretch = () => {
 		});
 	};
 
-	const generateExerciseNumbers = () => {
-		setExerciseSelectionOne(Math.trunc(Math.random() * 100 + 1));
-		setExerciseSelectionTwo(Math.trunc(Math.random() * 100 + 1));
-		setExerciseSelectionThree(Math.trunc(Math.random() * 100 + 1));
-		setExerciseSelectionFour(Math.trunc(Math.random() * 100 + 1));
-		setExerciseSelectionFive(Math.trunc(Math.random() * 100 + 1));
-		setExerciseSelectionSix(Math.trunc(Math.random() * 100 + 1));
-	};
-
 	const HandleChange = (e) => {
 		setFilterValue(e.target.value);
-		if (e.target.value === "abs" && activeButton === "1") {
-			setExerciseOne(absExercises[exerciseSelectionOne]);
-			setExerciseTwo(absExercises[exerciseSelectionTwo]);
-			setExerciseThree(absExercises[exerciseSelectionThree]);
-			setExerciseFour(absExercises[exerciseSelectionFour]);
-			setExerciseFive(absExercises[exerciseSelectionFive]);
-			setExerciseSix(absExercises[exerciseSelectionSix]);
+		if (e.target.value === "pectorals") {
+			setActiveButton(0);
+			setExerciseOne(
+				pectoralsExercises[Math.trunc(Math.random() * 4 + 1)] || pectoralsExercises[1]
+			);
+			setExerciseTwo(
+				pectoralsExercises[Math.trunc(Math.random() * 4 + 1)] || pectoralsExercises[2]
+			);
+			setExerciseThree(
+				pectoralsExercises[Math.trunc(Math.random() * 4 + 1)] || pectoralsExercises[3]
+			);
+			setExerciseFour(
+				pectoralsExercises[Math.trunc(Math.random() * 4 + 1)] || pectoralsExercises[4]
+			);
+			setExerciseFive(
+				pectoralsExercises[Math.trunc(Math.random() * 4 + 1)] || pectoralsExercises[5]
+			);
+			setExerciseSix(
+				pectoralsExercises[Math.trunc(Math.random() * 4 + 1)] || pectoralsExercises[6]
+			);
 		}
-		if (e.target.value === "pectorals" && activeButton === "1") {
-			setExerciseOne(pectoralsExercises[exerciseSelectionOne]);
-			setExerciseTwo(pectoralsExercises[exerciseSelectionTwo]);
-			setExerciseThree(pectoralsExercises[exerciseSelectionThree]);
-			setExerciseFour(pectoralsExercises[exerciseSelectionFour]);
-			setExerciseFive(pectoralsExercises[exerciseSelectionFive]);
-			setExerciseSix(pectoralsExercises[exerciseSelectionSix]);
+		if (e.target.value === "back") {
+			setActiveButton(0);
+			setExerciseOne(backExercises[Math.trunc(Math.random() * 12 + 1)] || backExercises[1]);
+			setExerciseTwo(backExercises[Math.trunc(Math.random() * 12 + 1)] || backExercises[2]);
+			setExerciseThree(backExercises[Math.trunc(Math.random() * 12 + 1)] || backExercises[3]);
+			setExerciseFour(backExercises[Math.trunc(Math.random() * 12 + 1)] || backExercises[4]);
+			setExerciseFive(backExercises[Math.trunc(Math.random() * 12 + 1)] || backExercises[5]);
+			setExerciseSix(backExercises[Math.trunc(Math.random() * 12 + 1)] || backExercises[6]);
 		}
-		if (e.target.value === "back" && activeButton === "1") {
-			setExerciseOne(backExercises[exerciseSelectionOne]);
-			setExerciseTwo(backExercises[exerciseSelectionTwo]);
-			setExerciseThree(trapsExercises[exerciseShortestSelectionThree]);
-			setExerciseFour(trapsExercises[exerciseShortestSelectionFour]);
-			setExerciseFive(backExercises[exerciseSelectionFive]);
-			setExerciseSix(backExercises[exerciseSelectionSix]);
+		if (e.target.value === "triceps") {
+			setActiveButton(0);
+			setExerciseOne(
+				tricepsExercises[Math.trunc(Math.random() * 3 + 1)] || tricepsExercises[1]
+			);
+			setExerciseTwo(
+				tricepsExercises[Math.trunc(Math.random() * 3 + 1)] || tricepsExercises[2]
+			);
+			setExerciseThree(
+				tricepsExercises[Math.trunc(Math.random() * 3 + 1)] || tricepsExercises[3]
+			);
+			setExerciseFour(
+				tricepsExercises[Math.trunc(Math.random() * 3 + 1)] || tricepsExercises[4]
+			);
+			setExerciseFive(
+				tricepsExercises[Math.trunc(Math.random() * 3 + 1)] || tricepsExercises[1]
+			);
+			setExerciseSix(
+				tricepsExercises[Math.trunc(Math.random() * 3 + 1)] || tricepsExercises[2]
+			);
 		}
-		if (e.target.value === "traps" && activeButton === "1") {
-			setExerciseOne(trapsExercises[exerciseShortestSelectionOne]);
-			setExerciseTwo(trapsExercises[exerciseShortestSelectionTwo]);
-			setExerciseThree(trapsExercises[exerciseShortestSelectionThree]);
-			setExerciseFour(trapsExercises[exerciseShortestSelectionFour]);
-			setExerciseFive(trapsExercises[exerciseShortestSelectionFive]);
-			setExerciseSix(trapsExercises[exerciseShortestSelectionSix]);
+		if (e.target.value === "calves") {
+			setActiveButton(0);
+			setExerciseOne(calvesExercises[Math.trunc(Math.random() * 10)] || calvesExercises[1]);
+			setExerciseTwo(calvesExercises[Math.trunc(Math.random() * 10)] || calvesExercises[2]);
+			setExerciseThree(calvesExercises[Math.trunc(Math.random() * 10)] || calvesExercises[3]);
+			setExerciseFour(calvesExercises[Math.trunc(Math.random() * 10)] || calvesExercises[4]);
+			setExerciseFive(calvesExercises[Math.trunc(Math.random() * 10)] || calvesExercises[5]);
+			setExerciseSix(calvesExercises[Math.trunc(Math.random() * 10)] || calvesExercises[6]);
 		}
-		if (e.target.value === "shoulders" && activeButton === "1") {
-			setExerciseOne(shouldersExercises[exerciseSelectionOne]);
-			setExerciseTwo(shouldersExercises[exerciseSelectionTwo]);
-			setExerciseThree(shouldersExercises[exerciseSelectionThree]);
-			setExerciseFour(shouldersExercises[exerciseSelectionFour]);
-			setExerciseFive(shouldersExercises[exerciseSelectionFive]);
-			setExerciseSix(shouldersExercises[exerciseSelectionSix]);
+		if (e.target.value === "quads") {
+			setActiveButton(0);
+			setExerciseOne(quadsExercises[Math.trunc(Math.random() * 24)] || quadsExercises[1]);
+			setExerciseTwo(quadsExercises[Math.trunc(Math.random() * 24)] || quadsExercises[2]);
+			setExerciseThree(quadsExercises[Math.trunc(Math.random() * 24)] || quadsExercises[3]);
+			setExerciseFour(quadsExercises[Math.trunc(Math.random() * 24)] || quadsExercises[4]);
+			setExerciseFive(quadsExercises[Math.trunc(Math.random() * 24)] || quadsExercises[5]);
+			setExerciseSix(quadsExercises[Math.trunc(Math.random() * 24)] || quadsExercises[6]);
 		}
-		if (e.target.value === "biceps" && activeButton === "1") {
-			setExerciseOne(bicepsExercises[exerciseShorterSelectionOne]);
-			setExerciseTwo(bicepsExercises[exerciseShorterSelectionTwo]);
-			setExerciseThree(bicepsExercises[exerciseShorterSelectionThree]);
-			setExerciseFour(bicepsExercises[exerciseShorterSelectionFour]);
-			setExerciseFive(bicepsExercises[exerciseShorterSelectionFive]);
-			setExerciseSix(bicepsExercises[exerciseShorterSelectionSix]);
-		}
-		if (e.target.value === "triceps" && activeButton === "1") {
-			setExerciseOne(tricepsExercises[exerciseShorterSelectionOne]);
-			setExerciseTwo(tricepsExercises[exerciseShorterSelectionTwo]);
-			setExerciseThree(tricepsExercises[exerciseShorterSelectionThree]);
-			setExerciseFour(tricepsExercises[exerciseShorterSelectionFour]);
-			setExerciseFive(tricepsExercises[exerciseShorterSelectionFive]);
-			setExerciseSix(tricepsExercises[exerciseShorterSelectionSix]);
-		}
-		if (e.target.value === "calves" && activeButton === "1") {
-			setExerciseOne(calvesExercises[exerciseShorterSelectionOne]);
-			setExerciseTwo(calvesExercises[exerciseShorterSelectionTwo]);
-			setExerciseThree(calvesExercises[exerciseShorterSelectionThree]);
-			setExerciseFour(calvesExercises[exerciseShorterSelectionFour]);
-			setExerciseFive(calvesExercises[exerciseShorterSelectionFive]);
-			setExerciseSix(calvesExercises[exerciseShorterSelectionSix]);
-		}
-		if (e.target.value === "quads" && activeButton === "1") {
-			setExerciseOne(quadsExercises[exerciseSelectionOne]);
-			setExerciseTwo(quadsExercises[exerciseSelectionTwo]);
-			setExerciseThree(quadsExercises[exerciseSelectionThree]);
-			setExerciseFour(quadsExercises[exerciseSelectionFour]);
-			setExerciseFive(quadsExercises[exerciseSelectionFive]);
-			setExerciseSix(quadsExercises[exerciseSelectionSix]);
-		}
-		if (e.target.value === "hamstrings" && activeButton === "1") {
-			setExerciseOne(hamstringsExercises[exerciseSelectionOne]);
-			setExerciseTwo(hamstringsExercises[exerciseSelectionTwo]);
-			setExerciseThree(hamstringsExercises[exerciseSelectionThree]);
-			setExerciseFour(hamstringsExercises[exerciseSelectionFour]);
-			setExerciseFive(hamstringsExercises[exerciseSelectionFive]);
-			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
+		if (e.target.value === "hamstrings") {
+			setActiveButton(0);
+			setExerciseOne(
+				hamstringsExercises[Math.trunc(Math.random() * 24)] || hamstringsExercises[1]
+			);
+			setExerciseTwo(
+				hamstringsExercises[Math.trunc(Math.random() * 24)] || hamstringsExercises[2]
+			);
+			setExerciseThree(
+				hamstringsExercises[Math.trunc(Math.random() * 24)] || hamstringsExercises[3]
+			);
+			setExerciseFour(
+				hamstringsExercises[Math.trunc(Math.random() * 24)] || hamstringsExercises[4]
+			);
+			setExerciseFive(
+				hamstringsExercises[Math.trunc(Math.random() * 24)] || hamstringsExercises[5]
+			);
+			setExerciseSix(
+				hamstringsExercises[Math.trunc(Math.random() * 24)] || hamstringsExercises[6]
+			);
 		}
 	};
 
@@ -218,6 +193,15 @@ const GenerateStretch = () => {
 		setTimeout(() => {
 			setLoading(false);
 		}, 2000);
+
+		console.log(
+			exerciseOne,
+			exerciseTwo,
+			exerciseThree,
+			exerciseFour,
+			exerciseFive,
+			exerciseSix
+		);
 
 		setTimeout(() => {
 			setIsStretchModalOpen(true);
@@ -255,41 +239,59 @@ const GenerateStretch = () => {
 					response.filter((exercise) => exercise.name.toLowerCase().includes("stretch"))
 				);
 				setAbsExercises(
-					response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("waist"))
-				);
-				setPectoralsExercises(
-					response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("chest"))
-				);
-				setBackExercises(
-					response.filter((exercise) => exercise.bodyPart.toLowerCase().includes("back"))
-				);
-				setTrapsExercises(
-					response.filter((exercise) => exercise.name.toLowerCase().includes("shrug"))
-				);
-				setShouldersExercises(
-					response.filter((exercise) =>
-						exercise.bodyPart.toLowerCase().includes("shoulders")
+					response.filter(
+						(exercise) =>
+							exercise.bodyPart.toLowerCase().includes("waist") &&
+							exercise.name.toLowerCase().includes("stretch")
 					)
 				);
-				setBicepsExercises(
-					response.filter((exercise) => exercise.name.toLowerCase().includes("bicep"))
+				setPectoralsExercises(
+					response.filter(
+						(exercise) =>
+							exercise.bodyPart.toLowerCase().includes("chest") &&
+							exercise.name.toLowerCase().includes("stretch")
+					)
+				);
+				setBackExercises(
+					response.filter(
+						(exercise) =>
+							exercise.bodyPart.toLowerCase().includes("back") &&
+							exercise.name.toLowerCase().includes("stretch")
+					)
+				);
+				setShouldersExercises(
+					response.filter(
+						(exercise) =>
+							exercise.bodyPart.toLowerCase().includes("shoulders") &&
+							exercise.name.toLowerCase().includes("stretch")
+					)
 				);
 				setTricepsExercises(
-					response.filter((exercise) => exercise.name.toLowerCase().includes("tricep"))
+					response.filter(
+						(exercise) =>
+							exercise.name.toLowerCase().includes("tricep") &&
+							exercise.name.toLowerCase().includes("stretch")
+					)
 				);
 				setCalvesExercises(
-					response.filter((exercise) =>
-						exercise.bodyPart.toLowerCase().includes("lower legs")
+					response.filter(
+						(exercise) =>
+							exercise.bodyPart.toLowerCase().includes("lower legs") &&
+							exercise.name.toLowerCase().includes("stretch")
 					)
 				);
 				setQuadsExercises(
-					response.filter((exercise) =>
-						exercise.bodyPart.toLowerCase().includes("upper legs")
+					response.filter(
+						(exercise) =>
+							exercise.bodyPart.toLowerCase().includes("upper legs") &&
+							exercise.name.toLowerCase().includes("stretch")
 					)
 				);
 				setHamstringsExercises(
-					response.filter((exercise) =>
-						exercise.bodyPart.toLowerCase().includes("upper legs")
+					response.filter(
+						(exercise) =>
+							exercise.bodyPart.toLowerCase().includes("upper legs") &&
+							exercise.name.toLowerCase().includes("stretch")
 					)
 				);
 				console.log(
@@ -297,7 +299,6 @@ const GenerateStretch = () => {
 					absExercises,
 					pectoralsExercises,
 					backExercises,
-					trapsExercises,
 					shouldersExercises,
 					bicepsExercises,
 					tricepsExercises,
@@ -307,10 +308,6 @@ const GenerateStretch = () => {
 				);
 			})
 			.catch((err) => console.error(err));
-	}, []);
-
-	useEffect(() => {
-		generateExerciseNumbers();
 	}, []);
 
 	return (
@@ -326,8 +323,8 @@ const GenerateStretch = () => {
 				<StretchModal
 					goToTop={goToTop}
 					setIsStretchModalOpen={setIsStretchModalOpen}
+					activeButton={activeButton}
 					setActiveButton={setActiveButton}
-					setActiveButtonTwo={setActiveButtonTwo}
 					exerciseOne={exerciseOne}
 					exerciseTwo={exerciseTwo}
 					exerciseThree={exerciseThree}
@@ -335,7 +332,6 @@ const GenerateStretch = () => {
 					exerciseFive={exerciseFive}
 					exerciseSix={exerciseSix}
 					filterValue={filterValue}
-					activeButtonTwo={activeButtonTwo}
 				/>
 			)}
 
@@ -403,23 +399,11 @@ const GenerateStretch = () => {
 						className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
 					>
 						<option value='Select muscle group'>Please Select muscle group</option>
-						<option className='p-4 bg-white text-slate-900' value='abs'>
-							abs
-						</option>
 						<option className='p-4 bg-white text-slate-900' value='pectorals'>
 							pectorals
 						</option>
 						<option className='p-4 bg-white text-slate-900' value='back'>
 							back
-						</option>
-						<option className='p-4 bg-white text-slate-900' value='traps'>
-							traps
-						</option>
-						<option className='p-4 bg-white text-slate-900' value='delts'>
-							delts
-						</option>
-						<option className='p-4 bg-white text-slate-900' value='biceps'>
-							biceps
 						</option>
 						<option className='p-4 bg-white text-slate-900' value='calves'>
 							calves

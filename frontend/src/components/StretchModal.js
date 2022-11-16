@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 // Variables used in this example to display exercise data from props drilling
 function StretchModal({
 	goToTop,
-	setIsWorkoutModalOpen,
+	setIsStretchModalOpen,
+	activeButton,
 	setActiveButton,
-	setActiveButtonTwo,
 	exerciseOne,
 	exerciseTwo,
 	exerciseThree,
@@ -13,91 +13,39 @@ function StretchModal({
 	exerciseFive,
 	exerciseSix,
 	filterValue,
-	activeButtonTwo,
-	randomStrengthAndPowerNumberOne,
-	randomStrengthAndPowerNumberTwo,
-	randomStrengthAndPowerNumberThree,
-	randomStrengthAndPowerNumberFour,
-	randomStrengthAndPowerNumberFive,
-	randomStrengthAndPowerNumberSix,
-	randomGrowthAndHypertrophyNumberOne,
-	randomGrowthAndHypertrophyNumberTwo,
-	randomGrowthAndHypertrophyNumberThree,
-	randomGrowthAndHypertrophyNumberFour,
-	randomGrowthAndHypertrophyNumberFive,
-	randomGrowthAndHypertrophyNumberSix,
-	randomCardioAndEnduranceNumberOne,
-	randomCardioAndEnduranceNumberTwo,
-	randomCardioAndEnduranceNumberThree,
-	randomCardioAndEnduranceNumberFour,
-	randomCardioAndEnduranceNumberFive,
-	randomCardioAndEnduranceNumberSix,
 }) {
 	// State value for goals
-	const [goals, setGoals] = useState("strength and power");
+	const [goals, setGoals] = useState();
 
 	// State value for determined reps for exercises 1 - 6
-	const [repsOne, setRepsOne] = useState();
-	const [repsTwo, setRepsTwo] = useState();
-	const [repsThree, setRepsThree] = useState();
-	const [repsFour, setRepsFour] = useState();
-	const [repsFive, setRepsFive] = useState();
-	const [repsSix, setRepsSix] = useState();
+	const [repsOne, setRepsOne] = useState(8);
+	const [repsTwo, setRepsTwo] = useState(10);
+	const [repsThree, setRepsThree] = useState(9);
+	const [repsFour, setRepsFour] = useState(10);
+	const [repsFive, setRepsFive] = useState(8);
+	const [repsSix, setRepsSix] = useState(9);
 
 	// State value for determined tempos and rest periods
-	const [tempo, setTempo] = useState("1-0-1");
-	const [tempoTwo, setTempoTwo] = useState("1-0-1");
-	const [rest, setRest] = useState("120s");
-	const [restTwo, setRestTwo] = useState("120s");
+	const [tempo, setTempo] = useState("1-2-1");
+	const [tempoTwo, setTempoTwo] = useState("1-2-1");
+	const [rest, setRest] = useState("30s");
+	const [restTwo, setRestTwo] = useState("60s");
 
 	const handleReturnToGenerateClick = () => {
 		setActiveButton(0);
-		setActiveButtonTwo(0);
-		setIsWorkoutModalOpen(false);
+		setIsStretchModalOpen(false);
 		goToTop();
 	};
 
-	// useEffect to set initial state values for goals, reps, tempos, and rest periods
 	useEffect(() => {
-		if (activeButtonTwo === "1") {
-			setGoals("strength and power");
-			setRepsOne(randomStrengthAndPowerNumberOne);
-			setRepsTwo(randomStrengthAndPowerNumberTwo);
-			setRepsThree(randomStrengthAndPowerNumberThree);
-			setRepsFour(randomStrengthAndPowerNumberFour);
-			setRepsFive(randomStrengthAndPowerNumberFive);
-			setRepsSix(randomStrengthAndPowerNumberSix);
-			setTempo("3-1-1");
-			setTempoTwo("1-2-1");
-			setRest("120s");
-			setRestTwo("90s");
+		if (activeButton === "1") {
+			setGoals("Chest, Shoulders, Triceps");
 		}
-		if (activeButtonTwo === "2") {
-			setGoals("growth and hypertrophy");
-			setRepsOne(randomGrowthAndHypertrophyNumberOne);
-			setRepsTwo(randomGrowthAndHypertrophyNumberTwo);
-			setRepsThree(randomGrowthAndHypertrophyNumberThree);
-			setRepsFour(randomGrowthAndHypertrophyNumberFour);
-			setRepsFive(randomGrowthAndHypertrophyNumberFive);
-			setRepsSix(randomGrowthAndHypertrophyNumberSix);
-			setTempo("2-1-2");
-			setTempoTwo("2-2-1");
-			setRest("45s");
-			setRestTwo("60s");
+		if (activeButton === "2") {
+			setGoals("Back, Biceps, Shoulders");
 		}
-		if (activeButtonTwo === "3") {
-			setGoals("cardiovascular and endurance");
-			setGoals("growth and hypertrophy");
-			setRepsOne(randomCardioAndEnduranceNumberOne);
-			setRepsTwo(randomCardioAndEnduranceNumberTwo);
-			setRepsThree(randomCardioAndEnduranceNumberThree);
-			setRepsFour(randomCardioAndEnduranceNumberFour);
-			setRepsFive(randomCardioAndEnduranceNumberFive);
-			setRepsSix(randomCardioAndEnduranceNumberSix);
-			setTempo("1-0-1");
-			setTempoTwo("1-1-1");
-			setRest("30s");
-			setRestTwo("20s");
+		if (activeButton === "3") {
+			setGoals("Quads, Hamstrings, Glutes, Calves");
 		}
 	}, []);
 
@@ -105,9 +53,16 @@ function StretchModal({
 	return (
 		<section className='absolute h-[200vh] bg-[#f1f1f1] top-0 bottom-0 left-0 right-0 z-30 flex flex-col'>
 			<div className='p-2 mx-auto max-w-prose grid gap-2 items-center uppercase rounded-lg md:grid-cols-2 lg:grid-cols-3 lg:max-w-[105ch]'>
-				<h1 className=' text-sm text-center bg-slate-800 text-white uppercase rounded-lg md:text-2xl py-3 md:col-span-2 lg:col-span-3'>
-					{goals} {filterValue} Workout
-				</h1>
+				{goals && (
+					<h1 className=' text-sm text-center bg-slate-800 text-white uppercase rounded-lg md:text-2xl py-3 md:col-span-2 lg:col-span-3'>
+						{goals} Stretches
+					</h1>
+				)}
+				{filterValue && (
+					<h1 className=' text-sm text-center bg-slate-800 text-white uppercase rounded-lg md:text-2xl py-3 md:col-span-2 lg:col-span-3'>
+						{filterValue} Stretches
+					</h1>
+				)}
 				<div className='w-full flex flex-col items-center bg-white text-slate-900 shadow-lg border border-slate-500/50 p-5 rounded-lg'>
 					<h1 className=' h-12 text-sm lg:text-base'>1. {exerciseOne.name}</h1>
 					<img src={exerciseOne.gifUrl} alt={exerciseOne.name} loading='lazy' />
