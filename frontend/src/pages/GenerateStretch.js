@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import WorkoutModal from "../components/WorkoutModal";
+import StretchModal from "../components/StretchModal";
 import loadingIcon from "../assets/weights-icon-loader.png";
-import { BsQuestionCircle } from "react-icons/bs";
 
 const GenerateStretch = () => {
 	const API_KEY = process.env.REACT_APP_API_KEY;
@@ -26,11 +25,8 @@ const GenerateStretch = () => {
 	const [loading, setLoading] = useState(false);
 	const [search, setSearch] = useState();
 
-	// State value for Modal containing custom workout
-	const [isWorkoutModalOpen, setIsWorkoutModalOpen] = useState(false);
-	const [isExtraInfoOneModalOpen, setIsExtraInfoOneModalOpen] = useState(false);
-	const [isExtraInfoTwoModalOpen, setIsExtraInfoTwoModalOpen] = useState(false);
-	const [isExtraInfoThreeModalOpen, setIsExtraInfoThreeModalOpen] = useState(false);
+	// State value for Modal containing custom stretches
+	const [isStretchModalOpen, setIsStretchModalOpen] = useState(false);
 
 	// State values for six exercises for custom workout
 	const [exerciseOne, setExerciseOne] = useState();
@@ -100,39 +96,6 @@ const GenerateStretch = () => {
 		Math.trunc(Math.random() * 11 + 1)
 	);
 
-	// State values for rep amounts for Strength and Power
-	const [randomStrengthAndPowerNumberOne, setRandomStrengthAndPowerNumberOne] = useState("");
-	const [randomStrengthAndPowerNumberTwo, setRandomStrengthAndPowerNumberTwo] = useState("");
-	const [randomStrengthAndPowerNumberThree, setRandomStrengthAndPowerNumberThree] = useState("");
-	const [randomStrengthAndPowerNumberFour, setRandomStrengthAndPowerNumberFour] = useState("");
-	const [randomStrengthAndPowerNumberFive, setRandomStrengthAndPowerNumberFive] = useState("");
-	const [randomStrengthAndPowerNumberSix, setRandomStrengthAndPowerNumberSix] = useState("");
-
-	// State values for rep amounts for Growth and Hypertrophy
-	const [randomGrowthAndHypertrophyNumberOne, setRandomGrowthAndHypertrophyNumberOne] =
-		useState("");
-	const [randomGrowthAndHypertrophyNumberTwo, setRandomGrowthAndHypertrophyNumberTwo] =
-		useState("");
-	const [randomGrowthAndHypertrophyNumberThree, setRandomGrowthAndHypertrophyNumberThree] =
-		useState("");
-	const [randomGrowthAndHypertrophyNumberFour, setRandomGrowthAndHypertrophyNumberFour] =
-		useState("");
-	const [randomGrowthAndHypertrophyNumberFive, setRandomGrowthAndHypertrophyNumberFive] =
-		useState("");
-	const [randomGrowthAndHypertrophyNumberSix, setRandomGrowthAndHypertrophyNumberSix] =
-		useState("");
-
-	// State values for rep amounts for Cardio and Endurance
-	const [randomCardioAndEnduranceNumberOne, setRandomCardioAndEnduranceNumberOne] = useState("");
-	const [randomCardioAndEnduranceNumberTwo, setRandomCardioAndEnduranceNumberTwo] = useState("");
-	const [randomCardioAndEnduranceNumberThree, setRandomCardioAndEnduranceNumberThree] =
-		useState("");
-	const [randomCardioAndEnduranceNumberFour, setRandomCardioAndEnduranceNumberFour] =
-		useState("");
-	const [randomCardioAndEnduranceNumberFive, setRandomCardioAndEnduranceNumberFive] =
-		useState("");
-	const [randomCardioAndEnduranceNumberSix, setRandomCardioAndEnduranceNumberSix] = useState("");
-
 	const HandleClick = (e) => {
 		e.preventDefault();
 		let activeButtonNumber = e.target.id;
@@ -152,33 +115,6 @@ const GenerateStretch = () => {
 			top: 0,
 			behavior: "smooth",
 		});
-	};
-
-	const generateGrowthReps = () => {
-		setRandomGrowthAndHypertrophyNumberOne(Math.trunc(Math.random() * 4 + 8));
-		setRandomGrowthAndHypertrophyNumberTwo(Math.trunc(Math.random() * 4 + 8));
-		setRandomGrowthAndHypertrophyNumberThree(Math.trunc(Math.random() * 4 + 8));
-		setRandomGrowthAndHypertrophyNumberFour(Math.trunc(Math.random() * 4 + 8));
-		setRandomGrowthAndHypertrophyNumberFive(Math.trunc(Math.random() * 4 + 8));
-		setRandomGrowthAndHypertrophyNumberSix(Math.trunc(Math.random() * 4 + 8));
-	};
-
-	const generateStrengthReps = () => {
-		setRandomStrengthAndPowerNumberOne(Math.trunc(Math.random() * 4 + 3));
-		setRandomStrengthAndPowerNumberTwo(Math.trunc(Math.random() * 4 + 3));
-		setRandomStrengthAndPowerNumberThree(Math.trunc(Math.random() * 4 + 3));
-		setRandomStrengthAndPowerNumberFour(Math.trunc(Math.random() * 4 + 3));
-		setRandomStrengthAndPowerNumberFive(Math.trunc(Math.random() * 4 + 3));
-		setRandomStrengthAndPowerNumberSix(Math.trunc(Math.random() * 4 + 3));
-	};
-
-	const generateEnduranceReps = () => {
-		setRandomCardioAndEnduranceNumberOne(Math.trunc(Math.random() * 4 + 12));
-		setRandomCardioAndEnduranceNumberTwo(Math.trunc(Math.random() * 4 + 12));
-		setRandomCardioAndEnduranceNumberThree(Math.trunc(Math.random() * 4 + 12));
-		setRandomCardioAndEnduranceNumberFour(Math.trunc(Math.random() * 4 + 12));
-		setRandomCardioAndEnduranceNumberFive(Math.trunc(Math.random() * 4 + 12));
-		setRandomCardioAndEnduranceNumberSix(Math.trunc(Math.random() * 4 + 12));
 	};
 
 	const generateExerciseNumbers = () => {
@@ -272,94 +208,6 @@ const GenerateStretch = () => {
 			setExerciseFive(hamstringsExercises[exerciseSelectionFive]);
 			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
 		}
-		if (e.target.value === "upper" && activeButton === "2") {
-			setExerciseOne(pectoralsExercises[exerciseSelectionOne]);
-			setExerciseTwo(backExercises[exerciseSelectionTwo]);
-			setExerciseSix(trapsExercises[exerciseShortestSelectionSix]);
-			setExerciseThree(shouldersExercises[exerciseSelectionThree]);
-			setExerciseFour(bicepsExercises[exerciseShorterSelectionFour]);
-			setExerciseFive(tricepsExercises[exerciseShorterSelectionFive]);
-		}
-		if (e.target.value === "lower" && activeButton === "2") {
-			setExerciseOne(quadsExercises[exerciseSelectionOne]);
-			setExerciseTwo(hamstringsExercises[exerciseSelectionTwo]);
-			setExerciseThree(calvesExercises[exerciseShorterSelectionThree]);
-			setExerciseFour(quadsExercises[exerciseSelectionFour]);
-			setExerciseFive(calvesExercises[exerciseShorterSelectionFive]);
-			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
-		}
-		if (e.target.value === "push" && activeButton === "3") {
-			setExerciseOne(pectoralsExercises[exerciseSelectionOne]);
-			setExerciseTwo(pectoralsExercises[exerciseSelectionTwo]);
-			setExerciseSix(shouldersExercises[exerciseSelectionSix]);
-			setExerciseThree(shouldersExercises[exerciseSelectionThree]);
-			setExerciseFour(tricepsExercises[exerciseShorterSelectionFour]);
-			setExerciseFive(tricepsExercises[exerciseShorterSelectionFive]);
-		}
-		if (e.target.value === "pull" && activeButton === "3") {
-			setExerciseOne(backExercises[exerciseSelectionOne]);
-			setExerciseTwo(backExercises[exerciseSelectionTwo]);
-			setExerciseThree(backExercises[exerciseSelectionThree]);
-			setExerciseFour(trapsExercises[exerciseShortestSelectionFour]);
-			setExerciseFive(bicepsExercises[exerciseShorterSelectionFive]);
-			setExerciseSix(bicepsExercises[exerciseShorterSelectionSix]);
-		}
-		if (e.target.value === "legs" && activeButton === "3") {
-			setExerciseOne(quadsExercises[exerciseSelectionOne]);
-			setExerciseTwo(hamstringsExercises[exerciseSelectionTwo]);
-			setExerciseThree(calvesExercises[exerciseShorterSelectionThree]);
-			setExerciseFour(quadsExercises[exerciseSelectionFour]);
-			setExerciseFive(calvesExercises[exerciseShorterSelectionFive]);
-			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
-		}
-		if (e.target.value === "chest" && activeButton === "4") {
-			setExerciseOne(pectoralsExercises[exerciseSelectionOne]);
-			setExerciseTwo(pectoralsExercises[exerciseSelectionTwo]);
-			setExerciseSix(pectoralsExercises[exerciseSelectionSix]);
-			setExerciseThree(pectoralsExercises[exerciseSelectionThree]);
-			setExerciseFour(pectoralsExercises[exerciseSelectionFour]);
-			setExerciseFive(pectoralsExercises[exerciseSelectionFive]);
-		}
-		if (e.target.value === "back" && activeButton === "4") {
-			setExerciseOne(backExercises[exerciseSelectionOne]);
-			setExerciseTwo(backExercises[exerciseSelectionTwo]);
-			setExerciseThree(trapsExercises[exerciseShortestSelectionThree]);
-			setExerciseFour(trapsExercises[exerciseShortestSelectionFour]);
-			setExerciseFive(backExercises[exerciseSelectionFive]);
-			setExerciseSix(backExercises[exerciseSelectionSix]);
-		}
-		if (e.target.value === "shoulders" && activeButton === "4") {
-			setExerciseOne(shouldersExercises[exerciseSelectionOne]);
-			setExerciseTwo(shouldersExercises[exerciseSelectionTwo]);
-			setExerciseThree(shouldersExercises[exerciseSelectionThree]);
-			setExerciseFour(shouldersExercises[exerciseSelectionFour]);
-			setExerciseFive(shouldersExercises[exerciseSelectionFive]);
-			setExerciseSix(shouldersExercises[exerciseSelectionSix]);
-		}
-		if (e.target.value === "legs" && activeButton === "4") {
-			setExerciseOne(quadsExercises[exerciseSelectionOne]);
-			setExerciseTwo(quadsExercises[exerciseSelectionTwo]);
-			setExerciseSix(hamstringsExercises[exerciseSelectionSix]);
-			setExerciseThree(hamstringsExercises[exerciseSelectionThree]);
-			setExerciseFour(calvesExercises[exerciseShorterSelectionFour]);
-			setExerciseFive(calvesExercises[exerciseShorterSelectionFive]);
-		}
-		if (e.target.value === "arms" && activeButton === "4") {
-			setExerciseOne(bicepsExercises[exerciseShorterSelectionOne]);
-			setExerciseTwo(bicepsExercises[exerciseShorterSelectionTwo]);
-			setExerciseThree(bicepsExercises[exerciseShorterSelectionThree]);
-			setExerciseFour(tricepsExercises[exerciseShorterSelectionFour]);
-			setExerciseFive(tricepsExercises[exerciseShorterSelectionFive]);
-			setExerciseSix(tricepsExercises[exerciseShorterSelectionSix]);
-		}
-		if (e.target.value === "abs" && activeButton === "4") {
-			setExerciseOne(absExercises[exerciseSelectionOne]);
-			setExerciseTwo(absExercises[exerciseSelectionTwo]);
-			setExerciseThree(absExercises[exerciseSelectionThree]);
-			setExerciseFour(absExercises[exerciseSelectionFour]);
-			setExerciseFive(absExercises[exerciseSelectionFive]);
-			setExerciseSix(absExercises[exerciseSelectionSix]);
-		}
 	};
 
 	const HandleSubmit = (e) => {
@@ -372,7 +220,7 @@ const GenerateStretch = () => {
 		}, 2000);
 
 		setTimeout(() => {
-			setIsWorkoutModalOpen(true);
+			setIsStretchModalOpen(true);
 		}, 2000);
 	};
 
@@ -463,9 +311,6 @@ const GenerateStretch = () => {
 
 	useEffect(() => {
 		generateExerciseNumbers();
-		generateStrengthReps();
-		generateGrowthReps();
-		generateEnduranceReps();
 	}, []);
 
 	return (
@@ -477,10 +322,10 @@ const GenerateStretch = () => {
 					</div>
 				</section>
 			)}
-			{isWorkoutModalOpen && (
-				<WorkoutModal
+			{isStretchModalOpen && (
+				<StretchModal
 					goToTop={goToTop}
-					setIsWorkoutModalOpen={setIsWorkoutModalOpen}
+					setIsStretchModalOpen={setIsStretchModalOpen}
 					setActiveButton={setActiveButton}
 					setActiveButtonTwo={setActiveButtonTwo}
 					exerciseOne={exerciseOne}
@@ -491,24 +336,6 @@ const GenerateStretch = () => {
 					exerciseSix={exerciseSix}
 					filterValue={filterValue}
 					activeButtonTwo={activeButtonTwo}
-					randomStrengthAndPowerNumberOne={randomStrengthAndPowerNumberOne}
-					randomStrengthAndPowerNumberTwo={randomStrengthAndPowerNumberTwo}
-					randomStrengthAndPowerNumberThree={randomStrengthAndPowerNumberThree}
-					randomStrengthAndPowerNumberFour={randomStrengthAndPowerNumberFour}
-					randomStrengthAndPowerNumberFive={randomStrengthAndPowerNumberFive}
-					randomStrengthAndPowerNumberSix={randomStrengthAndPowerNumberSix}
-					randomGrowthAndHypertrophyNumberOne={randomGrowthAndHypertrophyNumberOne}
-					randomGrowthAndHypertrophyNumberTwo={randomGrowthAndHypertrophyNumberTwo}
-					randomGrowthAndHypertrophyNumberThree={randomGrowthAndHypertrophyNumberThree}
-					randomGrowthAndHypertrophyNumberFour={randomGrowthAndHypertrophyNumberFour}
-					randomGrowthAndHypertrophyNumberFive={randomGrowthAndHypertrophyNumberFive}
-					randomGrowthAndHypertrophyNumberSix={randomGrowthAndHypertrophyNumberOne}
-					randomCardioAndEnduranceNumberOne={randomCardioAndEnduranceNumberOne}
-					randomCardioAndEnduranceNumberTwo={randomCardioAndEnduranceNumberTwo}
-					randomCardioAndEnduranceNumberThree={randomCardioAndEnduranceNumberThree}
-					randomCardioAndEnduranceNumberFour={randomCardioAndEnduranceNumberFour}
-					randomCardioAndEnduranceNumberFive={randomCardioAndEnduranceNumberOne}
-					randomCardioAndEnduranceNumberSix={randomCardioAndEnduranceNumberOne}
 				/>
 			)}
 
