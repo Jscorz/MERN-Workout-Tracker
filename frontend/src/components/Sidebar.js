@@ -74,6 +74,11 @@ const Sidebar = ({ isHamburgerMenuOpen, setIsHamburgerMenuOpen, handleClick, use
 						Generate Workout
 					</Link>
 				</li>
+				<li className='w-full text-center text-3xl text-white px-3 py-6 hover:opacity-90 hover:bg-slate-700'>
+					<Link to='/generatestretch' onClick={() => setIsHamburgerMenuOpen(false)}>
+						Generate Stretch
+					</Link>
+				</li>
 				<li>
 					<button
 						className='text-white text-xl mt-4 px-8 py-3 border-2 border-white rounded-lg hover:bg-purple-500 hover:text-white hover:bg-opacity-60'

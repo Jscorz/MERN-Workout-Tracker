@@ -52,6 +52,12 @@ const Navbar = () => {
 							>
 								Generate Workout
 							</Link>
+							<Link
+								to='/generatestretch'
+								className='hidden text-white whitespace-nowrap text-sm uppercase mr-6 md:block lg:text-base lg:mr-14'
+							>
+								Generate Stretch
+							</Link>
 							{user.user.userpicture === "1" && (
 								<div className='relative group'>
 									<img
