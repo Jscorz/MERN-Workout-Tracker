@@ -530,7 +530,7 @@ const GenerateStretch = () => {
 					}
 				>
 					Chest <br />
-					Shoudlers <br />
+					Shoulders <br />
 					Triceps <br />
 				</button>
 				<button
@@ -551,8 +551,8 @@ const GenerateStretch = () => {
 					onClick={HandleClick}
 					className={
 						activeButton === "3"
-							? "options w-[33%] p-4 bg-white text-[.65rem] text-slate-900 uppercase transition hover:bg-opacity-80 md:text-base"
-							: "options w-[33%] p-4 bg-slate-800 text-[.65rem] text-white uppercase transition hover:bg-opacity-80 md:text-base"
+							? "options w-[33%] p-4 bg-white text-[.65rem] text-slate-900 uppercase transition rounded-tr-lg rounded-br-lg hover:bg-opacity-80 md:text-base"
+							: "options w-[33%] p-4 bg-slate-800 text-[.65rem] text-white uppercase transition rounded-tr-lg rounded-br-lg hover:bg-opacity-80 md:text-base"
 					}
 				>
 					Quads <br />
@@ -570,42 +570,6 @@ const GenerateStretch = () => {
 			</div>
 			<div className='flex w-full max-w-prose'>
 				<form className='w-full'>
-					{activeButton === 0 && (
-						<select
-							onChange={HandleChange}
-							value={filterValue}
-							className='w-[100%] bg-slate-800 text-white text-center uppercase p-4 transition hover:bg-opacity-80 cursor-pointer rounded-lg'
-						>
-							<option value='Select muscle group'>Please Select muscle group</option>
-							<option className='p-4 bg-white text-slate-900' value='abs'>
-								abs
-							</option>
-							<option className='p-4 bg-white text-slate-900' value='pectorals'>
-								pectorals
-							</option>
-							<option className='p-4 bg-white text-slate-900' value='back'>
-								back
-							</option>
-							<option className='p-4 bg-white text-slate-900' value='traps'>
-								traps
-							</option>
-							<option className='p-4 bg-white text-slate-900' value='delts'>
-								delts
-							</option>
-							<option className='p-4 bg-white text-slate-900' value='biceps'>
-								biceps
-							</option>
-							<option className='p-4 bg-white text-slate-900' value='calves'>
-								calves
-							</option>
-							<option className='p-4 bg-white text-slate-900' value='quads'>
-								quads
-							</option>
-							<option className='p-4 bg-white text-slate-900' value='hamstrings'>
-								hamstrings
-							</option>
-						</select>
-					)}
 					<select
 						onChange={HandleChange}
 						value={filterValue}
